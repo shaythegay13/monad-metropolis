@@ -1,0 +1,243 @@
+{
+  "sourceCommit": "fc79feb3eddff29439a3fe462e740ccdf3af3923",
+  "files": [
+    {
+      "source": "AGENTS.md",
+      "destination": "AGENTS.md",
+      "sourceSha256": "70a669293d464d7afd41806dc2a44a247a026f18aeab3bce18fd0908bb11a0b8",
+      "destinationSha256": "a2c3ff67e8a8279fa07267c22e761ac97ae209f88592e2beebaf56289fb04d80",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "CLAUDE.md",
+      "destination": "CLAUDE.md",
+      "sourceSha256": "99a0522e3146484e21f95d65caa6ed3bb6490e9b547e988034bb9ca48e4014a2",
+      "destinationSha256": "7518d56aaec3cefc3240f82da0614f83c704661e4b38ff54ae6616072e975ac4",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "docs/PRD-MONAD.md",
+      "destination": "docs/PRD-MONAD.md",
+      "sourceSha256": "54b55b9417d8a7f237ef4962075ff79c80b70f3a88772254ee148b78b2063b03",
+      "destinationSha256": "b94e5084a212a992b1a8848a880f76b9b88235d4b892239f1360d926ec64c72a",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "docs/HACKATHON_REQUIREMENTS.md",
+      "destination": "docs/HACKATHON_REQUIREMENTS.md",
+      "sourceSha256": "e732b1b3cf511cca8387ac7160d062ff9ac74b58d161d711ac4803a855432c2f",
+      "destinationSha256": "2807372c0f17c9f3ea8ba48c230de057344c6615685d93c4e655056550b302c6",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "docs/ARCHITECTURE.md",
+      "destination": "docs/ARCHITECTURE.md",
+      "sourceSha256": "f37e3b97ba2c657228ea1bb1f35d5c3c90ce7bc23336b881c278b31e8eb59dce",
+      "destinationSha256": "7a28b166b2ea51617d57e80ff5f1b10a2c8cdfa782442dc4c86a7aed7bd163f4",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "docs/verification/MONAD-M0.md",
+      "destination": "docs/verification/MONAD-M0.md",
+      "sourceSha256": "e24a28ccfdac6c6458c8c38fbec196a013ab603226c0baa114a36186f814a457",
+      "destinationSha256": "b054f1b902431030b75a2fd8a392ffb4c1b24a531167189d7ffd83ecbade8520",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "docs/verification/MONAD-M1.md",
+      "destination": "docs/verification/MONAD-M1.md",
+      "sourceSha256": "326453d4e5391374b65c6e7f6573759f8e3806446d38817eaf3a64854d0a5c6c",
+      "destinationSha256": "471a12d4b3930558614e5e4ea2310d7d5384b06989d0648708fbcb831ef4cc1b",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "docs/verification/MONAD-M1-agent-1.json",
+      "destination": "docs/verification/MONAD-M1-agent-1.json",
+      "sourceSha256": "0601d5a016d6534122d2f1ec9a2279c079e1f1e833ebd85fe4a401d4e58aa0d1",
+      "destinationSha256": "0601d5a016d6534122d2f1ec9a2279c079e1f1e833ebd85fe4a401d4e58aa0d1",
+      "decision": "REUSE"
+    },
+    {
+      "source": "docs/verification/MONAD-M1-agent-2.json",
+      "destination": "docs/verification/MONAD-M1-agent-2.json",
+      "sourceSha256": "97a91dd691c6d4dd50f427cd385a7d4e408e5b406a3a9d06ef593a4266331cb3",
+      "destinationSha256": "97a91dd691c6d4dd50f427cd385a7d4e408e5b406a3a9d06ef593a4266331cb3",
+      "decision": "REUSE"
+    },
+    {
+      "source": "docs/verification/MONAD-M1-rpc-proof.json",
+      "destination": "docs/verification/MONAD-M1-rpc-proof.json",
+      "sourceSha256": "85babd2d027e9d444537f8dfb66fc142086bb29f0ba05fc165a99f27de9dfe0d",
+      "destinationSha256": "85babd2d027e9d444537f8dfb66fc142086bb29f0ba05fc165a99f27de9dfe0d",
+      "decision": "REUSE"
+    },
+    {
+      "source": "scripts/verify-erc8004-agent.ts",
+      "destination": "scripts/verify-erc8004-agent.ts",
+      "sourceSha256": "08d803bf910feb58dc3f1a4bb2096aeaccd94893b101f5cf67eb26b717b8fd0a",
+      "destinationSha256": "08d803bf910feb58dc3f1a4bb2096aeaccd94893b101f5cf67eb26b717b8fd0a",
+      "decision": "REUSE"
+    },
+    {
+      "source": "tests/identity.test.ts",
+      "destination": "tests/identity.test.ts",
+      "sourceSha256": "f346cc1859bb909e9f4bed133e4c3fa83e5ac23f86c8fe3c4ef951ac12601941",
+      "destinationSha256": "f346cc1859bb909e9f4bed133e4c3fa83e5ac23f86c8fe3c4ef951ac12601941",
+      "decision": "REUSE"
+    },
+    {
+      "source": "tests/canonical.test.ts",
+      "destination": "tests/canonical.test.ts",
+      "sourceSha256": "d163255d050a2772815ef576fbf9d377d0771cfa9f1598296de0ae0013ff0db1",
+      "destinationSha256": "d163255d050a2772815ef576fbf9d377d0771cfa9f1598296de0ae0013ff0db1",
+      "decision": "REUSE"
+    },
+    {
+      "source": "tests/digest.test.ts",
+      "destination": "tests/digest.test.ts",
+      "sourceSha256": "2c2f2ced06c499941472d2ef8c46278c01e96b64dd200fbd2419a6005b092176",
+      "destinationSha256": "2c2f2ced06c499941472d2ef8c46278c01e96b64dd200fbd2419a6005b092176",
+      "decision": "REUSE"
+    },
+    {
+      "source": "tests/envelope.test.ts",
+      "destination": "tests/envelope.test.ts",
+      "sourceSha256": "22f0e91c37f64701ca971473f04b5ccfb1682490b952250359660891face445f",
+      "destinationSha256": "22f0e91c37f64701ca971473f04b5ccfb1682490b952250359660891face445f",
+      "decision": "REUSE"
+    },
+    {
+      "source": "tests/consumer-validation.test.ts",
+      "destination": "tests/consumer-validation.test.ts",
+      "sourceSha256": "b34cc8e586cd52d23de2611318ff78ac9c46daeaa260c37a8b72f76e4f76d858",
+      "destinationSha256": "e1477c93456c7c07cbdbec2765816f2df4d730881911dda969ddee410b6ffddd",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "tests/helpers/cross-process-worker.ts",
+      "destination": "tests/helpers/cross-process-worker.ts",
+      "sourceSha256": "05515dbbee52832fc7c038fb2d86eec5c8189229a8e6a7c9b497263e73d591a7",
+      "destinationSha256": "05515dbbee52832fc7c038fb2d86eec5c8189229a8e6a7c9b497263e73d591a7",
+      "decision": "REUSE"
+    },
+    {
+      "source": "fixtures/real/passport-bundle.json",
+      "destination": "fixtures/real/passport-bundle.json",
+      "sourceSha256": "6f940e476a51d2debc3d666a235cd99e9c11f65513172d289ad01b387b870429",
+      "destinationSha256": "6f940e476a51d2debc3d666a235cd99e9c11f65513172d289ad01b387b870429",
+      "decision": "REUSE"
+    },
+    {
+      "source": "fixtures/real/metadata.json",
+      "destination": "fixtures/real/metadata.json",
+      "sourceSha256": "bdfa6bb00943af83e0fd826b4247d205309621b98877bd3be3a45ad985140659",
+      "destinationSha256": "bdfa6bb00943af83e0fd826b4247d205309621b98877bd3be3a45ad985140659",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/schema/src/bundle.ts",
+      "destination": "packages/schema/src/bundle.ts",
+      "sourceSha256": "69ebf3e0eee393c8826772283f001764e93e462b8eb51c2df209ccf6eed82f77",
+      "destinationSha256": "69ebf3e0eee393c8826772283f001764e93e462b8eb51c2df209ccf6eed82f77",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/schema/src/claim.ts",
+      "destination": "packages/schema/src/claim.ts",
+      "sourceSha256": "870716894708e3425de721e536449203b7d0250bc373a52c802d5c5ab4f9a917",
+      "destinationSha256": "870716894708e3425de721e536449203b7d0250bc373a52c802d5c5ab4f9a917",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/schema/src/coverage.ts",
+      "destination": "packages/schema/src/coverage.ts",
+      "sourceSha256": "9a9725fd06b20b78af4552c4f896a3accbb2556fea4d2503e1ccbc9b2ca0bc85",
+      "destinationSha256": "9a9725fd06b20b78af4552c4f896a3accbb2556fea4d2503e1ccbc9b2ca0bc85",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/schema/src/evidence.ts",
+      "destination": "packages/schema/src/evidence.ts",
+      "sourceSha256": "a8d705951a25e780afa54e910b856e187a01f8699aa7a30bc78d340b7473978a",
+      "destinationSha256": "a8d705951a25e780afa54e910b856e187a01f8699aa7a30bc78d340b7473978a",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/schema/src/explanation.ts",
+      "destination": "packages/schema/src/explanation.ts",
+      "sourceSha256": "88c3bc737e76e32f83e70d394b51e13468805df462af683de494e15b89f54f0b",
+      "destinationSha256": "88c3bc737e76e32f83e70d394b51e13468805df462af683de494e15b89f54f0b",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/schema/src/identity.ts",
+      "destination": "packages/schema/src/identity.ts",
+      "sourceSha256": "af618349e93a109717c5f3f71a3fcfaeb2341da61587d0910275f300de5d889b",
+      "destinationSha256": "af618349e93a109717c5f3f71a3fcfaeb2341da61587d0910275f300de5d889b",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/schema/src/index.ts",
+      "destination": "packages/schema/src/index.ts",
+      "sourceSha256": "a6c6c426466f770279000b4cdaac6251446933b4d20f3c09ff12d5ac9d068ea5",
+      "destinationSha256": "a6c6c426466f770279000b4cdaac6251446933b4d20f3c09ff12d5ac9d068ea5",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/identity/src/config.ts",
+      "destination": "packages/identity/src/config.ts",
+      "sourceSha256": "48b9cfed9b36407378980a609bffbae57e8a6f383e9fc798f58ff9fbdce106da",
+      "destinationSha256": "48b9cfed9b36407378980a609bffbae57e8a6f383e9fc798f58ff9fbdce106da",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/identity/src/registration.ts",
+      "destination": "packages/identity/src/registration.ts",
+      "sourceSha256": "15db0c90cac349164918835ef6636d06b8c0ebffcbe3bf4b4a4dc26cd6341769",
+      "destinationSha256": "15db0c90cac349164918835ef6636d06b8c0ebffcbe3bf4b4a4dc26cd6341769",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/identity/src/resolver.ts",
+      "destination": "packages/identity/src/resolver.ts",
+      "sourceSha256": "46cc477400110073242b276c8e5185f8215eb9717c65cd1b0c9148b17034eac0",
+      "destinationSha256": "46cc477400110073242b276c8e5185f8215eb9717c65cd1b0c9148b17034eac0",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/verification/src/canonical.ts",
+      "destination": "packages/verification/src/canonical.ts",
+      "sourceSha256": "ce7a16d3299627a2af36d6f04e568a94b6c6983fa5f6e07f5abbd78c343e7b99",
+      "destinationSha256": "ce7a16d3299627a2af36d6f04e568a94b6c6983fa5f6e07f5abbd78c343e7b99",
+      "decision": "REUSE"
+    },
+    {
+      "source": "packages/verification/src/digest.ts",
+      "destination": "packages/verification/src/digest.ts",
+      "sourceSha256": "8bd9eaae38c097328fddb04c80536f71a774ec0c0d1230273b28c3e2d7478d5f",
+      "destinationSha256": "e060c740dce07f4e427eba0dba805384c429b9e41d2da772a98e8eb526b1d0a3",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "packages/verification/src/index.ts",
+      "destination": "packages/verification/src/index.ts",
+      "sourceSha256": "dfc4eada3f1e33fdaeb297c80e827aa46b447a2b0022b8fcddcb29cf1c26d619",
+      "destinationSha256": "dfc4eada3f1e33fdaeb297c80e827aa46b447a2b0022b8fcddcb29cf1c26d619",
+      "decision": "REUSE"
+    },
+    {
+      "source": "apps/consumer/app/lib/validate-bundle.ts",
+      "destination": "packages/consumer/src/validate-bundle.ts",
+      "sourceSha256": "6193fa764b8b1558b9c691cfef9031c9d3bce0d183e61053fa331a045a8f3b09",
+      "destinationSha256": "cd6e3109bc4ef17367d7c35322b776399058ad8e6d30e92ebb3064d80701061f",
+      "decision": "ADAPT"
+    },
+    {
+      "source": "apps/consumer/app/lib/types.ts",
+      "destination": "packages/consumer/src/types.ts",
+      "sourceSha256": "6ae59c020179f9b73e8d1b872a91fba7c1e7194ec0e40c5a09204bf0561a38b3",
+      "destinationSha256": "1854b212b3b6c6c96c06c5fe17ab68681c84a4afcc86c415a3121f893051cf1e",
+      "decision": "ADAPT"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "subjectType": "erc8004_agent",
+  "agentId": "2",
+  "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+  "network": "monad-testnet",
+  "chainId": 10143,
+  "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+  "ownerAddress": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+  "agentWallet": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+  "agentWalletStatus": "set",
+  "agentUri": "ipfs://QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+  "registration": {
+    "status": "unreachable",
+    "sourceUri": "ipfs://QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+    "retrievalUrl": "https://ipfs.io/ipfs/QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+    "source": "ipfs_gateway",
+    "warnings": [
+      "Registration HTTP 429; redirects/compression not followed"
+    ]
+  },
+  "resolution": {
+    "blockNumber": "68684786",
+    "blockHash": "0x60b166d1f5a8b60975e889b37f1719a0a411e7ad0bad558e7362ec0cd7882db8",
+    "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+    "resolvedAt": "2026-10-06T12:25:30.956Z"
+  }
+}
