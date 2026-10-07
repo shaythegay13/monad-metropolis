@@ -1,6 +1,7 @@
 import { passportBundleSchema, type PassportBundle } from "../../schema/src/index.js";
 import { verifyBundleIntegrity } from "../../verification/src/index.js";
 import type { ValidationStepResult, BundleValidationResult } from "./types.js";
+import { validateAgentBundle } from "./validate-agent-bundle.js";
 
 export type { ValidationStepResult, BundleValidationResult };
 
@@ -43,6 +44,26 @@ export function validateImportedBundle(rawJson: unknown): BundleValidationResult
   }
 
   const candidate = rawJson as Record<string, unknown>;
+
+  // Explicit v2 envelope; never reinterpret v1's schema_version field as v2.
+  if (candidate.schemaVersion === "2.0.0") {
+    const v2 = validateAgentBundle(rawJson);
+    return { isValid: v2.isValid, bundle: v2.bundle,
+      steps: [
+        { step: "schema", name: "V2 envelope schema", passed: v2.schemaValid, message: "Explicit agent Passport schema 2.0.0" },
+        { step: "evidence", name: "V2 scope and reference integrity", passed: v2.referencesValid,
+          message: "Evidence, metric and observation references; declared scope and coverage coherence" },
+        { step: "integrity", name: "Payload SHA-256", passed: v2.digestMatches, message: v2.integrityLabel }
+      ], integrityLabel: v2.integrityLabel,
+      integrityExplanation: "Offline schema, references and payload digest verification; does NOT establish authentic origin, wallet ownership, truthful source data, metric accuracy or onchain publication.",
+      publicationLabel: "Publication not supported in v2", publicationExplanation: "This v2 artifact contains no publication record.",
+      ...(v2.isValid ? {} : { errorSummary: v2.errors.join("; ") }) };
+  }
+  if (Object.hasOwn(candidate, "schemaVersion")) {
+    return { isValid: false, steps: [{ step: "schema", name: "Envelope version", passed: false,
+      message: "Unsupported or ambiguous agent Passport schema version" }], integrityLabel, integrityExplanation,
+      publicationLabel, publicationExplanation, errorSummary: "Unsupported or ambiguous schema version" };
+  }
 
   if (candidate.schema_version !== SUPPORTED_SCHEMA_VERSION) {
     steps.push({

@@ -1,0 +1,18 @@
+{
+  "fixtureKind": "real captured evidence with deterministically derived Passport",
+  "sourceFixture": "fixtures/real/monad-m2/agent-2.json",
+  "sourceFileSha256": "95a210b0f66f4e1ebe1678877fa6facedcc3aa5601dcef53ec7601bc6b18a3a5",
+  "generation": {
+    "generatedAt": "2026-10-07T12:47:03.588Z",
+    "passportVersion": 1
+  },
+  "payloadDigest": "9963102ba6b529b0c66c6a5a9cb655e3970f825ead27c0e07683492154cda760",
+  "artifactFileSha256": "d1d8fcc35100d80c34a977b1670432fea9a3fe1706f345f438b868447787629d",
+  "command": [
+    "node",
+    "dist/scripts/generate-agent-passport.js",
+    "fixtures/real/monad-m2/agent-2.json",
+    "fixtures/real/monad-m3/agent-2-passport-v2.json",
+    "2026-10-07T12:47:03.588Z"
+  ]
+}

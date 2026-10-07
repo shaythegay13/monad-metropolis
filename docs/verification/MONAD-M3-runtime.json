@@ -1,0 +1,37 @@
+[
+  {
+    "command": [
+      "node",
+      "dist/scripts/generate-agent-passport.js",
+      "fixtures/real/monad-m2/agent-2.json",
+      "dist/m3-reproduced.json",
+      "2026-10-07T12:47:03.588Z"
+    ],
+    "exitCode": 0,
+    "output": "{\n  \"schemaVersion\": \"2.0.0\",\n  \"digest\": \"9963102ba6b529b0c66c6a5a9cb655e3970f825ead27c0e07683492154cda760\",\n  \"coverage\": \"complete_for_query\",\n  \"metrics\": [\n    {\n      \"metricId\": \"active_utc_days\",\n      \"value\": 1\n    },\n    {\n      \"metricId\": \"failed_execution_count\",\n      \"value\": 0\n    },\n    {\n      \"metricId\": \"first_observed_activity_at\",\n      \"value\": \"2026-02-05T13:17:09.000Z\"\n    },\n    {\n      \"metricId\": \"last_observed_activity_at\",\n      \"value\": \"2026-02-05T13:19:29.000Z\"\n    },\n    {\n      \"metricId\": \"observed_transaction_count\",\n      \"value\": 2\n    },\n    {\n      \"metricId\": \"successful_execution_count\",\n      \"value\": 2\n    },\n    {\n      \"metricId\": \"unique_recipient_addresses\",\n      \"value\": 1\n    },\n    {\n      \"metricId\": \"unknown_execution_status_count\",\n      \"value\": 0\n    }\n  ]\n}\n"
+  },
+  {
+    "command": [
+      "node",
+      "dist/scripts/verify-agent-passport.js",
+      "fixtures/real/monad-m3/agent-2-passport-v2.json"
+    ],
+    "exitCode": 0,
+    "output": "{\n  \"isValid\": true,\n  \"integrityLabel\": \"Passport integrity verified\",\n  \"integrityExplanation\": \"Offline schema, references and payload digest verification; does NOT establish authentic origin, wallet ownership, truthful source data, metric accuracy or onchain publication.\",\n  \"steps\": [\n    {\n      \"step\": \"schema\",\n      \"name\": \"V2 envelope schema\",\n      \"passed\": true,\n      \"message\": \"Explicit agent Passport schema 2.0.0\"\n    },\n    {\n      \"step\": \"evidence\",\n      \"name\": \"V2 scope and reference integrity\",\n      \"passed\": true,\n      \"message\": \"Evidence, metric and observation references; declared scope and coverage coherence\"\n    },\n    {\n      \"step\": \"integrity\",\n      \"name\": \"Payload SHA-256\",\n      \"passed\": true,\n      \"message\": \"Passport integrity verified\"\n    }\n  ]\n}\n"
+  },
+  {
+    "check": "Compiled reproduction byte-identical to real derived fixture",
+    "passed": true
+  },
+  {
+    "check": "Isolated offline consumer without generator/providers and with network APIs blocked",
+    "exitCode": 0,
+    "output": "{\"artifact\":\"v1.json\",\"isValid\":true,\"label\":\"Bundle integrity matched\",\"network\":\"forbidden\",\"generatorAndProviders\":\"absent\"}\n{\"artifact\":\"v2.json\",\"isValid\":true,\"label\":\"Passport integrity verified\",\"network\":\"forbidden\",\"generatorAndProviders\":\"absent\"}\n"
+  },
+  {
+    "check": "Compiled CLI rejects tampered metric",
+    "expectedExitCode": 1,
+    "exitCode": 1,
+    "output": "{\n  \"isValid\": false,\n  \"integrityLabel\": \"Passport integrity not verified\",\n  \"integrityExplanation\": \"Offline schema, references and payload digest verification; does NOT establish authentic origin, wallet ownership, truthful source data, metric accuracy or onchain publication.\",\n  \"steps\": [\n    {\n      \"step\": \"schema\",\n      \"name\": \"V2 envelope schema\",\n      \"passed\": true,\n      \"message\": \"Explicit agent Passport schema 2.0.0\"\n    },\n    {\n      \"step\": \"evidence\",\n      \"name\": \"V2 scope and reference integrity\",\n      \"passed\": false,\n      \"message\": \"Evidence, metric and observation references; declared scope and coverage coherence\"\n    },\n    {\n      \"step\": \"integrity\",\n      \"name\": \"Payload SHA-256\",\n      \"passed\": false,\n      \"message\": \"Passport integrity not verified\"\n    }\n  ],\n  \"errorSummary\": \"Observation metric/evidence/value/wording/coverage references disagree; Payload digest mismatch\"\n}\n"
+  }
+]

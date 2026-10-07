@@ -1,4 +1,5 @@
 import type { PassportBundle } from "../../schema/src/index.js";
+import type { AgentPassportBundleV2 } from "../../schema/src/agent-passport.js";
 
 export type ValidationStepResult = {
   step: "schema" | "address" | "evidence" | "integrity";
@@ -11,7 +12,7 @@ export type ValidationStepResult = {
 export type BundleValidationResult = {
   isValid: boolean;
   steps: ValidationStepResult[];
-  bundle?: PassportBundle;
+  bundle?: PassportBundle | AgentPassportBundleV2;
   errorSummary?: string;
   integrityLabel: string;
   integrityExplanation: string;

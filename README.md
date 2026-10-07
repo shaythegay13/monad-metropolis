@@ -9,10 +9,11 @@ No universal trust score.
 
 ## Current scope
 
-M0.5 migrated accepted M1 identity resolution and verification foundations. M2 adds
-bounded Envio HyperSync ingestion for registry-designated agent wallets. Economic
-observations, publication, other sponsor integrations and a web application are deferred. The retained v1 wallet bundle
-format is a compatibility contract; agent identities are standalone domain objects.
+M0.5 preserves accepted M1 identity resolution and verification foundations. M2 adds
+bounded Envio HyperSync ingestion for registry-designated agent wallets. M3 adds
+explicit agent Passport v2 with eight deterministic dataset metrics, literal observations,
+scope, coverage, provenance and limitations. The independent offline consumer supports
+both v1 and v2. Publication, other sponsor integrations and a web application are deferred.
 
 ## Install and verify
 
@@ -47,7 +48,8 @@ supplied metadata; no registry publication verification exists yet.
 
 Read `docs/PRD-MONAD.md`, `docs/HACKATHON_REQUIREMENTS.md`, `docs/ARCHITECTURE.md`,
 `STATUS.md`, `AGENTS.md` and `CLAUDE.md`. `docs/REUSE.md` lists exact migration choices.
-`docs/verification/MONAD-M2.md` records the current evidence pipeline verification.
+`docs/verification/MONAD-M3.md` records current Passport verification.
+`docs/verification/MONAD-M2.md` preserves the accepted evidence pipeline verification.
 Historical M0/M1 reports retain their original context and test counts.
 
 ## Git boundary
@@ -55,7 +57,9 @@ Historical M0/M1 reports retain their original context and test counts.
 This project has newly initialized history, not a copy/clone of either reference `.git`.
 The GitHub remote preserves the old M0 lineage on `monad-metropolis`. The independent
 bootstrap `ea30c95` is published on `signal-passport-monad`; the local `monad-metropolis`
-branch tracks that remote branch. M2 changes remain uncommitted for review.
+branch tracks that remote branch. Accepted M2 is committed locally as
+`9dfc4e7e595175dc9d6397a8aa05296da038014d`; it has not been pushed.
+M3 changes remain uncommitted for owner review.
 
 ## M2 evidence verification
 
@@ -83,3 +87,20 @@ node dist/scripts/cross-check-envio-activity.js dist/m2-cross-check.json fixture
 
 The two primary records are historical direct transactions, not evidence of payments,
 service delivery or recent economic activity. Coverage applies only to the declared query.
+
+## M3 offline Passport generation and verification
+
+Use the accepted captured evidence and explicit generation metadata; no API token or
+network connection is needed. The output path must not exist:
+
+```powershell
+node dist/scripts/generate-agent-passport.js fixtures/real/monad-m2/agent-2.json dist/m3-review.json 2026-10-07T12:47:03.588Z
+node dist/scripts/verify-agent-passport.js dist/m3-review.json
+```
+
+The retained real artifact and reproducibility metadata are in `fixtures/real/monad-m3/`.
+The consumer verifies schema, reference/scope coherence and the canonical payload digest.
+It does not rerun the generator, authenticate the author or independently recalculate
+metric accuracy. Current registry association does not prove historical association;
+observations describe only the wallet's included dataset within its declared scope.
+Partial/unknown coverage remains explicit; provider errors cannot become zero activity.

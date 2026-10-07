@@ -76,7 +76,7 @@ scripts                read-only developer CLI
 No Next.js apps, React, Ethereum/Blockscout ingestion or AI execution were migrated.
 Later sections describe the target architecture unless explicitly marked implemented.
 The v1 wallet bundle is retained as a compatibility fixture/verification contract, not
-as a completed Monad agent Passport. A future schema/version decision is still required.
+as a Monad agent Passport. M3 now adds the separate explicit agent schema 2.0.0 below.
 All modules use in-repository relative imports; tsc emits independently runnable Node ESM.
 Runtime npm dependencies are zod, js-sha3 and @envio-dev/hypersync-client. No workspace orchestrator required.
 See `REUSE.md`, `verification/MONAD-M0.5.md` and `STATUS.md` for the current baseline.
@@ -151,8 +151,7 @@ response caps. The RPC override is trusted operator configuration, not agent met
 
 Compatibility: **PassportBundle v1.0.0, its payload, evidence IDs, canonical bytes and
 SHA-256 digest scope are unchanged.** AgentIdentity is not inserted into an existing
-wallet Passport. A future bundle version/integration decision is required before doing
-so. The extracted consumer library imports schema/verification only; it never imports
+wallet Passport. M3 adds a separate explicit 2.0.0 envelope, described below. The extracted consumer library imports schema/verification only; it never imports
 the resolver. The prior App Two interface remains in the read-only reference repo.
 M1 adds no economics, feedback, policy, sponsor functionality, transaction writes or UI.
 
@@ -366,6 +365,73 @@ IDs must not depend on:
 - page number;
 - retrieval time;
 - UI state.
+
+---
+
+## Implemented M3 - Agent Passport schema 2.0.0
+
+M3 deliberately introduces `packages/schema/src/agent-passport.ts`, additive to the
+unchanged v1 wallet bundle. The v2 envelope uses `schemaVersion: "2.0.0"`; v1 continues
+using its original `schema_version: "1.0.0"`. Dispatch is explicit; a relabeled v1 is
+not a v2. Both versions use the original payload-only canonical SHA-256 implementation.
+No new hashing algorithm, publication field, AI explanation or policy is introduced.
+
+`packages/passport/src/generate.ts` accepts M1 AgentIdentity, the M2 ActivityRetrievalResult
+and explicit generation metadata. It validates the subject/wallet/identity snapshot,
+query scope, evidence, counts and continuation consistency before generation. Provider
+error results are rejected even if they retain evidence; a successful partial/unknown
+retrieval may produce a clearly labeled Passport. No owner fallback or network access.
+The generator canonicalizes address case, deduplicates identical evidence, rejects
+conflicting duplicates and sorts evidence/metrics/observations by stable identifiers.
+
+`metrics.ts` contains eight pure reductions (six counts and two optional timestamps):
+transaction count, distinct UTC dates, distinct non-null lowercased recipient addresses,
+minimum/maximum included timestamp, and literal success/failed/unknown execution counts.
+All metric evidenceIds identify the complete included dataset: even a zero matching
+status is a reduction over that dataset. Empty data produces six zeros with empty evidence
+references supported by explicit scope/coverage; no first/last observation is fabricated.
+There is no economic_history_days, concentration, counterparty inference or value/payment
+metric. `wallet-observations/1.0.0` is the explicit calculation version.
+
+Every metric has one observation with its fixed neutral label, same value, metric ID,
+evidence IDs, evidence count, coverage state and dataset-only interpretation. Payload
+`observationOrder` explicitly references observation IDs for consumer presentation order;
+it must resolve exactly once to each observation. This keeps presentation order separate
+from canonical identifier sorting and supplies an independently checked observation graph.
+
+The canonical payload includes version, stable agent passportId, complete M1 identity
+snapshot, observation scope, metrics, observations/order, evidence, coverage, selected
+retrieval provenance, structured limitations and explicit generation/version metadata.
+Scope binds chain, wallet, current registry designation as of the identity snapshot,
+activity universe and decimal-string [fromBlock,toBlockExclusive) bounds. The artifact
+says: "Observed activity for the wallet currently designated as this agent's ERC-8004
+agentWallet." Four mandatory coded limitations cover historical association, transaction
+vs business semantics, address vs counterparty semantics and query-only coverage.
+Retrieval provenance/time is deliberately inside the payload hash. Raw provider captures
+are retained in M2 fixtures, not copied into the v2 artifact. No credential field exists.
+
+Generation timestamp is passed by the caller; no hidden current-time reads occur in metric
+calculation or generation. Version 1 has no previous hash; later versions require an
+explicit previousVersionHash. That link is metadata, not an onchain or signature proof.
+Canonical serializer and digest source are unchanged; array ordering is prepared by the
+generator, never silently altered by the hashing implementation.
+
+The consumer supports both versions. `validate-agent-bundle.ts` checks schema, identifier
+uniqueness, subject/scope/count coherence, metric evidence membership, observation metric/
+evidence/value/label/coverage links, observation-order references, mandatory limitations
+and the original payload's digest. Hashing the original raw payload avoids silently
+excluding fields stripped by inherited schema parsing. This consumer imports only schema
+and verification; it neither invokes generation nor recalculates metric formulas.
+"Passport integrity verified" is not authentication, chain truth or reputation verification.
+An internally coherent altered metric/observation plus recomputed digest can pass; tests
+explicitly preserve that boundary. Independent correctness can be reproduced through the
+separate deterministic generator, not by making the consumer depend on it.
+
+Offline scripts generate from a captured M2 fixture and independently verify the bundle.
+M2 agent-2 evidence is immutable ground truth; the derived M3 fixture records its source
+hash and explicit generation metadata. Publication, enrichment, policies, new providers
+and later milestones are not part of M3. The following generic metric/Passport sketches
+remain target architecture; only the explicit M3 schema and eight reductions are implemented.
 
 ---
 

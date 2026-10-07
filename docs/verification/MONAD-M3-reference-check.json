@@ -1,0 +1,29 @@
+{
+  "method": "SHA-256 source and Git metadata comparison against pre-M3 snapshot; Git optional locks disabled; .env* reference credentials excluded without reading. HEAD and status compared.",
+  "repositories": {
+    "signal-passport": {
+      "head": "fc79feb3eddff29439a3fe462e740ccdf3af3923",
+      "status": "?? \"Google Stitch Frontend Development.txt\"\n?? Signal-Passport-Weekend-PRD.md\n",
+      "sourceFileCount": 135,
+      "gitFileCount": 211,
+      "checks": {
+        "headUnchanged": true,
+        "statusUnchanged": true,
+        "sourceFilesUnchanged": true,
+        "gitMetadataUnchanged": true
+      }
+    },
+    "ledgerlens": {
+      "head": "bd9b41ce31d1584059677456d2866afcf455786a",
+      "status": "",
+      "sourceFileCount": 40,
+      "gitFileCount": 190,
+      "checks": {
+        "headUnchanged": true,
+        "statusUnchanged": true,
+        "sourceFilesUnchanged": true,
+        "gitMetadataUnchanged": true
+      }
+    }
+  }
+}
