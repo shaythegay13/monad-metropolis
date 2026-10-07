@@ -1,104 +1,93 @@
 # Signal Passport Monad - STATUS
 
-Last updated: October 6, 2026 (America/New_York).
-
-## Active project and reference boundary
+Last updated: October 7, 2026 (America/New_York).
 
 ACTIVE PROJECT: `signal-passport-monad/`.
-Absolute path: `C:\Users\shayb\Downloads\Signal Passport\signal-passport-monad`.
-READ ONLY REFERENCES: `../signal-passport/` and `../ledgerlens/`.
-All new product implementation happens here. No runtime/build/test dependency on either
-prior repository. The two references and their Git histories remain unchanged.
-
-Signal Passport is a portable economic-history layer for autonomous agents.
-Signal Passport provides evidence-backed economic history; the consuming application
-supplies the trust policy. No universal trust score.
+READ ONLY REFERENCES: `../signal-passport/`, `../ledgerlens/`.
+Only this repository receives new product work. No runtime dependency on references.
 
 ## Governing documents
 
-`docs/PRD-MONAD.md` > `docs/HACKATHON_REQUIREMENTS.md` > `docs/ARCHITECTURE.md`
-> this STATUS > verified code. Also obey local `AGENTS.md` and `CLAUDE.md`.
-The user-authorized M0.5 correction replaces the old decision to develop in the original
-Signal Passport repository. Target product scope and priority remain unchanged.
+PRD-MONAD > HACKATHON_REQUIREMENTS > ARCHITECTURE > STATUS > verified code.
+Obey AGENTS.md and CLAUDE.md. Signal Passport provides portable evidence-backed history;
+the consumer supplies trust policy. No universal trust score.
 
-## Current milestone: M0.5 - New Monad Repository Bootstrap and Migration
+## Current milestone: M2 - Envio Monad Evidence Pipeline
 
-**State: Accepted.** Implemented, Verified and acceptance evidence reviewed locally.
-Report: `docs/verification/MONAD-M0.5.md`.
+**ACCEPTED** for the bounded evidence ingestion scope using explicitly selected Envio
+JSON transport on Windows. Implemented, verified and evidence reviewed locally. Changes
+are uncommitted for owner review. Full report: `docs/verification/MONAD-M2.md`.
 
-| Milestone | State | Evidence |
-|---|---|---|
-| M0 | Accepted historically; migrated | Original report retained with context notice |
-| M1 | Accepted historically; reverified in dedicated project | M1 report plus new M0.5 live snapshot |
-| M0.5 | Accepted | Independent install, 57 tests, types/build/runtime, unchanged references |
-| M2 | Not started | Requires a separate instruction |
+| Milestone | State |
+|---|---|
+| M0 / M1 | Accepted; historical verification preserved |
+| M0.5 | Accepted; independent foundation at ea30c95 |
+| M2 | Accepted; 89 tests, live Envio evidence and independent RPC cross-check |
+| M3 | Not started; requires separate instruction |
 
-## Working - verified in this dedicated repository
+## Working - verified
 
-- Accepted read-only ERC-8004 resolver, distinct owner vs agentWallet, explicit metadata
-  retrieval/error states and no reputation inference.
-- Canonical JSON serialization, SHA-256 payload-only digest and v1 wallet schema contracts.
-- Extracted offline consumer schema/reference/digest validation; no analysis/provider access.
-- 57 tests (53 selected migrated tests + 4 new foundation/boundary tests), 4 suites,
-  57 pass, 0 fail/cancelled/skipped/todo. This repository does not claim the old 93 count.
-- `npm.cmd run typecheck` passes for packages, CLI and tests.
-- `npm.cmd run build` emits Node ESM and declarations; compiled CLI and offline consumer run.
-- Real Monad Testnet agent 1 resolves from this repository's compiled CLI with parsed card.
+- M1 read-only ERC-8004 resolution with separate owner/registry-wallet semantics.
+- Envio HyperSync direct outgoing transactions for the current registry-designated
+  wallet; unset wallet fails explicitly with no owner/metadata fallback.
+- Validated normalization, stable chain:hash IDs, exact decimal block/value strings,
+  block-header timestamps, nullable recipient, observed status and deduplication.
+- Provenance, frozen half-open bounds, continuation/guard metadata; complete/partial/
+  unknown coverage separate from errors and valid empty results.
+- Official client adapter plus explicit documented Envio JSON transport. JSON live
+  verified; native SDK cannot load on Windows (published binaries are Linux/macOS only).
+- Existing v1 schemas, canonical serialization, digest and offline consumer unchanged.
+- **89 tests / 4 suites / 89 passed / 0 failed, cancelled, skipped or todo**;
+  includes 57 inherited tests and 32 new M2 tests. Type checking and build pass.
+- Compiled M2 CLI and independent RPC cross-check pass. npm dependency tree healthy.
 
-## Current live identity proof
+## Live proof
 
-Network: Monad Testnet; chain 10143; RPC `https://testnet-rpc.monad.xyz`.
-Registry: `0x8004a818bfb912233c491871b3d84c89a494bd9e`.
-Agent ID: 1; registration name: Monad Demo Agent.
-Owner: `0x133603465adde7c39fa0e6e34b264e1573e1fd08`.
-Registry agentWallet: `0x133603465adde7c39fa0e6e34b264e1573e1fd08` (independently read).
-Registration: original data URI preserved; retrieved and parsed.
-Snapshot block: 68753857; at 2026-10-06T18:16:36.869Z.
-Full proof: `docs/verification/MONAD-M0.5-agent-1.json`.
-No claims about successful service operation or economic history follow from identity.
+Primary agent 2, chain 10143; registry `0x8004a818bfb912233c491871b3d84c89a494bd9e`.
+Registry agentWallet `0xf043b0d473a2edd7c5d6f4d931334096b77a7edc`.
+Envio endpoint `https://monad-testnet.hypersync.xyz`.
+Frozen [10830000, 68955393): 2 raw / 2 normalized / complete_for_query.
+Captured October 7, 2026; final compiled rerun 2026-10-07T11:24:43.783Z matched.
+Additional agent-1 sample 1 / 1; recent agent-2 window valid zero / complete_for_query.
+Both primary transactions plus secondary sample independently matched official Monad RPC
+on hash, block, from/to, value, timestamp and status: **3 / 3 matched**.
+Evidence: `fixtures/real/monad-m2/`; cross-check and selection in `docs/verification/`.
+These are sparse historical direct transactions, not evidence of recent commerce.
 
-## Environment and dependency baseline
+## Environment and security
 
-Windows NT 10.0.26200.0 / PowerShell; Node v24.19.0; npm 11.17.0.
-Runtime: zod 4.6.2, js-sha3 0.13.0.
+Node v24.19.0, npm 11.17.0, Windows/PowerShell.
+Runtime: @envio-dev/hypersync-client 1.4.1, zod 4.6.2, js-sha3 0.13.0.
 Development: TypeScript 5.9.3, tsx 4.23.13, @types/node 24.13.4.
-Clean `npm.cmd ci --no-audit --no-fund` passed; `npm.cmd ls --depth=0` healthy.
-No Next.js, React, workspace orchestrator or database is installed.
-No apps migrated: application production builds are not applicable.
+ENVIO_API_TOKEN is present in ignored/untracked .env.local; never printed or copied.
+Use explicit `node --env-file=.env.local ...` for the M2 CLI. .env.example is blank.
+Exact token scan found no occurrence in deliverables. Reference credentials not read.
+No Next.js/React apps, no application builds or servers; library/CLI build verified.
 
-No credentials copied. `.env.local` and nested variants ignored; `.env.example` has
-only an empty optional RPC placeholder. CLI reads process environment, not env files.
-Hackathon wallet/account/sponsor credential configuration remains unestablished.
+## Git and reference state
 
-## Git
+Local branch `monad-metropolis`, starting/current HEAD
+`ea30c95de8a496f6ff774bc67c7e3c2bb7ce48b5`.
+Bootstrap is published to `origin/signal-passport-monad`; older remote
+`origin/monad-metropolis` remains preserved. M2 changes are uncommitted/unpushed.
+Both reference source trees, Git metadata, HEAD and status remain unchanged.
+Workspace STATUS updated; historical M0/M1/M0.5 reports preserved.
 
-New independent repository initialized on `monad-metropolis`; no old `.git` copied.
-M0.5 initial commit message: `chore: bootstrap Monad Signal Passport project`.
-The source of migrated work was original Signal Passport commit
-`fc79feb3eddff29439a3fe462e740ccdf3af3923`; it is provenance, not an ancestor here.
+## Known limitations
 
-Origin is `https://github.com/shaythegay13/monad-metropolis.git`. That remote already
-contains the old M0 lineage at `c653e44`; it is NOT empty. No fetch/merge/force push or
-remote rewrite is part of M0.5. This independent initial commit is local only, without
-an upstream. A deliberate publication branch/remote decision is needed before pushing.
+Native SDK execution is not verified on this Windows host; explicit JSON is used without
+fallback. Coverage means provider query exhaustion, not lifetime/finality/consensus.
+Current registry association is not proof of historical wallet ownership. Reorg guards
+and conflicting rows are checked, but no continuous rollback/reindex service exists.
+Only outgoing direct transactions; no internal/log/token-transfer/business interpretation.
+Old v1 wallet envelope remains a compatibility contract; future agent Passport integration
+needs a deliberate version plan. Inherited publication labels reflect metadata only.
+M1 metadata/registration restrictions remain unchanged. Envio's full sponsor requirement
+for Passport observations/demo is not yet complete. No M3/reputation/metrics, Nansen,
+Dynamic, Alchemy sponsor feature, contracts, policies, publication, CRE, Qwen or UI work.
 
-## Known limitations / not migrated
+## Exact next action
 
-- No web Generator or Consumer UI; only CLI and offline consumer library.
-- No Blockscout provider, analysis engine, old wallet metrics or AI execution. Their
-  architectural patterns remain reference material; future work is bounded by the PRD.
-- The v1 wallet envelope is retained for compatibility, not relabeled as a Monad agent
-  Passport. Integrating AgentIdentity into a sealed payload needs an explicit version plan.
-- Inherited publication labels reflect supplied metadata, not verified onchain state.
-- M1 restrictions remain: no IPv6-only metadata/redirects/CID verification, registration
-  history, arbitrary metadata enumeration, new wallet signature or capability proof.
-- The real card advertises example.com services and omits self-registration entries;
-  resolver warnings preserve these limitations.
-- No Envio, Nansen, Dynamic, Alchemy sponsor feature, policy, contracts, CRE, Qwen or M2.
-
-## Next action
-
-M0.5 is Accepted. M2 is ready for a separately authorized bounded planning/implementation
-step **in signal-passport-monad only**. Proposed scope remains Envio Monad Evidence
-Pipeline with provenance, normalization, deduplication and explicit coverage/error states.
-Do not substitute owner or advertised wallet for the registry agentWallet. Metrics remain M3.
+Review the uncommitted M2 changes and evidence. M3 is ready for a separately requested,
+bounded deterministic-observation design/implementation, with evidence references and
+coverage preserved. Do not start it or commit/push M2 without instruction.

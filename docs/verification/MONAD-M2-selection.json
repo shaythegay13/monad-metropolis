@@ -1,0 +1,384 @@
+{
+  "fixtureKind": "real captured provider fixture",
+  "purpose": "Real M1 identities and Envio sender-only candidate selection; no lifetime/activity-quality claim",
+  "initial": {
+    "endpoint": "https://monad-testnet.hypersync.xyz",
+    "height": {
+      "height": 68955493
+    },
+    "results": [
+      {
+        "identity": {
+          "subjectType": "erc8004_agent",
+          "agentId": "1",
+          "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "network": "monad-testnet",
+          "chainId": 10143,
+          "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "ownerAddress": "0x133603465adde7c39fa0e6e34b264e1573e1fd08",
+          "agentWallet": "0x133603465adde7c39fa0e6e34b264e1573e1fd08",
+          "agentWalletStatus": "set",
+          "agentUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJNb25hZCBEZW1vIEFnZW50IiwiZGVzY3JpcHRpb24iOiJEZW1vIGFnZW50IGZvciBNb25hZCB0ZXN0bmV0IC0gZGlyZWN0IGNvbnRyYWN0IGNhbGxzIiwiaW1hZ2UiOiJodHRwczovL2kuaW1ndXIuY29tL0pReE00bk8ucG5nIiwic2VydmljZXMiOlt7Im5hbWUiOiJBMkEiLCJlbmRwb2ludCI6Imh0dHBzOi8vbW9uYWQtZGVtby1hZ2VudC5leGFtcGxlLmNvbS8ud2VsbC1rbm93bi9hZ2VudC1jYXJkLmpzb24iLCJ2ZXJzaW9uIjoiMC4zLjAifSx7Im5hbWUiOiJNQ1AiLCJlbmRwb2ludCI6Imh0dHBzOi8vbW9uYWQtZGVtby1hZ2VudC5leGFtcGxlLmNvbS9tY3AiLCJ2ZXJzaW9uIjoiMjAyNS0wNi0xOCJ9XSwieDQwMlN1cHBvcnQiOmZhbHNlLCJhY3RpdmUiOnRydWUsInJlZ2lzdHJhdGlvbnMiOltdLCJzdXBwb3J0ZWRUcnVzdCI6WyJyZXB1dGF0aW9uIl19",
+          "registration": {
+            "status": "retrieved",
+            "sourceUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJNb25hZCBEZW1vIEFnZW50IiwiZGVzY3JpcHRpb24iOiJEZW1vIGFnZW50IGZvciBNb25hZCB0ZXN0bmV0IC0gZGlyZWN0IGNvbnRyYWN0IGNhbGxzIiwiaW1hZ2UiOiJodHRwczovL2kuaW1ndXIuY29tL0pReE00bk8ucG5nIiwic2VydmljZXMiOlt7Im5hbWUiOiJBMkEiLCJlbmRwb2ludCI6Imh0dHBzOi8vbW9uYWQtZGVtby1hZ2VudC5leGFtcGxlLmNvbS8ud2VsbC1rbm93bi9hZ2VudC1jYXJkLmpzb24iLCJ2ZXJzaW9uIjoiMC4zLjAifSx7Im5hbWUiOiJNQ1AiLCJlbmRwb2ludCI6Imh0dHBzOi8vbW9uYWQtZGVtby1hZ2VudC5leGFtcGxlLmNvbS9tY3AiLCJ2ZXJzaW9uIjoiMjAyNS0wNi0xOCJ9XSwieDQwMlN1cHBvcnQiOmZhbHNlLCJhY3RpdmUiOnRydWUsInJlZ2lzdHJhdGlvbnMiOltdLCJzdXBwb3J0ZWRUcnVzdCI6WyJyZXB1dGF0aW9uIl19",
+            "source": "data",
+            "document": {
+              "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+              "name": "Monad Demo Agent",
+              "description": "Demo agent for Monad testnet - direct contract calls",
+              "image": "https://i.imgur.com/JQxM4nO.png",
+              "services": [
+                {
+                  "name": "A2A",
+                  "endpoint": "https://monad-demo-agent.example.com/.well-known/agent-card.json",
+                  "version": "0.3.0"
+                },
+                {
+                  "name": "MCP",
+                  "endpoint": "https://monad-demo-agent.example.com/mcp",
+                  "version": "2025-06-18"
+                }
+              ],
+              "registrations": [],
+              "supportedTrust": [
+                "reputation"
+              ],
+              "x402Support": false,
+              "active": true
+            },
+            "warnings": [
+              "Registration fields and services are advertisements, not verified capabilities or wallet associations.",
+              "Registration has no self-registration entries."
+            ]
+          },
+          "resolution": {
+            "blockNumber": "68955496",
+            "blockHash": "0x5d33344c8dc11c00fdf5f4ea783c37e0e57565c89bdfb8522974e85036d8d644",
+            "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+            "resolvedAt": "2026-10-07T11:14:16.072Z"
+          }
+        },
+        "query": {
+          "from_block": 66955493,
+          "to_block": 68955393,
+          "transactions": [
+            {
+              "from": [
+                "0x133603465adde7c39fa0e6e34b264e1573e1fd08"
+              ]
+            }
+          ],
+          "field_selection": {
+            "block": [
+              "number",
+              "timestamp",
+              "hash"
+            ],
+            "transaction": [
+              "hash",
+              "block_number",
+              "block_hash",
+              "from",
+              "to",
+              "value",
+              "status"
+            ]
+          },
+          "max_num_transactions": 100
+        },
+        "raw": {
+          "data": [],
+          "archive_height": 68955496,
+          "next_block": 68955393,
+          "total_execution_time": 3,
+          "rollback_guard": null
+        },
+        "retrievedAt": "2026-10-07T11:14:16.115Z"
+      },
+      {
+        "identity": {
+          "subjectType": "erc8004_agent",
+          "agentId": "2",
+          "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "network": "monad-testnet",
+          "chainId": 10143,
+          "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "ownerAddress": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+          "agentWallet": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+          "agentWalletStatus": "set",
+          "agentUri": "ipfs://QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+          "registration": {
+            "status": "unreachable",
+            "sourceUri": "ipfs://QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+            "retrievalUrl": "https://ipfs.io/ipfs/QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+            "source": "ipfs_gateway",
+            "warnings": [
+              "Registration HTTP 429; redirects/compression not followed"
+            ]
+          },
+          "resolution": {
+            "blockNumber": "68955497",
+            "blockHash": "0x29a321f12f4da6bfb5f264d6fdcd3955bfb8c4966f769a58ae7726c27ef442c7",
+            "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+            "resolvedAt": "2026-10-07T11:14:16.430Z"
+          }
+        },
+        "query": {
+          "from_block": 66955493,
+          "to_block": 68955393,
+          "transactions": [
+            {
+              "from": [
+                "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc"
+              ]
+            }
+          ],
+          "field_selection": {
+            "block": [
+              "number",
+              "timestamp",
+              "hash"
+            ],
+            "transaction": [
+              "hash",
+              "block_number",
+              "block_hash",
+              "from",
+              "to",
+              "value",
+              "status"
+            ]
+          },
+          "max_num_transactions": 100
+        },
+        "raw": {
+          "data": [],
+          "archive_height": 68955496,
+          "next_block": 68955393,
+          "total_execution_time": 3,
+          "rollback_guard": null
+        },
+        "retrievedAt": "2026-10-07T11:14:16.471Z"
+      }
+    ]
+  },
+  "expanded": {
+    "endpoint": "https://monad-testnet.hypersync.xyz",
+    "height": {
+      "height": 68955493
+    },
+    "results": [
+      {
+        "identity": {
+          "subjectType": "erc8004_agent",
+          "agentId": "1",
+          "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "network": "monad-testnet",
+          "chainId": 10143,
+          "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "ownerAddress": "0x133603465adde7c39fa0e6e34b264e1573e1fd08",
+          "agentWallet": "0x133603465adde7c39fa0e6e34b264e1573e1fd08",
+          "agentWalletStatus": "set",
+          "agentUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJNb25hZCBEZW1vIEFnZW50IiwiZGVzY3JpcHRpb24iOiJEZW1vIGFnZW50IGZvciBNb25hZCB0ZXN0bmV0IC0gZGlyZWN0IGNvbnRyYWN0IGNhbGxzIiwiaW1hZ2UiOiJodHRwczovL2kuaW1ndXIuY29tL0pReE00bk8ucG5nIiwic2VydmljZXMiOlt7Im5hbWUiOiJBMkEiLCJlbmRwb2ludCI6Imh0dHBzOi8vbW9uYWQtZGVtby1hZ2VudC5leGFtcGxlLmNvbS8ud2VsbC1rbm93bi9hZ2VudC1jYXJkLmpzb24iLCJ2ZXJzaW9uIjoiMC4zLjAifSx7Im5hbWUiOiJNQ1AiLCJlbmRwb2ludCI6Imh0dHBzOi8vbW9uYWQtZGVtby1hZ2VudC5leGFtcGxlLmNvbS9tY3AiLCJ2ZXJzaW9uIjoiMjAyNS0wNi0xOCJ9XSwieDQwMlN1cHBvcnQiOmZhbHNlLCJhY3RpdmUiOnRydWUsInJlZ2lzdHJhdGlvbnMiOltdLCJzdXBwb3J0ZWRUcnVzdCI6WyJyZXB1dGF0aW9uIl19",
+          "registration": {
+            "status": "retrieved",
+            "sourceUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJNb25hZCBEZW1vIEFnZW50IiwiZGVzY3JpcHRpb24iOiJEZW1vIGFnZW50IGZvciBNb25hZCB0ZXN0bmV0IC0gZGlyZWN0IGNvbnRyYWN0IGNhbGxzIiwiaW1hZ2UiOiJodHRwczovL2kuaW1ndXIuY29tL0pReE00bk8ucG5nIiwic2VydmljZXMiOlt7Im5hbWUiOiJBMkEiLCJlbmRwb2ludCI6Imh0dHBzOi8vbW9uYWQtZGVtby1hZ2VudC5leGFtcGxlLmNvbS8ud2VsbC1rbm93bi9hZ2VudC1jYXJkLmpzb24iLCJ2ZXJzaW9uIjoiMC4zLjAifSx7Im5hbWUiOiJNQ1AiLCJlbmRwb2ludCI6Imh0dHBzOi8vbW9uYWQtZGVtby1hZ2VudC5leGFtcGxlLmNvbS9tY3AiLCJ2ZXJzaW9uIjoiMjAyNS0wNi0xOCJ9XSwieDQwMlN1cHBvcnQiOmZhbHNlLCJhY3RpdmUiOnRydWUsInJlZ2lzdHJhdGlvbnMiOltdLCJzdXBwb3J0ZWRUcnVzdCI6WyJyZXB1dGF0aW9uIl19",
+            "source": "data",
+            "document": {
+              "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+              "name": "Monad Demo Agent",
+              "description": "Demo agent for Monad testnet - direct contract calls",
+              "image": "https://i.imgur.com/JQxM4nO.png",
+              "services": [
+                {
+                  "name": "A2A",
+                  "endpoint": "https://monad-demo-agent.example.com/.well-known/agent-card.json",
+                  "version": "0.3.0"
+                },
+                {
+                  "name": "MCP",
+                  "endpoint": "https://monad-demo-agent.example.com/mcp",
+                  "version": "2025-06-18"
+                }
+              ],
+              "registrations": [],
+              "supportedTrust": [
+                "reputation"
+              ],
+              "x402Support": false,
+              "active": true
+            },
+            "warnings": [
+              "Registration fields and services are advertisements, not verified capabilities or wallet associations.",
+              "Registration has no self-registration entries."
+            ]
+          },
+          "resolution": {
+            "blockNumber": "68955496",
+            "blockHash": "0x5d33344c8dc11c00fdf5f4ea783c37e0e57565c89bdfb8522974e85036d8d644",
+            "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+            "resolvedAt": "2026-10-07T11:14:16.072Z"
+          }
+        },
+        "query": {
+          "from_block": 0,
+          "to_block": 68955393,
+          "transactions": [
+            {
+              "from": [
+                "0x133603465adde7c39fa0e6e34b264e1573e1fd08"
+              ]
+            }
+          ],
+          "field_selection": {
+            "block": [
+              "number",
+              "timestamp",
+              "hash"
+            ],
+            "transaction": [
+              "hash",
+              "block_number",
+              "block_hash",
+              "from",
+              "to",
+              "value",
+              "status"
+            ]
+          },
+          "max_num_transactions": 100
+        },
+        "raw": {
+          "data": [
+            {
+              "transactions": [
+                {
+                  "block_hash": "0x16e44bb05aaeef6d26496926b2dd02cc302e792b6e3bd069721430af554dad48",
+                  "block_number": 10827961,
+                  "from": "0x133603465adde7c39fa0e6e34b264e1573e1fd08",
+                  "hash": "0xe8f7f87d50d954daa3dcbc51796afbc76afb23245fd88162d35bbb67d3dc517d",
+                  "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+                  "value": "0x00",
+                  "status": 1
+                }
+              ],
+              "blocks": [
+                {
+                  "number": 10827961,
+                  "hash": "0x16e44bb05aaeef6d26496926b2dd02cc302e792b6e3bd069721430af554dad48",
+                  "timestamp": "0x69849494"
+                }
+              ]
+            }
+          ],
+          "archive_height": 68955581,
+          "next_block": 68955393,
+          "total_execution_time": 59,
+          "rollback_guard": null
+        },
+        "retrievedAt": "2026-10-07T11:14:41.859Z"
+      },
+      {
+        "identity": {
+          "subjectType": "erc8004_agent",
+          "agentId": "2",
+          "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "network": "monad-testnet",
+          "chainId": 10143,
+          "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "ownerAddress": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+          "agentWallet": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+          "agentWalletStatus": "set",
+          "agentUri": "ipfs://QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+          "registration": {
+            "status": "unreachable",
+            "sourceUri": "ipfs://QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+            "retrievalUrl": "https://ipfs.io/ipfs/QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+            "source": "ipfs_gateway",
+            "warnings": [
+              "Registration HTTP 429; redirects/compression not followed"
+            ]
+          },
+          "resolution": {
+            "blockNumber": "68955497",
+            "blockHash": "0x29a321f12f4da6bfb5f264d6fdcd3955bfb8c4966f769a58ae7726c27ef442c7",
+            "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+            "resolvedAt": "2026-10-07T11:14:16.430Z"
+          }
+        },
+        "query": {
+          "from_block": 0,
+          "to_block": 68955393,
+          "transactions": [
+            {
+              "from": [
+                "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc"
+              ]
+            }
+          ],
+          "field_selection": {
+            "block": [
+              "number",
+              "timestamp",
+              "hash"
+            ],
+            "transaction": [
+              "hash",
+              "block_number",
+              "block_hash",
+              "from",
+              "to",
+              "value",
+              "status"
+            ]
+          },
+          "max_num_transactions": 100
+        },
+        "raw": {
+          "data": [
+            {
+              "transactions": [
+                {
+                  "block_hash": "0xe0f1e5fecbd012c98c9002026c0bb5bcfab568bfb1babcf28189e49fea391daf",
+                  "block_number": 10830286,
+                  "from": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+                  "hash": "0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                  "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+                  "value": "0x00",
+                  "status": 1
+                },
+                {
+                  "block_hash": "0x297732e006e69b9469345cf0422b73ec36859282fe6cc6b4c3d67f7d90c1dba2",
+                  "block_number": 10830621,
+                  "from": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+                  "hash": "0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3",
+                  "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+                  "value": "0x00",
+                  "status": 1
+                }
+              ],
+              "blocks": [
+                {
+                  "number": 10830286,
+                  "hash": "0xe0f1e5fecbd012c98c9002026c0bb5bcfab568bfb1babcf28189e49fea391daf",
+                  "timestamp": "0x69849855"
+                },
+                {
+                  "number": 10830621,
+                  "hash": "0x297732e006e69b9469345cf0422b73ec36859282fe6cc6b4c3d67f7d90c1dba2",
+                  "timestamp": "0x698498e1"
+                }
+              ]
+            }
+          ],
+          "archive_height": 68955581,
+          "next_block": 68955393,
+          "total_execution_time": 56,
+          "rollback_guard": null
+        },
+        "retrievedAt": "2026-10-07T11:14:41.954Z"
+      }
+    ]
+  }
+}

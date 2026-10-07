@@ -1,0 +1,159 @@
+{
+  "fixtureKind": "real captured provider fixture",
+  "identity": {
+    "subjectType": "erc8004_agent",
+    "agentId": "2",
+    "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "network": "monad-testnet",
+    "chainId": 10143,
+    "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "ownerAddress": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+    "agentWallet": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+    "agentWalletStatus": "set",
+    "agentUri": "ipfs://QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+    "registration": {
+      "status": "unreachable",
+      "sourceUri": "ipfs://QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+      "retrievalUrl": "https://ipfs.io/ipfs/QmebSk2w69oBsPR2tkNFcqxX3Ug9b3QfpBrDqSfes1QbLb",
+      "source": "ipfs_gateway",
+      "warnings": [
+        "Registration HTTP 429; redirects/compression not followed"
+      ]
+    },
+    "resolution": {
+      "blockNumber": "68956592",
+      "blockHash": "0xcaac40dfe750b773c3e87f393e17daf4fa7fd02310b7094364d4b0aead431783",
+      "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+      "resolvedAt": "2026-10-07T11:19:48.517Z"
+    }
+  },
+  "state": "retrieved",
+  "evidence": [
+    {
+      "evidenceId": "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+      "chainId": 10143,
+      "transactionHash": "0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+      "timestamp": "2026-02-05T13:17:09.000Z",
+      "sender": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+      "recipient": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+      "status": "success",
+      "provider": "envio",
+      "sourceReference": "https://monad-testnet.hypersync.xyz/query",
+      "blockNumber": "10830286",
+      "blockHash": "0xe0f1e5fecbd012c98c9002026c0bb5bcfab568bfb1babcf28189e49fea391daf",
+      "value": "0",
+      "source": {
+        "product": "hypersync",
+        "network": "monad-testnet"
+      }
+    },
+    {
+      "evidenceId": "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3",
+      "chainId": 10143,
+      "transactionHash": "0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3",
+      "timestamp": "2026-02-05T13:19:29.000Z",
+      "sender": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+      "recipient": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+      "status": "success",
+      "provider": "envio",
+      "sourceReference": "https://monad-testnet.hypersync.xyz/query",
+      "blockNumber": "10830621",
+      "blockHash": "0x297732e006e69b9469345cf0422b73ec36859282fe6cc6b4c3d67f7d90c1dba2",
+      "value": "0",
+      "source": {
+        "product": "hypersync",
+        "network": "monad-testnet"
+      }
+    }
+  ],
+  "provenance": {
+    "provider": "envio",
+    "product": "hypersync",
+    "network": "monad-testnet",
+    "chainId": 10143,
+    "endpoint": "https://monad-testnet.hypersync.xyz",
+    "transport": "json",
+    "subjectWallet": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+    "subjectSource": "ERC-8004 registry-designated agentWallet",
+    "agentId": "2",
+    "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "identityResolution": {
+      "blockNumber": "68956592",
+      "blockHash": "0xcaac40dfe750b773c3e87f393e17daf4fa7fd02310b7094364d4b0aead431783",
+      "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+      "resolvedAt": "2026-10-07T11:19:48.517Z"
+    },
+    "fromBlock": 10830000,
+    "toBlock": 68955393,
+    "rangeSemantics": "[fromBlock,toBlock)",
+    "universe": "Direct EVM transactions whose sender equals the current registry-designated agentWallet; all observed statuses",
+    "startedAt": "2026-10-07T11:19:48.528Z",
+    "retrievedAt": "2026-10-07T11:19:48.882Z",
+    "rawRowsRetrieved": 2,
+    "normalizedEvidenceCount": 2,
+    "coverageStatus": "complete_for_query",
+    "stopReason": "exhausted",
+    "nextBlock": 68955393,
+    "maxPages": 100,
+    "batches": [
+      {
+        "fromBlock": 10830000,
+        "nextBlock": 68955393,
+        "archiveHeight": 68956591,
+        "rawRows": 2,
+        "rollbackGuard": null
+      }
+    ]
+  },
+  "captures": [
+    {
+      "query": {
+        "fromBlock": 10830000,
+        "toBlock": 68955393,
+        "subjectWallet": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc"
+      },
+      "raw": {
+        "data": [
+          {
+            "transactions": [
+              {
+                "block_hash": "0xe0f1e5fecbd012c98c9002026c0bb5bcfab568bfb1babcf28189e49fea391daf",
+                "block_number": 10830286,
+                "from": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+                "hash": "0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+                "value": "0x00",
+                "status": 1
+              },
+              {
+                "block_hash": "0x297732e006e69b9469345cf0422b73ec36859282fe6cc6b4c3d67f7d90c1dba2",
+                "block_number": 10830621,
+                "from": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+                "hash": "0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3",
+                "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+                "value": "0x00",
+                "status": 1
+              }
+            ],
+            "blocks": [
+              {
+                "number": 10830286,
+                "hash": "0xe0f1e5fecbd012c98c9002026c0bb5bcfab568bfb1babcf28189e49fea391daf",
+                "timestamp": "0x69849855"
+              },
+              {
+                "number": 10830621,
+                "hash": "0x297732e006e69b9469345cf0422b73ec36859282fe6cc6b4c3d67f7d90c1dba2",
+                "timestamp": "0x698498e1"
+              }
+            ]
+          }
+        ],
+        "archive_height": 68956591,
+        "next_block": 68955393,
+        "total_execution_time": 46,
+        "rollback_guard": null
+      }
+    }
+  ]
+}

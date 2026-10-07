@@ -9,7 +9,7 @@
 # Signal Passport — Technical Architecture
 
 **Version:** Monad Metropolis v1  
-**Last Updated:** October 6, 2026
+**Last Updated:** October 7, 2026
 
 **Purpose:** Defines how Signal Passport is technically structured. Product scope belongs in `PRD-MONAD.md`.
 
@@ -78,7 +78,7 @@ Later sections describe the target architecture unless explicitly marked impleme
 The v1 wallet bundle is retained as a compatibility fixture/verification contract, not
 as a completed Monad agent Passport. A future schema/version decision is still required.
 All modules use in-repository relative imports; tsc emits independently runnable Node ESM.
-Only zod and js-sha3 are runtime npm dependencies. No workspace orchestrator required.
+Runtime npm dependencies are zod, js-sha3 and @envio-dev/hypersync-client. No workspace orchestrator required.
 See `REUSE.md`, `verification/MONAD-M0.5.md` and `STATUS.md` for the current baseline.
 
 ---
@@ -205,6 +205,71 @@ Responsibilities may include:
 - derived indexed entities.
 
 Output must be transformed into Signal Passport's canonical evidence model.
+
+---
+
+### Implemented M2 - bounded Monad Testnet transaction ingestion
+
+`packages/activity/src/envio.ts` owns HyperSync access, authentication, the fixed
+`https://monad-testnet.hypersync.xyz` endpoint and provider-format decoding. The official
+Node client is pinned to 1.4.1. Its published native binaries exclude Windows; the
+explicit `json` transport uses Envio's documented POST `/query` API for Windows live
+verification. `native` remains the adapter default on supported hosts. There is no
+automatic transport/provider fallback. Native execution has not been live verified here.
+
+Flow: accepted M1 resolution -> validated current registry `agentWallet` -> sender-only
+HyperSync query -> provider validation -> normalized `ActivityEvidence` + provenance.
+Unset wallet is `agent_wallet_unset`; neither owner nor advertised addresses are used.
+M2 is chain 10143 only. Evidence describes transactions by the currently associated
+wallet; it does not prove that historical activity occurred while that agent owned it.
+
+Evidence universe: direct EVM transactions whose `from` equals that wallet, with all
+observed statuses, within explicit **[fromBlock, toBlock)** bounds. `toBlock` is exclusive.
+No logs, incoming transactions, traces, internal calls, token-transfer interpretation,
+payments, jobs or settlements. Server-side sender selection is revalidated locally.
+
+`packages/schema/src/activity.ts` extends the reusable evidence contract additively,
+without changing the old v1 envelope. It retains timestamp/sender/nullable recipient,
+uses the existing chain:lowercase-hash ID, and adds decimal-string block/value, block
+hash, typed status and Envio/HyperSync source. Value is raw wei, never floating MON.
+Absent value remains absent; absent status is unknown; absent recipient is null (not
+proof of contract creation by itself). Unsafe numeric values and malformed data fail.
+Block timestamps come from matching block headers, not retrieval time.
+
+`normalize.ts` validates and deduplicates by the existing evidence ID. Conflicting rows
+or block hashes fail; complete page acceptance is atomic. Output order is block then
+transaction hash. Provider types never become canonical product schema.
+`index.ts` loops with nextBlock, including empty intermediate pages, until the declared
+range is exhausted. Repeated identical rows are deduplicated; new rows behind the cursor
+or at/after the next cursor are rejected. Archive-height contradictions fail. Returned
+rollback guards are retained and adjacent guard mismatches reject changed chain segments.
+This is bounded historical scanning, not a general reorg-following indexer or finality proof.
+
+Coverage is complete_for_query only on valid exhaustion; page/record limits or a later
+failure preserve partial coverage. Missing continuation gives unknown. Errors have a
+separate state/code even if some evidence exists. A first-request error is unknown
+coverage, never a valid zero. A successful exhausted empty result is valid zero activity.
+Provenance includes agent/identity snapshot, network/chain, wallet, fixed boundaries,
+transport, endpoint, start/retrieval times, operational row counts, stop reason, cursors,
+archive heights and rollback metadata. The CLI fixture retains selected raw responses.
+
+JSON requests have a 30-second deadline, 16 MiB response cap and reject redirects.
+The loop defaults to 100 pages (maximum 1000) and 100,000 normalized records. Limits/errors
+are explicit. Native requests have a 30-second timeout and no retries. Error messages
+omit raw provider/native exceptions, bodies, configured URLs and credentials.
+`ENVIO_API_TOKEN` comes from the process environment; the documented CLI command explicitly
+loads the active repo's ignored `.env.local`. No reference-project environment is read.
+
+The verification CLI requires frozen bounds and an explicit transport. Artifacts are
+created exclusively (existing files are not overwritten) and checked for the token before
+writing. `scripts/cross-check-envio-activity.ts` independently checks a bounded sample
+against official Monad RPC; it never replaces Envio ingestion. Real captures and synthetic
+unit fixtures are separately labeled. The offline consumer still imports schema and
+verification only, with no activity/provider dependency.
+
+Acceptance evidence: `verification/MONAD-M2.md`. M2 adds no economic observations,
+reputation, policy, Passport generation or publication. The Envio bounty's complete
+observations/demo requirements remain future P0 work.
 
 ---
 

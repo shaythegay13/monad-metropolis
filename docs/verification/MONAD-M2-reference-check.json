@@ -1,0 +1,16 @@
+{
+  "signal-passport": {
+    "head": "fc79feb3eddff29439a3fe462e740ccdf3af3923",
+    "status": "?? \"Google Stitch Frontend Development.txt\"\n?? Signal-Passport-Weekend-PRD.md\n",
+    "sourceFilesComparedExcludingEnvironment": 135,
+    "gitFilesCompared": 211,
+    "unchanged": true
+  },
+  "ledgerlens": {
+    "head": "bd9b41ce31d1584059677456d2866afcf455786a",
+    "status": "",
+    "sourceFilesComparedExcludingEnvironment": 40,
+    "gitFilesCompared": 190,
+    "unchanged": true
+  }
+}

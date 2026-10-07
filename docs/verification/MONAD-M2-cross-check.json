@@ -1,0 +1,81 @@
+{
+  "source": "https://testnet-rpc.monad.xyz",
+  "chainId": 10143,
+  "checkedAt": "2026-10-07T11:20:44.016Z",
+  "scope": "Bounded independent RPC sample; not an alternative ingestion provider",
+  "samples": [
+    {
+      "input": "fixtures/real/monad-m2/agent-2.json",
+      "actual": {
+        "transactionHash": "0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+        "blockNumber": "10830286",
+        "blockHash": "0xe0f1e5fecbd012c98c9002026c0bb5bcfab568bfb1babcf28189e49fea391daf",
+        "sender": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+        "recipient": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+        "value": "0",
+        "timestamp": "2026-02-05T13:17:09.000Z",
+        "status": "success"
+      },
+      "matches": {
+        "transactionHash": true,
+        "blockNumber": true,
+        "blockHash": true,
+        "sender": true,
+        "recipient": true,
+        "value": true,
+        "timestamp": true,
+        "status": true
+      },
+      "matched": true
+    },
+    {
+      "input": "fixtures/real/monad-m2/agent-2.json",
+      "actual": {
+        "transactionHash": "0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3",
+        "blockNumber": "10830621",
+        "blockHash": "0x297732e006e69b9469345cf0422b73ec36859282fe6cc6b4c3d67f7d90c1dba2",
+        "sender": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+        "recipient": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+        "value": "0",
+        "timestamp": "2026-02-05T13:19:29.000Z",
+        "status": "success"
+      },
+      "matches": {
+        "transactionHash": true,
+        "blockNumber": true,
+        "blockHash": true,
+        "sender": true,
+        "recipient": true,
+        "value": true,
+        "timestamp": true,
+        "status": true
+      },
+      "matched": true
+    },
+    {
+      "input": "fixtures/real/monad-m2/agent-1.json",
+      "actual": {
+        "transactionHash": "0xe8f7f87d50d954daa3dcbc51796afbc76afb23245fd88162d35bbb67d3dc517d",
+        "blockNumber": "10827961",
+        "blockHash": "0x16e44bb05aaeef6d26496926b2dd02cc302e792b6e3bd069721430af554dad48",
+        "sender": "0x133603465adde7c39fa0e6e34b264e1573e1fd08",
+        "recipient": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+        "value": "0",
+        "timestamp": "2026-02-05T13:01:08.000Z",
+        "status": "success"
+      },
+      "matches": {
+        "transactionHash": true,
+        "blockNumber": true,
+        "blockHash": true,
+        "sender": true,
+        "recipient": true,
+        "value": true,
+        "timestamp": true,
+        "status": true
+      },
+      "matched": true
+    }
+  ],
+  "allMatched": true
+}

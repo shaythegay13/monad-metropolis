@@ -11,9 +11,11 @@
     "test": "tsx --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc -p tsconfig.build.json",
-    "verify:agent": "tsx scripts/verify-erc8004-agent.ts"
+    "verify:agent": "tsx scripts/verify-erc8004-agent.ts",
+    "verify:activity": "tsx scripts/verify-envio-agent-activity.ts"
   },
   "dependencies": {
+    "@envio-dev/hypersync-client": "1.4.1",
     "js-sha3": "0.13.0",
     "zod": "4.6.2"
   },
