@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-10-08T11:02:15.452Z",
+  "transactionHash": "0xf4cd39fb5e51c0ac909ba907efbc8189c981342b12441e74df34c802c410bd9d",
+  "approvedProfileHash": "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+  "approvedMaximumFeeWei": "23893948800000000",
+  "actualFeeWei": "23893948800000000",
+  "actualFeeMON": "0.0238939488",
+  "latestVersion": "2",
+  "downloadFileSha256": "eca35f6a109fe98c6974eb410f0d07f74b8ac4165dd8eb3be29eb2f1b8669e6c",
+  "artifact": "fixtures/real/monad-m5/agent-2072-passport-v2.json",
+  "walletInteractionEvidence": "Owner-reported Dynamic/MetaMask connection, review and explicit one-transaction approval; receipt and read-back independently verified",
+  "transaction": {
+    "type": "0x0",
+    "chainId": "0x279f",
+    "nonce": "0x4",
+    "gasPrice": "0x1c7f9bc800",
+    "gas": "0x2fa8c",
+    "to": "0x7d9cc86196241485cf1efaf8a96c7819ea95b194",
+    "value": "0x0",
+    "input": "0x668746b700000000000000000000000000000000000000000000000000000000000008188dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000",
+    "r": "0x6a10f7516d4a937080113d25054336dcdf47699eff0194afcf5d1d5dccf6772f",
+    "s": "0x59ca11394694a6ffb4a55085ed7c5fca0d9a1ae7c92fd2813d220fddc8c0520b",
+    "v": "0x4f62",
+    "hash": "0xf4cd39fb5e51c0ac909ba907efbc8189c981342b12441e74df34c802c410bd9d",
+    "blockHash": "0x42a13baaceaea2ffb4ccba1c2c23c11636ef3fa7891c20ea95382d784b49a066",
+    "blockNumber": "0x42078c7",
+    "transactionIndex": "0x1",
+    "from": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "blockTimestamp": "0x6ac77715"
+  },
+  "state": "confirmed",
+  "receipt": {
+    "type": "0x0",
+    "status": "0x1",
+    "cumulativeGasUsed": "0x2fa8c",
+    "logs": [
+      {
+        "address": "0x7d9cc86196241485cf1efaf8a96c7819ea95b194",
+        "topics": [
+          "0xe1b408050afa85b47b294f2604ed9c1a9df512ac74915b41953625d73d12bf5e",
+          "0x0000000000000000000000000000000000000000000000000000000000000818",
+          "0x0000000000000000000000000000000000000000000000000000000000000002",
+          "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000bc63bf8dba3aeca97801b85c600f8d0208fb51dd0000000000000000000000000000000000000000000000000000000000000000",
+        "blockHash": "0x42a13baaceaea2ffb4ccba1c2c23c11636ef3fa7891c20ea95382d784b49a066",
+        "blockNumber": "0x42078c7",
+        "blockTimestamp": "0x6ac77715",
+        "transactionHash": "0xf4cd39fb5e51c0ac909ba907efbc8189c981342b12441e74df34c802c410bd9d",
+        "transactionIndex": "0x1",
+        "logIndex": "0x1",
+        "removed": false
+      }
+    ],
+    "logsBloom": "0x04000000000000000000000000010000000000000000000000000000000000004000004000000000000000010000000000000000000000000000800000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000002000000000000000000000100000000000000800000000000000000100000000000000000000000000000000000000000000000000000000000000100000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008800000000000000000000",
+    "transactionHash": "0xf4cd39fb5e51c0ac909ba907efbc8189c981342b12441e74df34c802c410bd9d",
+    "transactionIndex": "0x1",
+    "blockHash": "0x42a13baaceaea2ffb4ccba1c2c23c11636ef3fa7891c20ea95382d784b49a066",
+    "blockNumber": "0x42078c7",
+    "gasUsed": "0x2fa8c",
+    "effectiveGasPrice": "0x1c7f9bc800",
+    "from": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "to": "0x7d9cc86196241485cf1efaf8a96c7819ea95b194",
+    "contractAddress": null
+  },
+  "verification": {
+    "localIntegrityValid": true,
+    "publicationFound": true,
+    "publishedHashMatches": true,
+    "registryVerified": true,
+    "publicationProvenanceVerified": true,
+    "status": "verified",
+    "checkedBlock": "69237883",
+    "checkedBlockHash": "0x5687f32fe6b8e24fe97190bededdc587f280b0e4a534da6a48b79246d3e67172",
+    "version": "2",
+    "profileHash": "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+    "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+    "contentUri": "",
+    "publishedAt": "1791457045",
+    "publicationBlock": "69236935",
+    "publisherMatchesCurrentAgentWallet": true
+  }
+}

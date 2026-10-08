@@ -1,0 +1,475 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@dynamic-labs-connectors/metamask-evm": {
+      "name": "@dynamic-labs-connectors/metamask-evm",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "@dynamic-labs/ethereum",
+        "@metamask/connect-evm",
+        "@metamask/connect-multichain"
+      ],
+      "effects": [
+        "@dynamic-labs/ethereum"
+      ],
+      "range": ">=4.6.4",
+      "nodes": [
+        "node_modules/@dynamic-labs-connectors/metamask-evm"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs-connectors/metamask-evm",
+        "version": "0.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@dynamic-labs/ethereum": {
+      "name": "@dynamic-labs/ethereum",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "@dynamic-labs-connectors/metamask-evm",
+        "@dynamic-labs/waas-evm"
+      ],
+      "effects": [
+        "@dynamic-labs-connectors/metamask-evm"
+      ],
+      "range": ">=4.20.3",
+      "nodes": [
+        "node_modules/@dynamic-labs/ethereum"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs/ethereum",
+        "version": "4.85.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@dynamic-labs/solana-core": {
+      "name": "@dynamic-labs/solana-core",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@solana/spl-token",
+        "@solana/web3.js"
+      ],
+      "effects": [
+        "@dynamic-labs/waas"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@dynamic-labs/solana-core"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs/ethereum",
+        "version": "4.85.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@dynamic-labs/waas": {
+      "name": "@dynamic-labs/waas",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@dynamic-labs/solana-core"
+      ],
+      "effects": [
+        "@dynamic-labs/waas-evm"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@dynamic-labs/waas"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs/ethereum",
+        "version": "4.85.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@dynamic-labs/waas-evm": {
+      "name": "@dynamic-labs/waas-evm",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@dynamic-labs/waas"
+      ],
+      "effects": [
+        "@dynamic-labs/ethereum"
+      ],
+      "range": ">=4.20.3",
+      "nodes": [
+        "node_modules/@dynamic-labs/waas-evm"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs/ethereum",
+        "version": "4.85.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@metamask/connect-evm": {
+      "name": "@metamask/connect-evm",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@metamask/connect-multichain",
+        "@metamask/utils"
+      ],
+      "effects": [
+        "@dynamic-labs-connectors/metamask-evm"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@metamask/connect-evm"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs-connectors/metamask-evm",
+        "version": "0.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@metamask/connect-multichain": {
+      "name": "@metamask/connect-multichain",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@metamask/mobile-wallet-protocol-dapp-client",
+        "@metamask/rpc-errors",
+        "@metamask/utils"
+      ],
+      "effects": [
+        "@dynamic-labs-connectors/metamask-evm"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@metamask/connect-multichain"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs-connectors/metamask-evm",
+        "version": "0.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@metamask/mobile-wallet-protocol-dapp-client": {
+      "name": "@metamask/mobile-wallet-protocol-dapp-client",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@metamask/utils"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@metamask/mobile-wallet-protocol-dapp-client"
+      ],
+      "fixAvailable": true
+    },
+    "@metamask/rpc-errors": {
+      "name": "@metamask/rpc-errors",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@metamask/utils"
+      ],
+      "effects": [
+        "@metamask/connect-multichain"
+      ],
+      "range": ">=6.3.1",
+      "nodes": [
+        "node_modules/@metamask/rpc-errors"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs-connectors/metamask-evm",
+        "version": "0.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@metamask/utils": {
+      "name": "@metamask/utils",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "uuid"
+      ],
+      "effects": [
+        "@metamask/connect-evm",
+        "@metamask/connect-multichain",
+        "@metamask/mobile-wallet-protocol-dapp-client",
+        "@metamask/rpc-errors"
+      ],
+      "range": ">=8.4.0",
+      "nodes": [
+        "node_modules/@metamask/mobile-wallet-protocol-dapp-client/node_modules/@metamask/utils",
+        "node_modules/@metamask/utils"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs-connectors/metamask-evm",
+        "version": "0.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@solana/buffer-layout-utils": {
+      "name": "@solana/buffer-layout-utils",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@solana/web3.js",
+        "bigint-buffer"
+      ],
+      "effects": [
+        "@solana/spl-token"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@solana/buffer-layout-utils"
+      ],
+      "fixAvailable": true
+    },
+    "@solana/spl-token": {
+      "name": "@solana/spl-token",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@solana/buffer-layout-utils",
+        "@solana/spl-token-group",
+        "@solana/spl-token-metadata",
+        "@solana/web3.js"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@solana/spl-token"
+      ],
+      "fixAvailable": true
+    },
+    "@solana/spl-token-group": {
+      "name": "@solana/spl-token-group",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@solana/web3.js"
+      ],
+      "effects": [
+        "@solana/spl-token"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@solana/spl-token-group"
+      ],
+      "fixAvailable": true
+    },
+    "@solana/spl-token-metadata": {
+      "name": "@solana/spl-token-metadata",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@solana/web3.js"
+      ],
+      "effects": [
+        "@solana/spl-token"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@solana/spl-token-metadata"
+      ],
+      "fixAvailable": true
+    },
+    "@solana/web3.js": {
+      "name": "@solana/web3.js",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "jayson"
+      ],
+      "effects": [
+        "@dynamic-labs/solana-core",
+        "@solana/spl-token",
+        "@solana/spl-token-group",
+        "@solana/spl-token-metadata"
+      ],
+      "range": "<=0.0.0-pr-29130 || 0.0.4 - 1.99.0",
+      "nodes": [
+        "node_modules/@solana/web3.js"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs/ethereum",
+        "version": "4.85.0",
+        "isSemVerMajor": true
+      }
+    },
+    "bigint-buffer": {
+      "name": "bigint-buffer",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1103747,
+          "name": "bigint-buffer",
+          "dependency": "bigint-buffer",
+          "title": "bigint-buffer Vulnerable to Buffer Overflow via toBigIntLE() Function",
+          "url": "https://github.com/advisories/GHSA-3gc7-fjrx-p6mg",
+          "severity": "high",
+          "cwe": [
+            "CWE-120"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<=1.1.5"
+        }
+      ],
+      "effects": [
+        "@solana/buffer-layout-utils"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/bigint-buffer"
+      ],
+      "fixAvailable": true
+    },
+    "jayson": {
+      "name": "jayson",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "stream-json",
+        "uuid"
+      ],
+      "effects": [
+        "@solana/web3.js"
+      ],
+      "range": "2.0.6 - 4.3.0",
+      "nodes": [
+        "node_modules/jayson"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs/ethereum",
+        "version": "4.85.0",
+        "isSemVerMajor": true
+      }
+    },
+    "stream-json": {
+      "name": "stream-json",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1164823,
+          "name": "stream-json",
+          "dependency": "stream-json",
+          "title": "stream-json: pick/ignore/filter/replace filters are O(depth²) on nested input — small crafted JSON blocks the event loop for seconds→minutes (DoS)",
+          "url": "https://github.com/advisories/GHSA-528h-pc64-c93x",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-407"
+          ],
+          "cvss": {
+            "score": 6.2,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<=3.4.0"
+        },
+        {
+          "source": 1241262,
+          "name": "stream-json",
+          "dependency": "stream-json",
+          "title": "stream-json: JSONC parser and verifier re-scan the whole accumulated comment on every input chunk",
+          "url": "https://github.com/advisories/GHSA-hqr4-qq8f-hg3x",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-407"
+          ],
+          "cvss": {
+            "score": 6.2,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<=3.5.0"
+        },
+        {
+          "source": 1241263,
+          "name": "stream-json",
+          "dependency": "stream-json",
+          "title": "stream-json has a prototype pollution issue: Assembler writes this.current[this.key] on plain objects",
+          "url": "https://github.com/advisories/GHSA-mjw6-4jj6-33hc",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 5.1,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L"
+          },
+          "range": "<3.6.0"
+        }
+      ],
+      "effects": [
+        "jayson"
+      ],
+      "range": "<=3.5.0",
+      "nodes": [
+        "node_modules/stream-json"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs/ethereum",
+        "version": "4.85.0",
+        "isSemVerMajor": true
+      }
+    },
+    "uuid": {
+      "name": "uuid",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1119441,
+          "name": "uuid",
+          "dependency": "uuid",
+          "title": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+          "url": "https://github.com/advisories/GHSA-w5hq-g745-h8pq",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-787",
+            "CWE-1285"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+          },
+          "range": "<11.1.1"
+        }
+      ],
+      "effects": [
+        "@metamask/utils",
+        "jayson"
+      ],
+      "range": "<11.1.1",
+      "nodes": [
+        "node_modules/@metamask/mobile-wallet-protocol-dapp-client/node_modules/@metamask/utils/node_modules/uuid",
+        "node_modules/@metamask/utils/node_modules/uuid",
+        "node_modules/jayson/node_modules/uuid"
+      ],
+      "fixAvailable": {
+        "name": "@dynamic-labs-connectors/metamask-evm",
+        "version": "0.0.0",
+        "isSemVerMajor": true
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 15,
+      "high": 4,
+      "critical": 0,
+      "total": 19
+    },
+    "dependencies": {
+      "prod": 707,
+      "dev": 61,
+      "optional": 71,
+      "peer": 1,
+      "peerOptional": 0,
+      "total": 812
+    }
+  }
+}

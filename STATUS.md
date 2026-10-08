@@ -11,19 +11,28 @@ Only this repository receives product work; neither reference is a runtime depen
 PRD-MONAD > HACKATHON_REQUIREMENTS > ARCHITECTURE > STATUS > verified code.
 Obey AGENTS.md and CLAUDE.md. Consumer supplies trust policy; no universal trust score.
 
-## Current milestone: M4 - Monad Passport Registry + Alchemy
+## Current milestone: M5 - Dynamic Wallet Integration + First Working Web App
 
-**ACCEPTED** within the bounded testnet scope after implementation, tests and review of
-live evidence. M4 remains uncommitted for owner review. Full report:
-`docs/verification/MONAD-M4.md`. No push or M5 implementation.
+**ACCEPTED - bounded M5 functional scope.** Owner-run checks A-E, G and H passed.
+F is automation-only because a second account is unavailable. The live v2 publication,
+exact downloaded artifact and independent onchain read-back are verified. All 193
+tests, typechecks, builds and dependency-tree checks pass. Audit remains 19 findings;
+all four high entries have an explicit inactive-dependency disposition supported by
+production bundle/server-trace evidence. This is not production security approval.
+
+Reports: `docs/verification/MONAD-M5.md`, `MONAD-M5-manual-QA.md` and
+`MONAD-M5-security-review.md` in the same directory.
+M4 commit: `8d9ce8de74f8239f5cdabc1b1a1ca20152edddd2`.
+M5 remains uncommitted/unpushed. No new closeout transactions. M6 is not started.
 
 | Milestone | State |
 |---|---|
 | M0 / M1 / M0.5 | Accepted; historical evidence preserved |
 | M2 | Accepted; committed 9dfc4e7 |
-| M3 | Accepted; committed 60782f1; immutable Agent-2 fixture preserved |
-| M4 | Accepted; controlled agent, real publication, independent verification; 173 tests pass |
-| M5 | Not started; separate instruction required |
+| M3 | Accepted; committed 60782f1 |
+| M4 | Accepted; committed 8d9ce8d |
+| M5 | Accepted for bounded functionality; 193 tests pass; security limitations documented |
+| M6+ | Not started |
 
 ## Working - verified
 
@@ -50,8 +59,27 @@ live evidence. M4 remains uncommitted for owner review. Full report:
   files, and without deployer/Envio credentials. Only Alchemy is needed for reads.
 - Coherent edited/rehashed artifact fails onchain comparison; unauthorized live eth_call
   reverts. Current-wallet equality remains separate from historical publication.
-- **173 tests, 4 suites, 173 passed, 0 failed/cancelled/skipped/todo**;
-  typecheck, build, dependency tree and npm audit all exit 0. Zero npm vulnerabilities.
+- Accepted M4 baseline: 173 tests and no audit findings before web dependencies.
+- M5 final checks: **193 tests, 4 suites, 193 passed, 0 failed/cancelled/skipped/todo**;
+  library/web typechecks and builds pass. Root dependency tree passes. The M5 dependency
+  audit reports 19 transitive findings (15 moderate, 4 high); it is not a clean audit.
+- Live local API verifies Agent 2072 v1's local integrity, deployed Registry and hash.
+  Download preserves the accepted artifact. Server preparation produces valid linked
+  v2 with four genuine observed transactions. One owner-approved live publication is now
+  confirmed at block 69236935; exact downloaded artifact and proof are retained.
+- Wrong-wallet, wrong-chain, cross-origin and tampered-Passport API requests reject.
+- Generated client assets contain no private credentials or server-secret markers.
+- Closeout read-only verification reconfirms version 2 at checked block 69242070.
+- V1 is now explicitly labeled historical, alongside the current onchain version.
+
+## Remaining limitations
+
+Wrong-wallet behavior is automation-only because the owner has no second account.
+Transaction rejection was not retested with a live publication. The owner personally
+confirmed the other A-H checks; no agent-observed browser testing is claimed.
+Warnings' visual prominence is deferred to later frontend work by owner instruction.
+Public hosting, release-specific API/origin controls and production security approval
+remain outside completed M5 scope. Dependency findings remain explicitly documented.
 
 ## Real proof
 
@@ -73,8 +101,8 @@ Recorded remaining balance after writes: 0.7787053288 MON (snapshot, not a live 
 
 ## Git and reference state
 
-Branch `monad-metropolis`; HEAD `60782f17cf40ef4f7fe707558c34bd0ca00221bc`.
-M2 and M3 are committed locally; no automatic push. M4 files are unstaged/uncommitted.
+Branch `monad-metropolis`; HEAD `8d9ce8de74f8239f5cdabc1b1a1ca20152edddd2`.
+M2, M3 and M4 are committed locally; no automatic push. M5 files are unstaged/uncommitted.
 Both reference HEADs, status, source files and Git metadata remain unchanged.
 Historical reports and M2/M3 fixtures match committed bytes. Parent STATUS changes
 only routing/state. Exact changed-file list and audit results are in the M4 report.
@@ -97,6 +125,6 @@ Full deployed-app/demo sponsor completion is not claimed.
 
 ## Exact next action
 
-Owner reviews M4 code and evidence. Await explicit instruction before committing/pushing
-M4 or beginning M5. Proposed M5: bounded Dynamic wallet/signing integration with the
-existing contract and verifier; definition only in the M4 report.
+Owner reviews M5 changes and closeout evidence. Await explicit instruction before
+committing/pushing, external deployment or starting M6. No further publication is
+authorized; the completed v2 transaction must not be repeated.

@@ -1,0 +1,590 @@
+{
+  "checkedAt": "2026-10-08T11:27:42.764Z",
+  "packages": [
+    {
+      "name": "@dynamic-labs/solana-core",
+      "version": "4.100.3",
+      "targets": [
+        {
+          "target": "browser",
+          "emitted": 0
+        },
+        {
+          "target": "nodejs",
+          "emitted": 0
+        },
+        {
+          "target": "edge",
+          "emitted": 0
+        }
+      ],
+      "serverTraceMatches": []
+    },
+    {
+      "name": "@solana/spl-token",
+      "version": "0.4.14",
+      "targets": [
+        {
+          "target": "browser",
+          "emitted": 0
+        },
+        {
+          "target": "nodejs",
+          "emitted": 0
+        },
+        {
+          "target": "edge",
+          "emitted": 0
+        }
+      ],
+      "serverTraceMatches": []
+    },
+    {
+      "name": "@solana/buffer-layout-utils",
+      "version": "0.2.0",
+      "targets": [
+        {
+          "target": "browser",
+          "emitted": 0
+        },
+        {
+          "target": "nodejs",
+          "emitted": 0
+        },
+        {
+          "target": "edge",
+          "emitted": 0
+        }
+      ],
+      "serverTraceMatches": []
+    },
+    {
+      "name": "bigint-buffer",
+      "version": "1.1.5",
+      "targets": [
+        {
+          "target": "browser",
+          "emitted": 0
+        },
+        {
+          "target": "nodejs",
+          "emitted": 0
+        },
+        {
+          "target": "edge",
+          "emitted": 0
+        }
+      ],
+      "serverTraceMatches": []
+    }
+  ],
+  "serverTraceCount": 4,
+  "webpack": [
+    {
+      "target": "browser",
+      "modules": [
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\index.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\max.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v1.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\nil.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\stringify.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\parse.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v1ToV6.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v6.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v3.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v6ToV1.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v5.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v7.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\validate.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\version.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\index.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v35.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\rng.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\md5.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\native.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\sha1.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\regex.js|app-pages-browser",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\max.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\nil.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\parse.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\stringify.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\v1ToV6.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\v1.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\v3.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\v4.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\v6.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\v5.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\v6ToV1.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\v7.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\validate.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\version.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\v35.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\rng.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\native.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\md5.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\sha1.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs-browser\\regex.js|app-pages-browser",
+          "chunks": [
+            "7619"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v4.js|app-pages-browser|3b1a8da1a23c91f8",
+          "chunks": [
+            "4318"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\v4.js|app-pages-browser",
+          "chunks": [
+            "4318"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\native.js|app-pages-browser",
+          "chunks": [
+            "4318"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\rng.js|app-pages-browser",
+          "chunks": [
+            "4318"
+          ],
+          "emitted": true
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[6].use[1]!<repo>\\node_modules\\uuid\\dist\\esm-browser\\stringify.js|app-pages-browser",
+          "chunks": [
+            "4318"
+          ],
+          "emitted": true
+        }
+      ]
+    },
+    {
+      "target": "nodejs",
+      "modules": [
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\index.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\max.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\nil.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\parse.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\stringify.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\v1.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\v1ToV6.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\v3.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\v4.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\v5.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\v6.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\v6ToV1.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\v7.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\validate.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\version.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\index.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\md5.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\sha1.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\native.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\rng.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\v35.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/esm|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\esm\\regex.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\max.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\nil.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\stringify.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\parse.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\v3.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\v4.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\v5.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\v6.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\v1.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\v6ToV1.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\v7.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\validate.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\version.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\v1ToV6.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\md5.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\sha1.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\v35.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\rng.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\regex.js|ssr",
+          "chunks": [],
+          "emitted": false
+        },
+        {
+          "identifier": "javascript/dynamic|<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-flight-client-module-loader.js!<repo>\\node_modules\\next\\dist\\build\\webpack\\loaders\\next-swc-loader.js??ruleSet[1].rules[17].oneOf[7].use[1]!<repo>\\node_modules\\uuid\\dist\\cjs\\native.js|ssr",
+          "chunks": [],
+          "emitted": false
+        }
+      ]
+    },
+    {
+      "target": "edge",
+      "modules": []
+    }
+  ]
+}

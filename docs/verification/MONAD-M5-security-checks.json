@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-08T18:01:06.486Z",
+  "envFileIgnored": true,
+  "stagedFileCount": 42,
+  "scannedProjectFiles": 151,
+  "scannedBrowserFiles": 116,
+  "secretValueMatches": 0,
+  "forbiddenBrowserMarkerMatches": 0,
+  "dynamicIdPresent": true,
+  "secretValuesPrinted": false
+}

@@ -14,7 +14,59 @@ bounded Envio HyperSync ingestion for registry-designated agent wallets. M3 adds
 explicit agent Passport v2 with eight deterministic dataset metrics, literal observations,
 scope, coverage, provenance and limitations. The independent offline consumer supports
 both v1 and v2. M4 adds authorized onchain publication and independent Alchemy-backed verification.
-Other sponsor integrations and a web application are deferred.
+M5 adds a Next.js web application with Dynamic/MetaMask connection, existing Passport
+inspection and wallet-mediated version 2 publication. The owner completed the successful wallet flow; v2 publication/read-back are verified.
+M5 functional closeout is accepted with documented manual-test and security limitations; see `docs/verification/MONAD-M5.md`. M6 and later integrations are deferred.
+
+## Run the web application (M5)
+
+From this repository, use Node >=22 and npm >=10:
+
+```powershell
+npm.cmd ci
+npm.cmd run web:dev -- --hostname 127.0.0.1 --port 3050
+```
+
+Open **http://127.0.0.1:3050** in your MetaMask-enabled browser. The launcher loads
+only `NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID`, `ENVIO_API_TOKEN` and
+`ALCHEMY_MONAD_TESTNET_RPC_URL` from ignored root `.env.local` (existing process
+values take priority). Only the Dynamic project ID is public. `DEPLOYER_PRIVATE_KEY`
+is explicitly removed from the web child process and is never used for web signing.
+Enable MetaMask and your local app origin in the Dynamic project as needed; do not
+disable Dynamic origin restrictions to work around a configuration problem.
+
+The accepted v1 Passport is accessible without a wallet at `/api/passport?download=1`.
+Connect MetaMask through Dynamic, switch to Monad Testnet **10143**, and use the
+current registry-designated Agent 2072 wallet. Prepare version 2, download its exact
+artifact, and review the hash, evidence scope, publisher, contract and fee.
+**The owner must approve the first live test before clicking Publish.** The wallet
+then asks for the signature. At most one live M5 publication is authorized. Do not
+blindly retry a wallet timeout: inspect MetaMask activity and the Registry first.
+
+The application only supports Agent 2072 / version 2 in M5. Existing v1 is immutable;
+both v1 and proposed v2 have empty content URIs because public artifact hosting has
+not been authorized. A localhost URL is not presented as a publicly hosted artifact.
+The public pending hash and submitted bundle are retained in browser localStorage
+for receipt/read-back recovery after a disconnect or reload. No credentials are stored
+there. A reverted or unresolved submission remains blocked from automatic retries.
+
+```powershell
+npm.cmd test
+npm.cmd run typecheck
+npm.cmd run build
+npm.cmd run web:typecheck
+npm.cmd run web:build
+npm.cmd run web:start -- --hostname 127.0.0.1 --port 3050
+```
+
+`build` continues to compile the library/CLI; `web:build` builds the web application.
+For a later authorized Vercel deployment, configure Next.js with project root
+`apps/web`, install from the repository root (`cd ../.. && npm ci`), build with
+`cd ../.. && npm run web:build`, and use the default `.next` output. Enable inclusion
+of files outside the root directory. Configure the three web variables in that
+deployment; never add the deployer key. This configuration has not been deployed or
+verified on Vercel. Public API rate limits/abuse controls and the remaining SDK
+dependency advisories must be reviewed before external deployment.
 
 ## Install and verify
 

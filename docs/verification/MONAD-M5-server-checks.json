@@ -1,0 +1,490 @@
+{
+  "checkedAt": "2026-10-08T10:36:02.469Z",
+  "signedTransactions": 0,
+  "state": {
+    "bundle": {
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "6fdcb7be70fc8717cdb75937606f26ce6b02268ea4f3fd3ebaf0392c006c874a"
+      },
+      "payload": {
+        "coverage": {
+          "coverageStatus": "complete_for_query",
+          "nextBlock": "69126918",
+          "normalizedEvidenceCount": 2,
+          "pageCount": 1,
+          "rawRowsRetrieved": 2,
+          "stopReason": "exhausted"
+        },
+        "evidence": [
+          {
+            "blockHash": "0x9e5d67d50f9b2b3bd1ceb0146589c8a2b6e55dbe0c52e42ad898ba926c35e4af",
+            "blockNumber": "69126790",
+            "chainId": 10143,
+            "evidenceId": "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+            "provider": "envio",
+            "recipient": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+            "sender": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+            "source": {
+              "network": "monad-testnet",
+              "product": "hypersync"
+            },
+            "sourceReference": "https://monad-testnet.hypersync.xyz/query",
+            "status": "success",
+            "timestamp": "2026-10-08T01:36:53.000Z",
+            "transactionHash": "0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+            "value": "0"
+          },
+          {
+            "blockHash": "0x112739df90af95089b7329fe52edc0e46b79ae8b7bf0154c80edb23cb992f864",
+            "blockNumber": "69126917",
+            "chainId": 10143,
+            "evidenceId": "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+            "provider": "envio",
+            "recipient": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+            "sender": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+            "source": {
+              "network": "monad-testnet",
+              "product": "hypersync"
+            },
+            "sourceReference": "https://monad-testnet.hypersync.xyz/query",
+            "status": "success",
+            "timestamp": "2026-10-08T01:37:31.000Z",
+            "transactionHash": "0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+            "value": "0"
+          }
+        ],
+        "generation": {
+          "generatedAt": "2026-10-08T01:37:40.868Z",
+          "passportVersion": 1
+        },
+        "limitations": [
+          {
+            "code": "current_association_only",
+            "description": "Current ERC-8004 wallet association does not prove historical association at the time of every observed transaction."
+          },
+          {
+            "code": "transaction_semantics_only",
+            "description": "Direct transactions and successful EVM executions do not establish payments, commerce, service delivery, trading, or business relationships."
+          },
+          {
+            "code": "address_semantics_only",
+            "description": "Recipient addresses are not automatically independent counterparties."
+          },
+          {
+            "code": "query_scope_only",
+            "description": "Coverage applies only to the declared query scope; observations describe the included dataset, not lifetime totals."
+          }
+        ],
+        "metrics": [
+          {
+            "calculationVersion": "wallet-observations/1.0.0",
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "metricId": "active_utc_days",
+            "value": 1
+          },
+          {
+            "calculationVersion": "wallet-observations/1.0.0",
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "metricId": "failed_execution_count",
+            "value": 0
+          },
+          {
+            "calculationVersion": "wallet-observations/1.0.0",
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "metricId": "first_observed_activity_at",
+            "value": "2026-10-08T01:36:53.000Z"
+          },
+          {
+            "calculationVersion": "wallet-observations/1.0.0",
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "metricId": "last_observed_activity_at",
+            "value": "2026-10-08T01:37:31.000Z"
+          },
+          {
+            "calculationVersion": "wallet-observations/1.0.0",
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "metricId": "observed_transaction_count",
+            "value": 2
+          },
+          {
+            "calculationVersion": "wallet-observations/1.0.0",
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "metricId": "successful_execution_count",
+            "value": 2
+          },
+          {
+            "calculationVersion": "wallet-observations/1.0.0",
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "metricId": "unique_recipient_addresses",
+            "value": 1
+          },
+          {
+            "calculationVersion": "wallet-observations/1.0.0",
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "metricId": "unknown_execution_status_count",
+            "value": 0
+          }
+        ],
+        "observationOrder": [
+          "observation:observed_transaction_count",
+          "observation:active_utc_days",
+          "observation:unique_recipient_addresses",
+          "observation:first_observed_activity_at",
+          "observation:last_observed_activity_at",
+          "observation:successful_execution_count",
+          "observation:failed_execution_count",
+          "observation:unknown_execution_status_count"
+        ],
+        "observationScope": {
+          "activityScope": "direct_outgoing_transactions_all_statuses",
+          "chainId": 10143,
+          "description": "Observed activity for the wallet currently designated as this agent's ERC-8004 agentWallet.",
+          "fromBlock": "69126790",
+          "subjectWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+          "toBlockExclusive": "69126918",
+          "walletAssociationAsOf": "2026-10-08T01:37:40.356Z",
+          "walletAssociationBasis": "current_erc8004_registry_designation"
+        },
+        "observations": [
+          {
+            "coverageStatus": "complete_for_query",
+            "evidenceCount": 2,
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "interpretation": "Observed dataset within the declared query scope",
+            "label": "Active UTC days within this dataset",
+            "metricIds": [
+              "active_utc_days"
+            ],
+            "observationId": "observation:active_utc_days",
+            "value": 1
+          },
+          {
+            "coverageStatus": "complete_for_query",
+            "evidenceCount": 2,
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "interpretation": "Observed dataset within the declared query scope",
+            "label": "Failed EVM executions observed",
+            "metricIds": [
+              "failed_execution_count"
+            ],
+            "observationId": "observation:failed_execution_count",
+            "value": 0
+          },
+          {
+            "coverageStatus": "complete_for_query",
+            "evidenceCount": 2,
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "interpretation": "Observed dataset within the declared query scope",
+            "label": "First observed transaction within this dataset",
+            "metricIds": [
+              "first_observed_activity_at"
+            ],
+            "observationId": "observation:first_observed_activity_at",
+            "value": "2026-10-08T01:36:53.000Z"
+          },
+          {
+            "coverageStatus": "complete_for_query",
+            "evidenceCount": 2,
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "interpretation": "Observed dataset within the declared query scope",
+            "label": "Last observed transaction within this dataset",
+            "metricIds": [
+              "last_observed_activity_at"
+            ],
+            "observationId": "observation:last_observed_activity_at",
+            "value": "2026-10-08T01:37:31.000Z"
+          },
+          {
+            "coverageStatus": "complete_for_query",
+            "evidenceCount": 2,
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "interpretation": "Observed dataset within the declared query scope",
+            "label": "Observed transactions",
+            "metricIds": [
+              "observed_transaction_count"
+            ],
+            "observationId": "observation:observed_transaction_count",
+            "value": 2
+          },
+          {
+            "coverageStatus": "complete_for_query",
+            "evidenceCount": 2,
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "interpretation": "Observed dataset within the declared query scope",
+            "label": "Successful EVM executions observed",
+            "metricIds": [
+              "successful_execution_count"
+            ],
+            "observationId": "observation:successful_execution_count",
+            "value": 2
+          },
+          {
+            "coverageStatus": "complete_for_query",
+            "evidenceCount": 2,
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "interpretation": "Observed dataset within the declared query scope",
+            "label": "Unique recipient addresses",
+            "metricIds": [
+              "unique_recipient_addresses"
+            ],
+            "observationId": "observation:unique_recipient_addresses",
+            "value": 1
+          },
+          {
+            "coverageStatus": "complete_for_query",
+            "evidenceCount": 2,
+            "evidenceIds": [
+              "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+              "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+            ],
+            "interpretation": "Observed dataset within the declared query scope",
+            "label": "Unknown EVM execution statuses observed",
+            "metricIds": [
+              "unknown_execution_status_count"
+            ],
+            "observationId": "observation:unknown_execution_status_count",
+            "value": 0
+          }
+        ],
+        "passportId": "agent:eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e:2072",
+        "provenance": {
+          "endpoint": "https://monad-testnet.hypersync.xyz",
+          "network": "monad-testnet",
+          "product": "hypersync",
+          "provider": "envio",
+          "retrievedAt": "2026-10-08T01:37:40.868Z",
+          "startedAt": "2026-10-08T01:37:40.503Z",
+          "transport": "json"
+        },
+        "schemaVersion": "2.0.0",
+        "subject": {
+          "agentId": "2072",
+          "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "agentUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJTaWduYWwgUGFzc3BvcnQgRGVtbyBBZ2VudCIsImRlc2NyaXB0aW9uIjoiVGVzdG5ldCBhZ2VudCB1c2VkIHRvIGRlbW9uc3RyYXRlIHBvcnRhYmxlLCBldmlkZW5jZS1iYWNrZWQgZWNvbm9taWMgaGlzdG9yeSB3aXRoIFNpZ25hbCBQYXNzcG9ydC4gQ3VycmVudCBkZW1vIGFjdGl2aXR5IGNvbnNpc3RzIG9mIGlkZW50aXR5IG1hbmFnZW1lbnQ7IG5vIGF1dG9ub21vdXMgc2VydmljZSBlbmRwb2ludHMgYXJlIGFkdmVydGlzZWQuIiwic2VydmljZXMiOltdLCJhY3RpdmUiOmZhbHNlLCJ4NDAyU3VwcG9ydCI6ZmFsc2UsInJlZ2lzdHJhdGlvbnMiOlt7ImFnZW50SWQiOjIwNzIsImFnZW50UmVnaXN0cnkiOiJlaXAxNTU6MTAxNDM6MHg4MDA0YTgxOGJmYjkxMjIzM2M0OTE4NzFiM2Q4NGM4OWE0OTRiZDllIn1dLCJzdXBwb3J0ZWRUcnVzdCI6W119",
+          "agentWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+          "agentWalletStatus": "set",
+          "chainId": 10143,
+          "network": "monad-testnet",
+          "ownerAddress": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+          "registration": {
+            "document": {
+              "active": false,
+              "description": "Testnet agent used to demonstrate portable, evidence-backed economic history with Signal Passport. Current demo activity consists of identity management; no autonomous service endpoints are advertised.",
+              "name": "Signal Passport Demo Agent",
+              "registrations": [
+                {
+                  "agentId": 2072,
+                  "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e"
+                }
+              ],
+              "services": [],
+              "supportedTrust": [],
+              "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+              "x402Support": false
+            },
+            "source": "data",
+            "sourceUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJTaWduYWwgUGFzc3BvcnQgRGVtbyBBZ2VudCIsImRlc2NyaXB0aW9uIjoiVGVzdG5ldCBhZ2VudCB1c2VkIHRvIGRlbW9uc3RyYXRlIHBvcnRhYmxlLCBldmlkZW5jZS1iYWNrZWQgZWNvbm9taWMgaGlzdG9yeSB3aXRoIFNpZ25hbCBQYXNzcG9ydC4gQ3VycmVudCBkZW1vIGFjdGl2aXR5IGNvbnNpc3RzIG9mIGlkZW50aXR5IG1hbmFnZW1lbnQ7IG5vIGF1dG9ub21vdXMgc2VydmljZSBlbmRwb2ludHMgYXJlIGFkdmVydGlzZWQuIiwic2VydmljZXMiOltdLCJhY3RpdmUiOmZhbHNlLCJ4NDAyU3VwcG9ydCI6ZmFsc2UsInJlZ2lzdHJhdGlvbnMiOlt7ImFnZW50SWQiOjIwNzIsImFnZW50UmVnaXN0cnkiOiJlaXAxNTU6MTAxNDM6MHg4MDA0YTgxOGJmYjkxMjIzM2M0OTE4NzFiM2Q4NGM4OWE0OTRiZDllIn1dLCJzdXBwb3J0ZWRUcnVzdCI6W119",
+            "status": "retrieved",
+            "warnings": [
+              "Registration fields and services are advertisements, not verified capabilities or wallet associations.",
+              "Registration image is missing."
+            ]
+          },
+          "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+          "resolution": {
+            "blockHash": "0x81cd111382a6b16eacebd997b1b9b1a6f1fff8e9fd2fb4611d89cf5858f6f90d",
+            "blockNumber": "69126959",
+            "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+            "resolvedAt": "2026-10-08T01:37:40.356Z"
+          },
+          "subjectType": "erc8004_agent"
+        }
+      },
+      "schemaVersion": "2.0.0"
+    },
+    "verification": {
+      "localIntegrityValid": true,
+      "publicationFound": true,
+      "publishedHashMatches": true,
+      "registryVerified": true,
+      "publicationProvenanceVerified": true,
+      "status": "verified",
+      "checkedBlock": "69166508",
+      "checkedBlockHash": "0x3d2ff2c220d47f51b08c625368f2dc8c671db1c6b51b8e99e3e838e88f010b7a",
+      "version": "1",
+      "profileHash": "0x6fdcb7be70fc8717cdb75937606f26ce6b02268ea4f3fd3ebaf0392c006c874a",
+      "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+      "contentUri": "",
+      "publishedAt": "1791423482",
+      "publicationBlock": "69127019",
+      "publisherMatchesCurrentAgentWallet": true
+    },
+    "agentWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "latest": "1",
+    "network": "available"
+  },
+  "wrongChain": {
+    "http": 422,
+    "body": {
+      "code": "wrong_network",
+      "error": "Connect to Monad Testnet (10143)."
+    }
+  },
+  "wrongWallet": {
+    "http": 422,
+    "body": {
+      "code": "wrong_wallet",
+      "error": "Only the current registry-designated agentWallet may publish."
+    }
+  },
+  "crossOrigin": {
+    "http": 403,
+    "body": {
+      "error": "Same-origin JSON requests are required."
+    }
+  },
+  "preparation": {
+    "http": 200,
+    "transaction": {
+      "from": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+      "to": "0x7d9cc86196241485cf1efaf8a96c7819ea95b194",
+      "data": "0x668746b700000000000000000000000000000000000000000000000000000000000008184ee5c86d3cf08c2bb3b67d4efe8f7a85c12c973487d70030f68aa3cb8ed339f4000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000",
+      "value": "0x0",
+      "chainId": 10143,
+      "gas": "195197",
+      "gasPrice": "122400000000",
+      "maxFeeWei": "23892112800000000",
+      "profileHash": "0x4ee5c86d3cf08c2bb3b67d4efe8f7a85c12c973487d70030f68aa3cb8ed339f4",
+      "version": 2,
+      "contentUri": ""
+    },
+    "scope": {
+      "chainId": 10143,
+      "subjectWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+      "walletAssociationBasis": "current_erc8004_registry_designation",
+      "walletAssociationAsOf": "2026-10-08T10:36:05.208Z",
+      "description": "Observed activity for the wallet currently designated as this agent's ERC-8004 agentWallet.",
+      "activityScope": "direct_outgoing_transactions_all_statuses",
+      "fromBlock": "69126790",
+      "toBlockExclusive": "69232744"
+    },
+    "coverage": {
+      "coverageStatus": "complete_for_query",
+      "stopReason": "exhausted",
+      "nextBlock": "69232744",
+      "rawRowsRetrieved": 4,
+      "normalizedEvidenceCount": 4,
+      "pageCount": 1
+    },
+    "metrics": [
+      {
+        "metricId": "active_utc_days",
+        "value": 1
+      },
+      {
+        "metricId": "failed_execution_count",
+        "value": 0
+      },
+      {
+        "metricId": "first_observed_activity_at",
+        "value": "2026-10-08T01:36:53.000Z"
+      },
+      {
+        "metricId": "last_observed_activity_at",
+        "value": "2026-10-08T01:38:02.000Z"
+      },
+      {
+        "metricId": "observed_transaction_count",
+        "value": 4
+      },
+      {
+        "metricId": "successful_execution_count",
+        "value": 4
+      },
+      {
+        "metricId": "unique_recipient_addresses",
+        "value": 2
+      },
+      {
+        "metricId": "unknown_execution_status_count",
+        "value": 0
+      }
+    ],
+    "artifact": "fixtures/real/monad-m5/server-prepared-v2.json",
+    "published": false
+  },
+  "preflight": {
+    "http": 200,
+    "body": {
+      "from": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+      "to": "0x7d9cc86196241485cf1efaf8a96c7819ea95b194",
+      "data": "0x668746b700000000000000000000000000000000000000000000000000000000000008184ee5c86d3cf08c2bb3b67d4efe8f7a85c12c973487d70030f68aa3cb8ed339f4000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000",
+      "value": "0x0",
+      "chainId": 10143,
+      "gas": "195197",
+      "gasPrice": "122400000000",
+      "maxFeeWei": "23892112800000000",
+      "profileHash": "0x4ee5c86d3cf08c2bb3b67d4efe8f7a85c12c973487d70030f68aa3cb8ed339f4",
+      "version": 2,
+      "contentUri": ""
+    }
+  },
+  "tampered": {
+    "http": 422,
+    "body": {
+      "code": "invalid_passport",
+      "error": "Passport integrity is invalid."
+    }
+  },
+  "download": {
+    "http": 200,
+    "disposition": "attachment; filename=\"agent-2072-passport-v1.json\"",
+    "digest": "6fdcb7be70fc8717cdb75937606f26ce6b02268ea4f3fd3ebaf0392c006c874a"
+  }
+}

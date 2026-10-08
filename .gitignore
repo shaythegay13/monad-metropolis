@@ -6,3 +6,6 @@ dist/
 coverage/
 *.tsbuildinfo
 .migration-reference-snapshot.json
+
+# Next.js build output
+.next/

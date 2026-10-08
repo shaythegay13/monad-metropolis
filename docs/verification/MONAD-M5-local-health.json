@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-08T10:47:34.508Z",
+  "browserRendered": false,
+  "ownerReportedPageNotLoading": true,
+  "checks": [
+    {
+      "url": "http://127.0.0.1:3050",
+      "status": 200,
+      "bytes": 12205
+    },
+    {
+      "url": "http://localhost:3050",
+      "status": 200,
+      "bytes": 12205
+    },
+    {
+      "url": "http://127.0.0.1:3050/api/passport",
+      "status": 200,
+      "bytes": 12642
+    }
+  ]
+}

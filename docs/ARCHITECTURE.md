@@ -954,3 +954,62 @@ must update this document before or with implementation.
 
 ---
 
+## 27. M5 web boundary: Dynamic wallet, server evidence, independent read-back
+
+`apps/web` is a new Next.js App Router application; it does not copy or depend on
+either reference repository. Root scripts separately build the library and web app.
+The root dependency lock is shared. Next's webpack extension aliases resolve the
+existing NodeNext `.js` imports to TypeScript sources without changing shared code.
+
+The browser uses Dynamic React SDK 4.100.3, Ethereum core 4.100.3 and the Dynamic
+MetaMask EVM connector 4.7.1. `@dynamic-labs/ethereum` 4.100.3 satisfies its peer
+dependency; only MetaMask connectors are passed to the provider. Connection is
+`connect-only`. An explicit custom EVM network supplies chain/network ID 10143,
+MON/18 decimals, `https://testnet-rpc.monad.xyz` and `https://testnet.monadscan.com`.
+Dynamic network validation is disabled only so the app can display a wrong-network
+state and offer switching; the app and server both strictly require chain 10143
+before preparation/signing. No second wallet authentication SDK is introduced.
+
+The server-only adapter exposes a bounded `/api/passport` route: accepted v1 download
+and verification; preparation; preflight; receipt/read-back. It uses Alchemy privately,
+the existing M1 identity resolver, M2 Envio JSON transport and M3 generator. It has no
+signer, private key, arbitrary RPC forwarding, deployment or registration action.
+POST requests require same-origin JSON and a body no larger than 2 MB. Authorization
+by an address in a read-only preparation request is not proof of wallet control;
+the existing contract enforces authorization on the signed transaction.
+
+Preparation verifies the immutable v1 record and its actual stored hash, checks
+latestVersion is 1 and the current `getAgentWallet`, and freezes `[69126790, toBlock)`.
+The upper bound is the minimum of the Envio archive height and the resolved Alchemy
+block minus 10; at most 10 retrieval pages are requested. Provider failure rejects;
+partial/unknown query coverage remains explicitly labeled by the unchanged generator.
+No economic or agent-quality inference is added. Version 2 links the actual previous
+digest; the schema remains 2.0.0. Generation metadata is part of the new payload hash.
+
+`packages/web/src/publication.ts` prepares unsigned calldata using the M4 preparer,
+rechecks the current agentWallet and version, estimates gas with the M4 125% margin,
+uses a 120% gas-price margin, checks balance and enforces the 0.2 MON fee cap. No
+owner fallback is allowed. A changed fee above the reviewed estimate requires a new
+review. The explicit Publish click handler obtains Dynamic's wallet client, rechecks
+its accounts/chain, runs server preflight, and asks the connected wallet to send one
+zero-value legacy transaction to the fixed existing Registry. No effect/load/connect
+handler signs or broadcasts. The wallet confirmation remains the final fee review.
+
+The browser persists only the returned transaction hash and public Passport bundle
+for recovery. Confirmation checks the actual receipt, transaction input/from/to/value/
+chain/block, then invokes the independent M4 verifier and checks canonical receipt
+block identity. A successful wallet response or receipt alone is not success. RPC
+failure, pending, revert and read-back mismatch stay distinct; disconnected wallets
+can continue read-only verification. Unresolved submissions are not automatically
+retried. App Two's existing verifier still has no generation/analysis dependency.
+
+The web launcher allowlists the three needed configuration values and removes the
+deployer key from its child environment. `server-only` prevents importing the adapter
+into client code; browser graph and generated-output scans enforce secret isolation.
+Only the Dynamic environment ID is public. V1's empty URI is unchanged; M5's proposed
+v2 also uses an empty URI pending authorized public artifact hosting.
+
+Real API preparation/verification is distinct from browser-wallet verification.
+See `verification/MONAD-M5.md` for evidence, pending manual checks and dependency
+limitations. No M6 consumer policies or later sponsor integrations are implemented.
+
