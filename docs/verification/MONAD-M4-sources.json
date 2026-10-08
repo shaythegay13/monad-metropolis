@@ -1,0 +1,59 @@
+{
+  "sources": [
+    {
+      "title": "Monad network information",
+      "url": "https://docs.monad.xyz/developer-essentials/testnet",
+      "retrievedAt": "2026-10-08T01:56:13.633006+00:00",
+      "sha256": "26255d6a28975f88138a0dc786a78f51f47e6af77974784f903315ddab23a5fb",
+      "verification": "Testnet chain and public RPC context; rendered table fields may require client hydration. Alchemy docs and live eth_chainId independently confirm 10143."
+    },
+    {
+      "title": "Alchemy Monad quickstart",
+      "url": "https://www.alchemy.com/docs/reference/monad-api-quickstart",
+      "retrievedAt": "2026-10-08T01:56:14.253478+00:00",
+      "sha256": "bd93e5eede8f2cdebd03fdb2e0cf19f7522b1431dc9a81c49ae1660c8702c074",
+      "verification": "Chain 10143, MON with 18 decimals, exact monad-testnet.g.alchemy.com endpoint form."
+    },
+    {
+      "title": "ERC-8004 specification",
+      "url": "https://eips.ethereum.org/EIPS/eip-8004",
+      "retrievedAt": "2026-10-08T01:56:14.413594+00:00",
+      "sha256": "8f293d534475249fab246624438a2650ce19e2d56b7706ae7977180463f70e17",
+      "verification": "Draft: register overloads, current agentWallet, URI update, ERC-721 owner and data URI registration."
+    },
+    {
+      "title": "8004 maintained deployment list",
+      "url": "https://raw.githubusercontent.com/erc-8004/erc-8004-contracts/b9e466c250744a7e06b13dff9d3c2844ed64f825/README.md",
+      "retrievedAt": "2026-10-08T01:56:14.698948+00:00",
+      "sha256": "0fa22248188fc2455c0c7c5e31836f09a92cfeb34e27f61e778d1d9e276fb3cb",
+      "verification": "Monad Testnet Identity Registry 0x8004A818BFB912233c491871b3d84c89A494BD9e."
+    },
+    {
+      "title": "Pinned Identity Registry implementation",
+      "url": "https://raw.githubusercontent.com/erc-8004/erc-8004-contracts/b9e466c250744a7e06b13dff9d3c2844ed64f825/contracts/IdentityRegistryUpgradeable.sol",
+      "retrievedAt": "2026-10-08T01:56:14.801878+00:00",
+      "sha256": "18c8ca8c88493b46e54d000c96eaf7470d1f9dbfe55493fd7fa923bae543ff75",
+      "verification": "register sets wallet to msg.sender; getAgentWallet reads reserved metadata; setAgentURI checks authorized owner/operator."
+    },
+    {
+      "title": "Solidity standard JSON compiler",
+      "url": "https://docs.soliditylang.org/en/latest/using-the-compiler.html",
+      "retrievedAt": "2026-10-08T01:56:15.127881+00:00",
+      "sha256": "b27ec1bff622c1f6e97957592d2dd6d8ca178238319e85ad263e7ee647c1809d",
+      "verification": "Explicit optimizer and Paris target; generated deployed bytecode immutable offsets allow exact runtime comparison."
+    },
+    {
+      "title": "Ethers v6",
+      "url": "https://docs.ethers.org/v6/",
+      "retrievedAt": "2026-10-08T01:56:15.310359+00:00",
+      "sha256": "1565f0ce7a2e30ccc1c23fc75cc86942bb322ace045e21b7363d2d633ee4e3f7",
+      "verification": "ABI encoding and local signing. Primary transport remains bounded existing RPC adapter."
+    }
+  ],
+  "latestFileRevisionsChecked": {
+    "ethereum/ERCs:ERCS/erc-8004.md": "503591a6e80e6e1affdd6403341e25269141f046",
+    "erc-8004/erc-8004-contracts:contracts/IdentityRegistryUpgradeable.sol": "44c0025fe70d081ebf3da21290e47496cc1acaf0"
+  },
+  "deploymentListRevision": "b9e466c250744a7e06b13dff9d3c2844ed64f825",
+  "identitySourceMatchesLatestFileRevision": true
+}

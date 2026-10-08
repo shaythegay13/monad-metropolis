@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-08T01:55:27.745Z",
+  "latestVersion": "1",
+  "latestProfileHash": "0x6fdcb7be70fc8717cdb75937606f26ce6b02268ea4f3fd3ebaf0392c006c874a",
+  "verifyCorrectHash": true,
+  "verifyWrongHash": false,
+  "unauthorizedReadOnlySimulation": "UnauthorizedPublisher",
+  "syntheticCoherentTamperOfRealArtifact": {
+    "localIntegrityValid": true,
+    "publicationFound": true,
+    "publishedHashMatches": false,
+    "registryVerified": true,
+    "publicationProvenanceVerified": false,
+    "status": "hash_mismatch",
+    "checkedBlock": "69130492",
+    "checkedBlockHash": "0xa9161bc7fc52ebca03471172c69ed83c66e88bacc53374a67aedf50e6e4df6c8",
+    "version": "1",
+    "profileHash": "0x6fdcb7be70fc8717cdb75937606f26ce6b02268ea4f3fd3ebaf0392c006c874a",
+    "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+    "contentUri": "",
+    "publishedAt": "1791423482",
+    "publicationBlock": "69127019",
+    "publisherMatchesCurrentAgentWallet": true
+  },
+  "remainingBalanceWei": "778705328800000000"
+}

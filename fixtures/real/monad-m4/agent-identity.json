@@ -1,0 +1,115 @@
+{
+  "submission": {
+    "transactionHash": "0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+    "sender": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+    "nonce": 1,
+    "chainId": 10143,
+    "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "maxFeeWei": "77651294400000000"
+  },
+  "receipt": {
+    "type": "0x0",
+    "status": "0x1",
+    "cumulativeGasUsed": "0x9ae26",
+    "logs": [
+      {
+        "address": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+        "topics": [
+          "0xf8e1a15aba9398e019f0b49df1a4fde98ee17ae345cb5f6b5e2c27f5033e8ce7"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000818",
+        "blockHash": "0x112739df90af95089b7329fe52edc0e46b79ae8b7bf0154c80edb23cb992f864",
+        "blockNumber": "0x41ecb05",
+        "blockTimestamp": "0x6ac6f3db",
+        "transactionHash": "0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+        "transactionIndex": "0x1",
+        "logIndex": "0x1",
+        "removed": false
+      },
+      {
+        "address": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+        "topics": [
+          "0x3a2c7fffc2cba7582c690e3b82c453ea02a308326a98a3ad7576c606336409fb",
+          "0x0000000000000000000000000000000000000000000000000000000000000818",
+          "0x000000000000000000000000bc63bf8dba3aeca97801b85c600f8d0208fb51dd"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002b5646174613a6170706c69636174696f6e2f6a736f6e3b6261736536342c65794a306558426c496a6f696148523063484d364c79396c6158427a4c6d5630614756795a5856744c6d39795a793946535642544c325670634330344d44413049334a6c5a326c7a64484a6864476c76626931324d534973496d3568625755694f694a5461576475595777675547467a63334276636e516752475674627942425a32567564434973496d526c63324e796158423061573975496a6f695647567a6447356c644342685a325675644342316332566b494852764947526c62573975633352795958526c49484276636e5268596d786c4c43426c646d6c6b5a57356a5a53316959574e725a5751675a574e76626d397461574d6761476c7a64473979655342336158526f49464e705a3235686243425159584e7a634739796443346751335679636d56756443426b5a5731764947466a64476c326158523549474e76626e4e706333527a4947396d49476c6b5a5735306158523549473168626d466e5a57316c626e51374947357649474631644739756232317664584d6763325679646d6c6a5a53426c626d527762326c7564484d6759584a6c4947466b646d567964476c7a5a5751754969776963325679646d6c6a5a584d694f6c74644c434a6859335270646d55694f6d5a6862484e6c4c434a344e4441795533567763473979644349365a6d467363325573496e4a6c5a326c7a64484a6864476c76626e4d694f6c7437496d466e5a573530535751694f6a49774e7a4973496d466e5a573530556d566e61584e30636e6b694f694a6c615841784e5455364d5441784e444d364d4867344d444130595467784f474a6d596a6b784d6a497a4d324d304f5445344e7a46694d3251344e474d344f5745304f5452695a446c6c496e31644c434a7a6458427762334a305a575255636e567a64434936573131390000000000000000000000",
+        "blockHash": "0x112739df90af95089b7329fe52edc0e46b79ae8b7bf0154c80edb23cb992f864",
+        "blockNumber": "0x41ecb05",
+        "blockTimestamp": "0x6ac6f3db",
+        "transactionHash": "0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+        "transactionIndex": "0x1",
+        "logIndex": "0x2",
+        "removed": false
+      }
+    ],
+    "logsBloom": "0x00000000000000000000200000000000000000002000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000800000000000000000000002000000000000000000000000000000000000000000100000000001100000000000000000000000000000000000000000000000000000000000000000000000002000000800000000000000000000008000000000000000000000000000000000000000000000000000000004000000000000001000000000200000000000000000000000000000000000000000000000",
+    "transactionHash": "0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+    "transactionIndex": "0x1",
+    "blockHash": "0x112739df90af95089b7329fe52edc0e46b79ae8b7bf0154c80edb23cb992f864",
+    "blockNumber": "0x41ecb05",
+    "gasUsed": "0x9ae26",
+    "effectiveGasPrice": "0x1c7f9bc800",
+    "from": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "contractAddress": null
+  },
+  "registration": {
+    "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+    "name": "Signal Passport Demo Agent",
+    "description": "Testnet agent used to demonstrate portable, evidence-backed economic history with Signal Passport. Current demo activity consists of identity management; no autonomous service endpoints are advertised.",
+    "services": [],
+    "active": false,
+    "x402Support": false,
+    "registrations": [
+      {
+        "agentId": 2072,
+        "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e"
+      }
+    ],
+    "supportedTrust": []
+  },
+  "agentUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJTaWduYWwgUGFzc3BvcnQgRGVtbyBBZ2VudCIsImRlc2NyaXB0aW9uIjoiVGVzdG5ldCBhZ2VudCB1c2VkIHRvIGRlbW9uc3RyYXRlIHBvcnRhYmxlLCBldmlkZW5jZS1iYWNrZWQgZWNvbm9taWMgaGlzdG9yeSB3aXRoIFNpZ25hbCBQYXNzcG9ydC4gQ3VycmVudCBkZW1vIGFjdGl2aXR5IGNvbnNpc3RzIG9mIGlkZW50aXR5IG1hbmFnZW1lbnQ7IG5vIGF1dG9ub21vdXMgc2VydmljZSBlbmRwb2ludHMgYXJlIGFkdmVydGlzZWQuIiwic2VydmljZXMiOltdLCJhY3RpdmUiOmZhbHNlLCJ4NDAyU3VwcG9ydCI6ZmFsc2UsInJlZ2lzdHJhdGlvbnMiOlt7ImFnZW50SWQiOjIwNzIsImFnZW50UmVnaXN0cnkiOiJlaXAxNTU6MTAxNDM6MHg4MDA0YTgxOGJmYjkxMjIzM2M0OTE4NzFiM2Q4NGM4OWE0OTRiZDllIn1dLCJzdXBwb3J0ZWRUcnVzdCI6W119",
+  "identity": {
+    "subjectType": "erc8004_agent",
+    "agentId": "2072",
+    "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "network": "monad-testnet",
+    "chainId": 10143,
+    "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "ownerAddress": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "agentWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "agentWalletStatus": "set",
+    "agentUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJTaWduYWwgUGFzc3BvcnQgRGVtbyBBZ2VudCIsImRlc2NyaXB0aW9uIjoiVGVzdG5ldCBhZ2VudCB1c2VkIHRvIGRlbW9uc3RyYXRlIHBvcnRhYmxlLCBldmlkZW5jZS1iYWNrZWQgZWNvbm9taWMgaGlzdG9yeSB3aXRoIFNpZ25hbCBQYXNzcG9ydC4gQ3VycmVudCBkZW1vIGFjdGl2aXR5IGNvbnNpc3RzIG9mIGlkZW50aXR5IG1hbmFnZW1lbnQ7IG5vIGF1dG9ub21vdXMgc2VydmljZSBlbmRwb2ludHMgYXJlIGFkdmVydGlzZWQuIiwic2VydmljZXMiOltdLCJhY3RpdmUiOmZhbHNlLCJ4NDAyU3VwcG9ydCI6ZmFsc2UsInJlZ2lzdHJhdGlvbnMiOlt7ImFnZW50SWQiOjIwNzIsImFnZW50UmVnaXN0cnkiOiJlaXAxNTU6MTAxNDM6MHg4MDA0YTgxOGJmYjkxMjIzM2M0OTE4NzFiM2Q4NGM4OWE0OTRiZDllIn1dLCJzdXBwb3J0ZWRUcnVzdCI6W119",
+    "registration": {
+      "status": "retrieved",
+      "sourceUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJTaWduYWwgUGFzc3BvcnQgRGVtbyBBZ2VudCIsImRlc2NyaXB0aW9uIjoiVGVzdG5ldCBhZ2VudCB1c2VkIHRvIGRlbW9uc3RyYXRlIHBvcnRhYmxlLCBldmlkZW5jZS1iYWNrZWQgZWNvbm9taWMgaGlzdG9yeSB3aXRoIFNpZ25hbCBQYXNzcG9ydC4gQ3VycmVudCBkZW1vIGFjdGl2aXR5IGNvbnNpc3RzIG9mIGlkZW50aXR5IG1hbmFnZW1lbnQ7IG5vIGF1dG9ub21vdXMgc2VydmljZSBlbmRwb2ludHMgYXJlIGFkdmVydGlzZWQuIiwic2VydmljZXMiOltdLCJhY3RpdmUiOmZhbHNlLCJ4NDAyU3VwcG9ydCI6ZmFsc2UsInJlZ2lzdHJhdGlvbnMiOlt7ImFnZW50SWQiOjIwNzIsImFnZW50UmVnaXN0cnkiOiJlaXAxNTU6MTAxNDM6MHg4MDA0YTgxOGJmYjkxMjIzM2M0OTE4NzFiM2Q4NGM4OWE0OTRiZDllIn1dLCJzdXBwb3J0ZWRUcnVzdCI6W119",
+      "source": "data",
+      "document": {
+        "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+        "name": "Signal Passport Demo Agent",
+        "description": "Testnet agent used to demonstrate portable, evidence-backed economic history with Signal Passport. Current demo activity consists of identity management; no autonomous service endpoints are advertised.",
+        "services": [],
+        "registrations": [
+          {
+            "agentId": 2072,
+            "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e"
+          }
+        ],
+        "supportedTrust": [],
+        "active": false,
+        "x402Support": false
+      },
+      "warnings": [
+        "Registration fields and services are advertisements, not verified capabilities or wallet associations.",
+        "Registration image is missing."
+      ]
+    },
+    "resolution": {
+      "blockNumber": "69126920",
+      "blockHash": "0x28d62081973bc72b0011885472d8a6990d9103801d571150eee0c1e5432ebf75",
+      "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+      "resolvedAt": "2026-10-08T01:37:28.512Z"
+    }
+  }
+}

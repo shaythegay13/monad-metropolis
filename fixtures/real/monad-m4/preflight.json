@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-08T01:36:43.049Z",
+  "chainId": 10143,
+  "provider": "Alchemy",
+  "deployer": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+  "balanceWei": "1000000000000000000",
+  "block": "69126767",
+  "identityRegistry": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+  "identityRuntimeCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+  "envioAuthenticatedQuery": true
+}

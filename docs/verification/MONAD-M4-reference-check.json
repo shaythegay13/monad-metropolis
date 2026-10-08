@@ -1,0 +1,55 @@
+{
+  "method": "Pre-M4 vs final SHA-256 comparison, optional Git locks disabled; .env* reference files excluded without reading",
+  "repositories": {
+    "signal-passport": {
+      "head": "fc79feb3eddff29439a3fe462e740ccdf3af3923",
+      "status": "?? \"Google Stitch Frontend Development.txt\"\n?? Signal-Passport-Weekend-PRD.md\n",
+      "sourceFileCount": 135,
+      "gitFileCount": 211,
+      "checks": {
+        "headUnchanged": true,
+        "statusUnchanged": true,
+        "sourceFilesUnchanged": true,
+        "gitMetadataUnchanged": true
+      }
+    },
+    "ledgerlens": {
+      "head": "bd9b41ce31d1584059677456d2866afcf455786a",
+      "status": "",
+      "sourceFileCount": 40,
+      "gitFileCount": 190,
+      "checks": {
+        "headUnchanged": true,
+        "statusUnchanged": true,
+        "sourceFilesUnchanged": true,
+        "gitMetadataUnchanged": true
+      }
+    }
+  },
+  "acceptedHistoricalFilesUnchanged": [
+    "docs/verification/MONAD-M0.5-agent-1.json",
+    "docs/verification/MONAD-M0.5-reference-check.json",
+    "docs/verification/MONAD-M0.5.md",
+    "docs/verification/MONAD-M0.md",
+    "docs/verification/MONAD-M1-agent-1.json",
+    "docs/verification/MONAD-M1-agent-2.json",
+    "docs/verification/MONAD-M1-rpc-proof.json",
+    "docs/verification/MONAD-M1.md",
+    "docs/verification/MONAD-M2-checks.json",
+    "docs/verification/MONAD-M2-cross-check.json",
+    "docs/verification/MONAD-M2-reference-check.json",
+    "docs/verification/MONAD-M2-selection.json",
+    "docs/verification/MONAD-M2.md",
+    "docs/verification/MONAD-M3-checks.json",
+    "docs/verification/MONAD-M3-reference-check.json",
+    "docs/verification/MONAD-M3-runtime.json",
+    "docs/verification/MONAD-M3.md",
+    "fixtures/real/monad-m2/README.md",
+    "fixtures/real/monad-m2/agent-1.json",
+    "fixtures/real/monad-m2/agent-2-empty.json",
+    "fixtures/real/monad-m2/agent-2.json",
+    "fixtures/real/monad-m3/README.md",
+    "fixtures/real/monad-m3/agent-2-passport-v2.json",
+    "fixtures/real/monad-m3/metadata.json"
+  ]
+}

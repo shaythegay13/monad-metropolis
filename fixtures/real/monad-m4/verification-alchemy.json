@@ -1,0 +1,17 @@
+{
+  "localIntegrityValid": true,
+  "publicationFound": true,
+  "publishedHashMatches": true,
+  "registryVerified": true,
+  "publicationProvenanceVerified": true,
+  "status": "verified",
+  "checkedBlock": "69127046",
+  "checkedBlockHash": "0x65ef0c822a912f180fa3cfee1b8d3efbfb2f9aa748a8e9281ec399957cffa2a2",
+  "version": "1",
+  "profileHash": "0x6fdcb7be70fc8717cdb75937606f26ce6b02268ea4f3fd3ebaf0392c006c874a",
+  "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+  "contentUri": "",
+  "publishedAt": "1791423482",
+  "publicationBlock": "69127019",
+  "publisherMatchesCurrentAgentWallet": true
+}

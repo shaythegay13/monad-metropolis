@@ -1,0 +1,21 @@
+{
+  "mode": "Isolated compiled consumer; generator/activity/writer/compiler files absent; deployer key and Envio token absent",
+  "exitCode": 0,
+  "verification": {
+    "localIntegrityValid": true,
+    "publicationFound": true,
+    "publishedHashMatches": true,
+    "registryVerified": true,
+    "publicationProvenanceVerified": true,
+    "status": "verified",
+    "checkedBlock": "69127390",
+    "checkedBlockHash": "0x78b6a66631043f801cf003a9d1506deadfd822b10009ab3f5bce26bdb9d5f37a",
+    "version": "1",
+    "profileHash": "0x6fdcb7be70fc8717cdb75937606f26ce6b02268ea4f3fd3ebaf0392c006c874a",
+    "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+    "contentUri": "",
+    "publishedAt": "1791423482",
+    "publicationBlock": "69127019",
+    "publisherMatchesCurrentAgentWallet": true
+  }
+}

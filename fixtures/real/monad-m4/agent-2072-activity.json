@@ -1,0 +1,186 @@
+{
+  "fixtureKind": "real controlled-agent captured provider fixture",
+  "identity": {
+    "subjectType": "erc8004_agent",
+    "agentId": "2072",
+    "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "network": "monad-testnet",
+    "chainId": 10143,
+    "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "ownerAddress": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "agentWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "agentWalletStatus": "set",
+    "agentUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJTaWduYWwgUGFzc3BvcnQgRGVtbyBBZ2VudCIsImRlc2NyaXB0aW9uIjoiVGVzdG5ldCBhZ2VudCB1c2VkIHRvIGRlbW9uc3RyYXRlIHBvcnRhYmxlLCBldmlkZW5jZS1iYWNrZWQgZWNvbm9taWMgaGlzdG9yeSB3aXRoIFNpZ25hbCBQYXNzcG9ydC4gQ3VycmVudCBkZW1vIGFjdGl2aXR5IGNvbnNpc3RzIG9mIGlkZW50aXR5IG1hbmFnZW1lbnQ7IG5vIGF1dG9ub21vdXMgc2VydmljZSBlbmRwb2ludHMgYXJlIGFkdmVydGlzZWQuIiwic2VydmljZXMiOltdLCJhY3RpdmUiOmZhbHNlLCJ4NDAyU3VwcG9ydCI6ZmFsc2UsInJlZ2lzdHJhdGlvbnMiOlt7ImFnZW50SWQiOjIwNzIsImFnZW50UmVnaXN0cnkiOiJlaXAxNTU6MTAxNDM6MHg4MDA0YTgxOGJmYjkxMjIzM2M0OTE4NzFiM2Q4NGM4OWE0OTRiZDllIn1dLCJzdXBwb3J0ZWRUcnVzdCI6W119",
+    "registration": {
+      "status": "retrieved",
+      "sourceUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJTaWduYWwgUGFzc3BvcnQgRGVtbyBBZ2VudCIsImRlc2NyaXB0aW9uIjoiVGVzdG5ldCBhZ2VudCB1c2VkIHRvIGRlbW9uc3RyYXRlIHBvcnRhYmxlLCBldmlkZW5jZS1iYWNrZWQgZWNvbm9taWMgaGlzdG9yeSB3aXRoIFNpZ25hbCBQYXNzcG9ydC4gQ3VycmVudCBkZW1vIGFjdGl2aXR5IGNvbnNpc3RzIG9mIGlkZW50aXR5IG1hbmFnZW1lbnQ7IG5vIGF1dG9ub21vdXMgc2VydmljZSBlbmRwb2ludHMgYXJlIGFkdmVydGlzZWQuIiwic2VydmljZXMiOltdLCJhY3RpdmUiOmZhbHNlLCJ4NDAyU3VwcG9ydCI6ZmFsc2UsInJlZ2lzdHJhdGlvbnMiOlt7ImFnZW50SWQiOjIwNzIsImFnZW50UmVnaXN0cnkiOiJlaXAxNTU6MTAxNDM6MHg4MDA0YTgxOGJmYjkxMjIzM2M0OTE4NzFiM2Q4NGM4OWE0OTRiZDllIn1dLCJzdXBwb3J0ZWRUcnVzdCI6W119",
+      "source": "data",
+      "document": {
+        "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+        "name": "Signal Passport Demo Agent",
+        "description": "Testnet agent used to demonstrate portable, evidence-backed economic history with Signal Passport. Current demo activity consists of identity management; no autonomous service endpoints are advertised.",
+        "services": [],
+        "registrations": [
+          {
+            "agentId": 2072,
+            "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e"
+          }
+        ],
+        "supportedTrust": [],
+        "active": false,
+        "x402Support": false
+      },
+      "warnings": [
+        "Registration fields and services are advertisements, not verified capabilities or wallet associations.",
+        "Registration image is missing."
+      ]
+    },
+    "resolution": {
+      "blockNumber": "69126959",
+      "blockHash": "0x81cd111382a6b16eacebd997b1b9b1a6f1fff8e9fd2fb4611d89cf5858f6f90d",
+      "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+      "resolvedAt": "2026-10-08T01:37:40.356Z"
+    }
+  },
+  "state": "retrieved",
+  "evidence": [
+    {
+      "evidenceId": "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+      "chainId": 10143,
+      "transactionHash": "0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+      "timestamp": "2026-10-08T01:36:53.000Z",
+      "sender": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+      "recipient": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+      "status": "success",
+      "provider": "envio",
+      "sourceReference": "https://monad-testnet.hypersync.xyz/query",
+      "blockNumber": "69126790",
+      "blockHash": "0x9e5d67d50f9b2b3bd1ceb0146589c8a2b6e55dbe0c52e42ad898ba926c35e4af",
+      "value": "0",
+      "source": {
+        "product": "hypersync",
+        "network": "monad-testnet"
+      }
+    },
+    {
+      "evidenceId": "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+      "chainId": 10143,
+      "transactionHash": "0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+      "timestamp": "2026-10-08T01:37:31.000Z",
+      "sender": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+      "recipient": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+      "status": "success",
+      "provider": "envio",
+      "sourceReference": "https://monad-testnet.hypersync.xyz/query",
+      "blockNumber": "69126917",
+      "blockHash": "0x112739df90af95089b7329fe52edc0e46b79ae8b7bf0154c80edb23cb992f864",
+      "value": "0",
+      "source": {
+        "product": "hypersync",
+        "network": "monad-testnet"
+      }
+    }
+  ],
+  "provenance": {
+    "provider": "envio",
+    "product": "hypersync",
+    "network": "monad-testnet",
+    "chainId": 10143,
+    "endpoint": "https://monad-testnet.hypersync.xyz",
+    "transport": "json",
+    "subjectWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "subjectSource": "ERC-8004 registry-designated agentWallet",
+    "agentId": "2072",
+    "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+    "identityResolution": {
+      "blockNumber": "69126959",
+      "blockHash": "0x81cd111382a6b16eacebd997b1b9b1a6f1fff8e9fd2fb4611d89cf5858f6f90d",
+      "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+      "resolvedAt": "2026-10-08T01:37:40.356Z"
+    },
+    "fromBlock": 69126790,
+    "toBlock": 69126918,
+    "rangeSemantics": "[fromBlock,toBlock)",
+    "universe": "Direct EVM transactions whose sender equals the current registry-designated agentWallet; all observed statuses",
+    "startedAt": "2026-10-08T01:37:40.503Z",
+    "retrievedAt": "2026-10-08T01:37:40.868Z",
+    "rawRowsRetrieved": 2,
+    "normalizedEvidenceCount": 2,
+    "coverageStatus": "complete_for_query",
+    "stopReason": "exhausted",
+    "nextBlock": 69126918,
+    "maxPages": 100,
+    "batches": [
+      {
+        "fromBlock": 69126790,
+        "nextBlock": 69126918,
+        "archiveHeight": 69126960,
+        "rawRows": 2,
+        "rollbackGuard": {
+          "block_number": 69126917,
+          "timestamp": 1791423451,
+          "hash": "0x112739df90af95089b7329fe52edc0e46b79ae8b7bf0154c80edb23cb992f864",
+          "first_block_number": 69126790,
+          "first_parent_hash": "0xe887f6560567540570e7c53f123053a6d271a37e11e2f7177e2beeb48753c302"
+        }
+      }
+    ]
+  },
+  "captures": [
+    {
+      "query": {
+        "fromBlock": 69126790,
+        "toBlock": 69126918,
+        "subjectWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd"
+      },
+      "raw": {
+        "data": [
+          {
+            "transactions": [
+              {
+                "block_hash": "0x9e5d67d50f9b2b3bd1ceb0146589c8a2b6e55dbe0c52e42ad898ba926c35e4af",
+                "block_number": 69126790,
+                "from": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+                "hash": "0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+                "value": "0x00",
+                "status": 1
+              },
+              {
+                "block_hash": "0x112739df90af95089b7329fe52edc0e46b79ae8b7bf0154c80edb23cb992f864",
+                "block_number": 69126917,
+                "from": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+                "hash": "0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+                "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+                "value": "0x00",
+                "status": 1
+              }
+            ],
+            "blocks": [
+              {
+                "number": 69126790,
+                "hash": "0x9e5d67d50f9b2b3bd1ceb0146589c8a2b6e55dbe0c52e42ad898ba926c35e4af",
+                "timestamp": "0x6ac6f3b5"
+              },
+              {
+                "number": 69126917,
+                "hash": "0x112739df90af95089b7329fe52edc0e46b79ae8b7bf0154c80edb23cb992f864",
+                "timestamp": "0x6ac6f3db"
+              }
+            ]
+          }
+        ],
+        "archive_height": 69126960,
+        "next_block": 69126918,
+        "total_execution_time": 5,
+        "rollback_guard": {
+          "block_number": 69126917,
+          "timestamp": 1791423451,
+          "hash": "0x112739df90af95089b7329fe52edc0e46b79ae8b7bf0154c80edb23cb992f864",
+          "first_block_number": 69126790,
+          "first_parent_hash": "0xe887f6560567540570e7c53f123053a6d271a37e11e2f7177e2beeb48753c302"
+        }
+      }
+    }
+  ]
+}

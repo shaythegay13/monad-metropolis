@@ -9,7 +9,7 @@
 # Signal Passport — Technical Architecture
 
 **Version:** Monad Metropolis v1  
-**Last Updated:** October 7, 2026
+**Last Updated:** October 8, 2026
 
 **Purpose:** Defines how Signal Passport is technically structured. Product scope belongs in `PRD-MONAD.md`.
 
@@ -432,6 +432,70 @@ M2 agent-2 evidence is immutable ground truth; the derived M3 fixture records it
 hash and explicit generation metadata. Publication, enrichment, policies, new providers
 and later milestones are not part of M3. The following generic metric/Passport sketches
 remain target architecture; only the explicit M3 schema and eight reductions are implemented.
+
+---
+
+## Implemented M4 - Monad publication and independent reads
+
+`contracts/SignalPassportRegistry.sol` is a minimal non-upgradeable append-only registry.
+The immutable Identity Registry is configured at deployment. Every publication requires
+`msg.sender == getAgentWallet(agentId)` and a nonzero wallet. There is no owner/operator
+fallback. Dependency failure reverts. Version 1 starts history; every later version must
+be latest + 1. Zero digest, version zero, duplicates, replacements and skips reject.
+The SHA-256 digest is stored directly as bytes32, not hashed again with keccak.
+
+Each record contains digest, optional contentUri, publisher, block number and timestamp.
+Agent ID and version are mapping keys; PassportPublished indexes agent/version/digest.
+Latest and historical reads are available, as is literal digest equality verification.
+No admin, upgrade, deletion, payment, delegate authorization or trust-scoring function.
+An external ERC-8004 upgrade or wallet change remains part of the identity trust boundary.
+
+`packages/publication/src` provides fixed-Alchemy testnet configuration, ABI definitions,
+bounded RPC reuse, local signing, compilation, publication preparation and independent
+verification. The testnet-only writer checks the actual chain before signing and again
+before sending, estimates gas, checks balance, bounds maximum fee to 0.2 MON, and records
+public transaction recovery metadata before broadcast. It never logs a key, signed
+transaction, credential URL or provider error body. Read-only consumers need no signer.
+If a submitted transaction is uncertain, inspect its journal/receipt before retrying;
+no automatic resubmission exists. Only one bounded operation is performed per CLI call.
+
+The signing key stays local in ethers; all nonce, gas, simulation, broadcast, receipt,
+identity and registry reads use Alchemy. `monad-registry.ts` orchestrates preflight,
+registration, URI update, capture, deployment and publication. Its explicit cross-check
+mode uses public Monad RPC only for independent proof. The existing M1 resolver and M2
+capture engine are reused with Alchemy for identity RPC, and existing M3 formulas and
+canonical payload bytes are unchanged. Controlled demo agent 2072 replaces Agent 2 only
+for the live M4 flow; the historical Agent-2 fixture is preserved.
+
+Publication metadata is a separate artifact; no changes to the strict M3 payload or
+bundle schema. Empty contentUri honestly defers public hosting. File import works now;
+URI contents, if later hosted, must pass the canonical hash comparison and must not be
+trusted merely because a URI was stored. The verifier never fetches contentUri.
+
+`verifyPublishedPassport` accepts independently trusted deployment configuration, checks
+chain ID, pins runtime bytecode hash and immutable Identity Registry, and reads the exact
+agent/version from the validated bundle at a single checked block. It rechecks the block
+hash to reject changed snapshots. It separates localIntegrityValid, publicationFound,
+publishedHashMatches, registryVerified and publicationProvenanceVerified. Provider failure
+is unknown, not absence. A missing version, wrong hash, wrong registry, invalid local
+bundle and provider error remain different results. The publication timestamp/block
+and publisher are returned; equality with the current agentWallet is a separate result.
+The authorization claim is at publication time, not an assertion that a wallet can never
+rotate. A caller must obtain the deployment address/code-hash trust configuration from a
+trusted source; arbitrary imported metadata is not a trust root.
+
+`verify-published-passport.ts` is an independent read-only entry point. Its import graph
+excludes the generator, activity ingestion, compiler and signing modules. It works with
+only Alchemy configured. Local digest matching still does not prove truthful evidence;
+onchain matching adds proof of authorized publication under the pinned registry code,
+subject to RPC/chain and ERC-8004 trust assumptions. No consensus/light-client proof or
+universal reputation verification is claimed.
+
+Toolchain: ethers 6.17.0; solc 0.8.37 standard JSON with optimizer 200 and Paris EVM target;
+EthereumJS VM/tx/common/util 10.1.3 for isolated executable contract tests. `tmp` is
+explicitly overridden to patched 0.2.7 for compiler tooling. No native Solidity framework
+or background development node is required. Exact deployed runtime bytes (including
+immutable constructor value) matched the compiler output. See `verification/MONAD-M4.md`.
 
 ---
 

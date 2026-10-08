@@ -1,0 +1,82 @@
+{
+  "verification": {
+    "localIntegrityValid": true,
+    "publicationFound": true,
+    "publishedHashMatches": true,
+    "registryVerified": true,
+    "publicationProvenanceVerified": true,
+    "status": "verified",
+    "checkedBlock": "69127047",
+    "checkedBlockHash": "0x2c79ba88972375c16ed564f922782f115c29fb1b38d8d1bf4f2d653a1976cb02",
+    "version": "1",
+    "profileHash": "0x6fdcb7be70fc8717cdb75937606f26ce6b02268ea4f3fd3ebaf0392c006c874a",
+    "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+    "contentUri": "",
+    "publishedAt": "1791423482",
+    "publicationBlock": "69127019",
+    "publisherMatchesCurrentAgentWallet": true
+  },
+  "crossCheck": {
+    "provider": "Independent public Monad RPC",
+    "receipts": [
+      {
+        "transactionHash": "0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+        "from": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+        "to": null,
+        "blockNumber": "69126980",
+        "blockHash": "0x109a30e88ce9c670651a85f5cb54673a4ea673f03477bc0af96c4496728443b4",
+        "status": "0x1"
+      },
+      {
+        "transactionHash": "0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+        "from": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+        "to": "0x7d9cc86196241485cf1efaf8a96c7819ea95b194",
+        "blockNumber": "69127019",
+        "blockHash": "0xfb8a695c5c5192a36dfed22584a6f850ff6eb3818e772b714b605635b5719366",
+        "status": "0x1"
+      }
+    ],
+    "identity": {
+      "subjectType": "erc8004_agent",
+      "agentId": "2072",
+      "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e",
+      "network": "monad-testnet",
+      "chainId": 10143,
+      "registryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+      "ownerAddress": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+      "agentWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+      "agentWalletStatus": "set",
+      "agentUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJTaWduYWwgUGFzc3BvcnQgRGVtbyBBZ2VudCIsImRlc2NyaXB0aW9uIjoiVGVzdG5ldCBhZ2VudCB1c2VkIHRvIGRlbW9uc3RyYXRlIHBvcnRhYmxlLCBldmlkZW5jZS1iYWNrZWQgZWNvbm9taWMgaGlzdG9yeSB3aXRoIFNpZ25hbCBQYXNzcG9ydC4gQ3VycmVudCBkZW1vIGFjdGl2aXR5IGNvbnNpc3RzIG9mIGlkZW50aXR5IG1hbmFnZW1lbnQ7IG5vIGF1dG9ub21vdXMgc2VydmljZSBlbmRwb2ludHMgYXJlIGFkdmVydGlzZWQuIiwic2VydmljZXMiOltdLCJhY3RpdmUiOmZhbHNlLCJ4NDAyU3VwcG9ydCI6ZmFsc2UsInJlZ2lzdHJhdGlvbnMiOlt7ImFnZW50SWQiOjIwNzIsImFnZW50UmVnaXN0cnkiOiJlaXAxNTU6MTAxNDM6MHg4MDA0YTgxOGJmYjkxMjIzM2M0OTE4NzFiM2Q4NGM4OWE0OTRiZDllIn1dLCJzdXBwb3J0ZWRUcnVzdCI6W119",
+      "registration": {
+        "status": "retrieved",
+        "sourceUri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJTaWduYWwgUGFzc3BvcnQgRGVtbyBBZ2VudCIsImRlc2NyaXB0aW9uIjoiVGVzdG5ldCBhZ2VudCB1c2VkIHRvIGRlbW9uc3RyYXRlIHBvcnRhYmxlLCBldmlkZW5jZS1iYWNrZWQgZWNvbm9taWMgaGlzdG9yeSB3aXRoIFNpZ25hbCBQYXNzcG9ydC4gQ3VycmVudCBkZW1vIGFjdGl2aXR5IGNvbnNpc3RzIG9mIGlkZW50aXR5IG1hbmFnZW1lbnQ7IG5vIGF1dG9ub21vdXMgc2VydmljZSBlbmRwb2ludHMgYXJlIGFkdmVydGlzZWQuIiwic2VydmljZXMiOltdLCJhY3RpdmUiOmZhbHNlLCJ4NDAyU3VwcG9ydCI6ZmFsc2UsInJlZ2lzdHJhdGlvbnMiOlt7ImFnZW50SWQiOjIwNzIsImFnZW50UmVnaXN0cnkiOiJlaXAxNTU6MTAxNDM6MHg4MDA0YTgxOGJmYjkxMjIzM2M0OTE4NzFiM2Q4NGM4OWE0OTRiZDllIn1dLCJzdXBwb3J0ZWRUcnVzdCI6W119",
+        "source": "data",
+        "document": {
+          "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+          "name": "Signal Passport Demo Agent",
+          "description": "Testnet agent used to demonstrate portable, evidence-backed economic history with Signal Passport. Current demo activity consists of identity management; no autonomous service endpoints are advertised.",
+          "services": [],
+          "registrations": [
+            {
+              "agentId": 2072,
+              "agentRegistry": "eip155:10143:0x8004a818bfb912233c491871b3d84c89a494bd9e"
+            }
+          ],
+          "supportedTrust": [],
+          "active": false,
+          "x402Support": false
+        },
+        "warnings": [
+          "Registration fields and services are advertisements, not verified capabilities or wallet associations.",
+          "Registration image is missing."
+        ]
+      },
+      "resolution": {
+        "blockNumber": "69127048",
+        "blockHash": "0x9ad1571d39a7d7d07a23235858e8b5944e32cc2aa424320786c941eda2660f4a",
+        "registryCodeHash": "0xd0e45b1d89fa9b6cc7e97c1f155d64180e5c232aaccf9900ef9d4fd738c02b41",
+        "resolvedAt": "2026-10-08T01:38:07.061Z"
+      }
+    }
+  }
+}

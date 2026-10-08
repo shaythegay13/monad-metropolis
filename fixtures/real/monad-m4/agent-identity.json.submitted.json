@@ -1,0 +1,8 @@
+{
+  "transactionHash": "0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d",
+  "sender": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+  "nonce": 1,
+  "chainId": 10143,
+  "to": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+  "maxFeeWei": "77651294400000000"
+}

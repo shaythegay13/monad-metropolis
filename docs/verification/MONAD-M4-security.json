@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-08T04:17:04.974Z",
+  "deliverableFilesScanned": 117,
+  "generatedBuildLogFilesScanned": 165,
+  "stagedFileCount": 0,
+  "exactSecretOrCredentialComponentMatches": 0,
+  "recognizableSecretMatches": 0,
+  "envLocalIgnored": true,
+  "envLocalTracked": false,
+  "secretValuesPrinted": false
+}
