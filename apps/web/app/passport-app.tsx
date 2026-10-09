@@ -123,6 +123,7 @@ function Workspace() {
     <header><a className="brand" href="/">Signal Passport<span>Portable agent history</span></a><div className="header-actions"><span className="pill">● Monad Testnet</span>
       {address ? <button className="secondary" onClick={() => void handleLogOut().catch(e => setWalletMessage(walletError(e)))}>Disconnect</button>
         : <button onClick={() => { setWalletMessage("If you cancel the connection request, no wallet will be connected."); setShowAuthFlow(true); }}>Connect Wallet</button>}</div></header>
+    <nav><a className="text-link" href="/compare">Compare Agents with your evidence policy →</a></nav>
     <div className="intro"><p className="eyebrow">ERC-8004 / AGENT {AGENT_ID}</p><h1>History you can inspect.<br/>Integrity you can verify.</h1><p>Evidence-backed observations with a portable Passport and a publication on Monad.</p></div>
     {error && <div className="notice error" role="alert">{error}</div>}
     {walletMessage && <p className="notice" role="status">{walletMessage}</p>}

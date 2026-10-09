@@ -1,0 +1,17 @@
+{
+  "description": "Consumer-selected examples, not safety or financial recommendations. Real historical Passport bytes are unchanged.",
+  "realCandidates": [
+    { "candidateId": "agent-2072", "path": "fixtures/real/monad-m5/agent-2072-passport-v2.json", "schemaVersion": "2.0.0", "passportVersion": 2 },
+    { "candidateId": "agent-2", "path": "fixtures/real/monad-m3/agent-2-passport-v2.json", "schemaVersion": "2.0.0", "passportVersion": 1 }
+  ],
+  "policies": {
+    "modest": { "policyVersion": "1.0.0", "minimumObservedTransactions": 2, "minimumActiveUtcDays": 1, "minimumUniqueRecipientAddresses": 1, "requireCompleteCoverage": true, "requireLocalIntegrity": true, "requireMonadPublication": true },
+    "strict": { "policyVersion": "1.0.0", "minimumObservedTransactions": 10, "requireMonadPublication": true },
+    "local": { "policyVersion": "1.0.0", "minimumObservedTransactions": 2, "requireLocalIntegrity": true }
+  },
+  "syntheticCases": [
+    { "case": "partial", "description": "Synthetic modified coverage and recomputed digest, never represented as a real capture or publication", "policy": "strict", "expectedNumericOutcome": "INSUFFICIENT_EVIDENCE" },
+    { "case": "unknown", "description": "Synthetic unknown coverage and recomputed digest", "expectedNumericOutcome": "INSUFFICIENT_EVIDENCE" },
+    { "case": "rpc_unavailable", "description": "Synthetic throwing RPC transport", "expectedPublicationOutcome": "INSUFFICIENT_EVIDENCE" }
+  ]
+}

@@ -181,3 +181,45 @@ public artifact hosting is deferred, while portable file import and onchain hash
 The bounded `monad-registry.ts` tool also supports authorized testnet writes. See the M4
 report for exact commands and public transaction recovery journals. Do not rerun writes
 merely to verify the published fixture. No mainnet, Dynamic, Nansen or M5 work is included.
+
+
+## M6 consumer policies
+
+Open `/compare` in the local web app. Inspect the two real Passports, select an example
+policy or edit thresholds, then click Run policy evaluation. Changing settings clears
+old results. No wallet connection or signature is needed for comparison.
+
+Agent 2072 is Passport version 2; Agent 2 is Passport version 1 under schema 2.0.0.
+The historical Agent-2 filename is not a claim that it has published version 2.
+The interface shows local integrity separately from fresh read-only Monad publication,
+query coverage, activity dates and limitations. Example policies are not recommendations.
+
+Developer use after `npm.cmd run build`:
+
+```javascript
+import { verifyCandidate, evaluatePolicy, compareCandidates }
+  from './dist/packages/policy/src/index.js';
+// Supply your existing Passport JSON. No generator or Envio access is needed.
+const policy = { policyVersion: '1.0.0', minimumObservedTransactions: 2 };
+const verified = await verifyCandidate('my-agent', passport);
+const result = evaluatePolicy(verified, policy);
+// For chain verification, pass { trust, rpc } from your consuming application.
+// Obtain Registry trust independently; never trust configuration inside a Passport.
+// compareCandidates([resultA, resultB]) compares distinct agents under one policy.
+```
+
+`node dist/scripts/evaluate-policy.js request.json [trusted-deployment.json]` accepts
+`{policy,candidates:[{candidateId,passport}]}`. Without the second argument it is offline:
+publication is not_checked, not absent. With the independently trusted deployment file,
+configure ALCHEMY_MONAD_TESTNET_RPC_URL; the command performs reads only. It needs neither
+Envio nor a deployer key. The deployment file has the same {trust: ...} shape as the M4
+trusted deployment record. The policy schema and decision table are documented in
+`docs/verification/MONAD-M6.md` and `packages/policy/src/schema.ts`.
+
+Local HTTP: GET `/api/policy` returns real candidate artifacts. POST the same request
+shape as the CLI using same-origin application/json (maximum 2 MB, 1-10 candidates).
+The server computes verification itself; supplied verification assertions are rejected.
+Responses include structured candidates and equally eligible candidate IDs. Errors:
+400 malformed JSON, 403 origin, 413 size, 415 media type, 422 invalid policy/candidates,
+429 process rate/concurrency limits. This local route is not public deployment clearance.
+M5's 19 dependency findings and production-security limitations remain documented.

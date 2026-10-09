@@ -11,28 +11,30 @@ Only this repository receives product work; neither reference is a runtime depen
 PRD-MONAD > HACKATHON_REQUIREMENTS > ARCHITECTURE > STATUS > verified code.
 Obey AGENTS.md and CLAUDE.md. Consumer supplies trust policy; no universal trust score.
 
-## Current milestone: M5 - Dynamic Wallet Integration + First Working Web App
+## Current milestone: M6 - Consumer Trust Policies + Agent Comparison
 
-**ACCEPTED - bounded M5 functional scope.** Owner-run checks A-E, G and H passed.
-F is automation-only because a second account is unavailable. The live v2 publication,
-exact downloaded artifact and independent onchain read-back are verified. All 193
-tests, typechecks, builds and dependency-tree checks pass. Audit remains 19 findings;
-all four high entries have an explicit inactive-dependency disposition supported by
-production bundle/server-trace evidence. This is not production security approval.
+**ACCEPTED - bounded M6 functional scope.** Reusable strict versioned consumer policy engine,
+independent verification contexts, deterministic three-state results and unranked comparison
+are implemented. The real Agent 2072 published version 2 and Agent 2 offline version 1
+(schema 2.0.0) compare honestly. Browser policy interactions and live read-only API checks
+pass. 224 tests pass; library/web typechecks, library build and dependency tree pass.
+Final build/security evidence is in `docs/verification/MONAD-M6.md` and companion files.
+The owner confirmed fresh Dynamic/MetaMask connection, B51DD account, chain 10143,
+historical v1 labeling and latest-v2 publication blocking. No new transaction,
+publication, contract, provider or M7 work. Functional acceptance is not production
+security approval.
 
-Reports: `docs/verification/MONAD-M5.md`, `MONAD-M5-manual-QA.md` and
-`MONAD-M5-security-review.md` in the same directory.
-M4 commit: `8d9ce8de74f8239f5cdabc1b1a1ca20152edddd2`.
-M5 remains uncommitted/unpushed. No new closeout transactions. M6 is not started.
+M5 is accepted and now committed: `3a427c1634ed0feae8c529fd9c1a8550e60e6e96`.
+M6 changes remain uncommitted/unpushed. Existing audit: 19 (15 moderate, 4 high), with
+M5 security disposition preserved; production security is not approved.
 
 | Milestone | State |
 |---|---|
-| M0 / M1 / M0.5 | Accepted; historical evidence preserved |
-| M2 | Accepted; committed 9dfc4e7 |
-| M3 | Accepted; committed 60782f1 |
-| M4 | Accepted; committed 8d9ce8d |
-| M5 | Accepted for bounded functionality; 193 tests pass; security limitations documented |
-| M6+ | Not started |
+| M0 / M1 / M0.5 | Accepted |
+| M2 / M3 / M4 | Accepted and committed |
+| M5 | Accepted for bounded functionality; committed 3a427c1 |
+| M6 | Accepted; browser/API/core verified and owner wallet regression confirmed |
+| M7+ | Not started |
 
 ## Working - verified
 
@@ -101,8 +103,8 @@ Recorded remaining balance after writes: 0.7787053288 MON (snapshot, not a live 
 
 ## Git and reference state
 
-Branch `monad-metropolis`; HEAD `8d9ce8de74f8239f5cdabc1b1a1ca20152edddd2`.
-M2, M3 and M4 are committed locally; no automatic push. M5 files are unstaged/uncommitted.
+Branch `monad-metropolis`; HEAD `3a427c1634ed0feae8c529fd9c1a8550e60e6e96`.
+M2 through M5 are committed locally; no automatic push. M6 files are unstaged/uncommitted.
 Both reference HEADs, status, source files and Git metadata remain unchanged.
 Historical reports and M2/M3 fixtures match committed bytes. Parent STATUS changes
 only routing/state. Exact changed-file list and audit results are in the M4 report.
@@ -125,6 +127,6 @@ Full deployed-app/demo sponsor completion is not claimed.
 
 ## Exact next action
 
-Owner reviews M5 changes and closeout evidence. Await explicit instruction before
-committing/pushing, external deployment or starting M6. No further publication is
-authorized; the completed v2 transaction must not be repeated.
+Owner reviews accepted M6 changes and verification evidence. Leave M6 uncommitted until
+explicitly instructed to commit. No push, external deployment, M7 or new transaction is
+authorized; never repeat completed v2 publication.

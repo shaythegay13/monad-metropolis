@@ -1,0 +1,52 @@
+{
+  "m5Commit": "3a427c1634ed0feae8c529fd9c1a8550e60e6e96",
+  "checks": [
+    {
+      "command": "npm.cmd test",
+      "exitCode": 0,
+      "tests": 224,
+      "suites": 4,
+      "passed": 224,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "durationMs": 3177.4648
+    },
+    {
+      "command": "npm.cmd run typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run build",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run web:typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "SIGNAL_PASSPORT_BUILD_AUDIT=1 npm.cmd run web:build",
+      "exitCode": 0,
+      "output": "\n> signal-passport-monad@0.1.0 web:build\n> node scripts/web.mjs build\n\n\u25b2 Next.js 16.4.0 (webpack)\n\u2713 Running next.config.mjs took 25ms\n\n  Creating an optimized production build ...\n\u2713 Compiled successfully in 118s\n  Running TypeScript ...\n  Finished TypeScript in 11.6s ...\n  Collecting page data using 7 workers ...\n  Generating static pages using 7 workers (0/4) ...\n  Generating static pages using 7 workers (1/4) \n  Generating static pages using 7 workers (2/4) \n  Generating static pages using 7 workers (3/4) \n\u2713 Generating static pages using 7 workers (4/4) in 918ms\n  Finalizing page optimization ...\n  Collecting build traces ...\n\nRoute (app)\n\u250c \u25cb /\n\u251c \u25cb /_not-found\n\u251c \u0192 /api/passport\n\u251c \u0192 /api/policy\n\u2514 \u25cb /compare\n\n\n\u25cb  (Static)   prerendered as static content\n\u0192  (Dynamic)  server-rendered on demand\n\n"
+    },
+    {
+      "command": "npm.cmd ls --all --json",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd audit --json",
+      "exitCode": 1,
+      "findings": {
+        "moderate": 15,
+        "high": 4,
+        "critical": 0,
+        "total": 19
+      }
+    },
+    {
+      "command": "node dist/scripts/evaluate-policy.js dist/m6-cli-request.json",
+      "exitCode": 0
+    }
+  ]
+}

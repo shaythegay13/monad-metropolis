@@ -1,0 +1,673 @@
+{
+  "checkedAt": "2026-10-08T22:05:12.394Z",
+  "results": {
+    "modest": {
+      "status": 200,
+      "body": {
+        "policy": {
+          "policyVersion": "1.0.0",
+          "minimumObservedTransactions": 2,
+          "minimumActiveUtcDays": 1,
+          "minimumUniqueRecipientAddresses": 1,
+          "requireCompleteCoverage": true,
+          "requireMonadPublication": true
+        },
+        "candidates": [
+          {
+            "candidateId": "agent-2",
+            "agentId": "2",
+            "passportVersion": 1,
+            "digest": "9963102ba6b529b0c66c6a5a9cb655e3970f825ead27c0e07683492154cda760",
+            "policy": {
+              "policyVersion": "1.0.0",
+              "minimumObservedTransactions": 2,
+              "minimumActiveUtcDays": 1,
+              "minimumUniqueRecipientAddresses": 1,
+              "requireCompleteCoverage": true,
+              "requireMonadPublication": true
+            },
+            "integrity": "valid",
+            "publication": {
+              "localIntegrityValid": true,
+              "publicationFound": false,
+              "publishedHashMatches": false,
+              "registryVerified": true,
+              "publicationProvenanceVerified": false,
+              "status": "not_found",
+              "checkedBlock": "69369476",
+              "checkedBlockHash": "0x4f49fa658834cf83816175185e69b5356e00f810d3d9dc7be4a3462e7d9857a4",
+              "version": "1"
+            },
+            "coverage": {
+              "coverageStatus": "complete_for_query",
+              "nextBlock": "68955393",
+              "normalizedEvidenceCount": 2,
+              "pageCount": 1,
+              "rawRowsRetrieved": 2,
+              "stopReason": "exhausted"
+            },
+            "scope": {
+              "activityScope": "direct_outgoing_transactions_all_statuses",
+              "chainId": 10143,
+              "description": "Observed activity for the wallet currently designated as this agent's ERC-8004 agentWallet.",
+              "fromBlock": "10830000",
+              "subjectWallet": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+              "toBlockExclusive": "68955393",
+              "walletAssociationAsOf": "2026-10-07T11:19:48.517Z",
+              "walletAssociationBasis": "current_erc8004_registry_designation"
+            },
+            "limitations": [
+              {
+                "code": "current_association_only",
+                "description": "Current ERC-8004 wallet association does not prove historical association at the time of every observed transaction."
+              },
+              {
+                "code": "transaction_semantics_only",
+                "description": "Direct transactions and successful EVM executions do not establish payments, commerce, service delivery, trading, or business relationships."
+              },
+              {
+                "code": "address_semantics_only",
+                "description": "Recipient addresses are not automatically independent counterparties."
+              },
+              {
+                "code": "query_scope_only",
+                "description": "Coverage applies only to the declared query scope; observations describe the included dataset, not lifetime totals."
+              }
+            ],
+            "generatedAt": "2026-10-07T12:47:03.588Z",
+            "retrievedAt": "2026-10-07T11:19:48.882Z",
+            "checks": [
+              {
+                "criterion": "local_integrity",
+                "outcome": "PASS",
+                "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+                "evidenceIds": []
+              },
+              {
+                "criterion": "minimumObservedTransactions",
+                "metricId": "observed_transaction_count",
+                "required": 2,
+                "actual": 2,
+                "outcome": "PASS",
+                "evidenceIds": [
+                  "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                  "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+                ],
+                "reason": "Observed 2 within this dataset; consumer requires at least 2."
+              },
+              {
+                "criterion": "minimumActiveUtcDays",
+                "metricId": "active_utc_days",
+                "required": 1,
+                "actual": 1,
+                "outcome": "PASS",
+                "evidenceIds": [
+                  "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                  "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+                ],
+                "reason": "Observed 1 within this dataset; consumer requires at least 1."
+              },
+              {
+                "criterion": "minimumUniqueRecipientAddresses",
+                "metricId": "unique_recipient_addresses",
+                "required": 1,
+                "actual": 1,
+                "outcome": "PASS",
+                "evidenceIds": [
+                  "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                  "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+                ],
+                "reason": "Observed 1 within this dataset; consumer requires at least 1."
+              },
+              {
+                "criterion": "complete_coverage",
+                "outcome": "PASS",
+                "reason": "Query coverage is complete_for_query; it is not lifetime coverage.",
+                "evidenceIds": []
+              },
+              {
+                "criterion": "monad_publication",
+                "outcome": "FAIL",
+                "reason": "Confirmed absent for this agent/version at the checked Registry block.",
+                "evidenceIds": []
+              }
+            ],
+            "outcome": "NOT_SATISFIED"
+          },
+          {
+            "candidateId": "agent-2072",
+            "agentId": "2072",
+            "passportVersion": 2,
+            "digest": "8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+            "policy": {
+              "policyVersion": "1.0.0",
+              "minimumObservedTransactions": 2,
+              "minimumActiveUtcDays": 1,
+              "minimumUniqueRecipientAddresses": 1,
+              "requireCompleteCoverage": true,
+              "requireMonadPublication": true
+            },
+            "integrity": "valid",
+            "publication": {
+              "localIntegrityValid": true,
+              "publicationFound": true,
+              "publishedHashMatches": true,
+              "registryVerified": true,
+              "publicationProvenanceVerified": true,
+              "status": "verified",
+              "checkedBlock": "69369475",
+              "checkedBlockHash": "0x9ad1942256edddb2b21205879ce9631d825c6904d2c9d3119161a18a16c949d0",
+              "version": "2",
+              "profileHash": "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+              "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+              "contentUri": "",
+              "publishedAt": "1791457045",
+              "publicationBlock": "69236935",
+              "publisherMatchesCurrentAgentWallet": true
+            },
+            "coverage": {
+              "coverageStatus": "complete_for_query",
+              "stopReason": "exhausted",
+              "nextBlock": "69235935",
+              "rawRowsRetrieved": 4,
+              "normalizedEvidenceCount": 4,
+              "pageCount": 1
+            },
+            "scope": {
+              "chainId": 10143,
+              "subjectWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+              "walletAssociationBasis": "current_erc8004_registry_designation",
+              "walletAssociationAsOf": "2026-10-08T10:52:19.626Z",
+              "description": "Observed activity for the wallet currently designated as this agent's ERC-8004 agentWallet.",
+              "activityScope": "direct_outgoing_transactions_all_statuses",
+              "fromBlock": "69126790",
+              "toBlockExclusive": "69235935"
+            },
+            "limitations": [
+              {
+                "code": "current_association_only",
+                "description": "Current ERC-8004 wallet association does not prove historical association at the time of every observed transaction."
+              },
+              {
+                "code": "transaction_semantics_only",
+                "description": "Direct transactions and successful EVM executions do not establish payments, commerce, service delivery, trading, or business relationships."
+              },
+              {
+                "code": "address_semantics_only",
+                "description": "Recipient addresses are not automatically independent counterparties."
+              },
+              {
+                "code": "query_scope_only",
+                "description": "Coverage applies only to the declared query scope; observations describe the included dataset, not lifetime totals."
+              }
+            ],
+            "generatedAt": "2026-10-08T10:52:20.163Z",
+            "retrievedAt": "2026-10-08T10:52:20.163Z",
+            "checks": [
+              {
+                "criterion": "local_integrity",
+                "outcome": "PASS",
+                "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+                "evidenceIds": []
+              },
+              {
+                "criterion": "minimumObservedTransactions",
+                "metricId": "observed_transaction_count",
+                "required": 2,
+                "actual": 4,
+                "outcome": "PASS",
+                "evidenceIds": [
+                  "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                  "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                  "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                  "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+                ],
+                "reason": "Observed 4 within this dataset; consumer requires at least 2."
+              },
+              {
+                "criterion": "minimumActiveUtcDays",
+                "metricId": "active_utc_days",
+                "required": 1,
+                "actual": 1,
+                "outcome": "PASS",
+                "evidenceIds": [
+                  "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                  "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                  "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                  "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+                ],
+                "reason": "Observed 1 within this dataset; consumer requires at least 1."
+              },
+              {
+                "criterion": "minimumUniqueRecipientAddresses",
+                "metricId": "unique_recipient_addresses",
+                "required": 1,
+                "actual": 2,
+                "outcome": "PASS",
+                "evidenceIds": [
+                  "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                  "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                  "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                  "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+                ],
+                "reason": "Observed 2 within this dataset; consumer requires at least 1."
+              },
+              {
+                "criterion": "complete_coverage",
+                "outcome": "PASS",
+                "reason": "Query coverage is complete_for_query; it is not lifetime coverage.",
+                "evidenceIds": []
+              },
+              {
+                "criterion": "monad_publication",
+                "outcome": "PASS",
+                "reason": "Independent Monad record matches this exact version and digest.",
+                "evidenceIds": []
+              }
+            ],
+            "outcome": "SATISFIED"
+          }
+        ],
+        "eligibleCandidateIds": [
+          "agent-2072"
+        ],
+        "methodology": "Eligibility only. All satisfying candidates are equally eligible; identifier ordering is not a ranking. Scopes and evidence dates can differ."
+      }
+    },
+    "strict": {
+      "status": 200,
+      "body": {
+        "policy": {
+          "policyVersion": "1.0.0",
+          "minimumObservedTransactions": 10,
+          "requireMonadPublication": true
+        },
+        "candidates": [
+          {
+            "candidateId": "agent-2",
+            "agentId": "2",
+            "passportVersion": 1,
+            "digest": "9963102ba6b529b0c66c6a5a9cb655e3970f825ead27c0e07683492154cda760",
+            "policy": {
+              "policyVersion": "1.0.0",
+              "minimumObservedTransactions": 10,
+              "requireMonadPublication": true
+            },
+            "integrity": "valid",
+            "publication": {
+              "localIntegrityValid": true,
+              "publicationFound": false,
+              "publishedHashMatches": false,
+              "registryVerified": true,
+              "publicationProvenanceVerified": false,
+              "status": "not_found",
+              "checkedBlock": "69369478",
+              "checkedBlockHash": "0x4d0ce75badbadd006cf86514aa100ee2eac3bc8a5f5376c968049f56f647b8ca",
+              "version": "1"
+            },
+            "coverage": {
+              "coverageStatus": "complete_for_query",
+              "nextBlock": "68955393",
+              "normalizedEvidenceCount": 2,
+              "pageCount": 1,
+              "rawRowsRetrieved": 2,
+              "stopReason": "exhausted"
+            },
+            "scope": {
+              "activityScope": "direct_outgoing_transactions_all_statuses",
+              "chainId": 10143,
+              "description": "Observed activity for the wallet currently designated as this agent's ERC-8004 agentWallet.",
+              "fromBlock": "10830000",
+              "subjectWallet": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+              "toBlockExclusive": "68955393",
+              "walletAssociationAsOf": "2026-10-07T11:19:48.517Z",
+              "walletAssociationBasis": "current_erc8004_registry_designation"
+            },
+            "limitations": [
+              {
+                "code": "current_association_only",
+                "description": "Current ERC-8004 wallet association does not prove historical association at the time of every observed transaction."
+              },
+              {
+                "code": "transaction_semantics_only",
+                "description": "Direct transactions and successful EVM executions do not establish payments, commerce, service delivery, trading, or business relationships."
+              },
+              {
+                "code": "address_semantics_only",
+                "description": "Recipient addresses are not automatically independent counterparties."
+              },
+              {
+                "code": "query_scope_only",
+                "description": "Coverage applies only to the declared query scope; observations describe the included dataset, not lifetime totals."
+              }
+            ],
+            "generatedAt": "2026-10-07T12:47:03.588Z",
+            "retrievedAt": "2026-10-07T11:19:48.882Z",
+            "checks": [
+              {
+                "criterion": "local_integrity",
+                "outcome": "PASS",
+                "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+                "evidenceIds": []
+              },
+              {
+                "criterion": "minimumObservedTransactions",
+                "metricId": "observed_transaction_count",
+                "required": 10,
+                "actual": 2,
+                "outcome": "FAIL",
+                "evidenceIds": [
+                  "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                  "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+                ],
+                "reason": "Observed 2 within this dataset; consumer requires at least 10."
+              },
+              {
+                "criterion": "monad_publication",
+                "outcome": "FAIL",
+                "reason": "Confirmed absent for this agent/version at the checked Registry block.",
+                "evidenceIds": []
+              }
+            ],
+            "outcome": "NOT_SATISFIED"
+          },
+          {
+            "candidateId": "agent-2072",
+            "agentId": "2072",
+            "passportVersion": 2,
+            "digest": "8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+            "policy": {
+              "policyVersion": "1.0.0",
+              "minimumObservedTransactions": 10,
+              "requireMonadPublication": true
+            },
+            "integrity": "valid",
+            "publication": {
+              "localIntegrityValid": true,
+              "publicationFound": true,
+              "publishedHashMatches": true,
+              "registryVerified": true,
+              "publicationProvenanceVerified": true,
+              "status": "verified",
+              "checkedBlock": "69369477",
+              "checkedBlockHash": "0x913d8123b28725453030c2bbceab42f648184455006f09eb2c03e0e4476c6d62",
+              "version": "2",
+              "profileHash": "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+              "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+              "contentUri": "",
+              "publishedAt": "1791457045",
+              "publicationBlock": "69236935",
+              "publisherMatchesCurrentAgentWallet": true
+            },
+            "coverage": {
+              "coverageStatus": "complete_for_query",
+              "stopReason": "exhausted",
+              "nextBlock": "69235935",
+              "rawRowsRetrieved": 4,
+              "normalizedEvidenceCount": 4,
+              "pageCount": 1
+            },
+            "scope": {
+              "chainId": 10143,
+              "subjectWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+              "walletAssociationBasis": "current_erc8004_registry_designation",
+              "walletAssociationAsOf": "2026-10-08T10:52:19.626Z",
+              "description": "Observed activity for the wallet currently designated as this agent's ERC-8004 agentWallet.",
+              "activityScope": "direct_outgoing_transactions_all_statuses",
+              "fromBlock": "69126790",
+              "toBlockExclusive": "69235935"
+            },
+            "limitations": [
+              {
+                "code": "current_association_only",
+                "description": "Current ERC-8004 wallet association does not prove historical association at the time of every observed transaction."
+              },
+              {
+                "code": "transaction_semantics_only",
+                "description": "Direct transactions and successful EVM executions do not establish payments, commerce, service delivery, trading, or business relationships."
+              },
+              {
+                "code": "address_semantics_only",
+                "description": "Recipient addresses are not automatically independent counterparties."
+              },
+              {
+                "code": "query_scope_only",
+                "description": "Coverage applies only to the declared query scope; observations describe the included dataset, not lifetime totals."
+              }
+            ],
+            "generatedAt": "2026-10-08T10:52:20.163Z",
+            "retrievedAt": "2026-10-08T10:52:20.163Z",
+            "checks": [
+              {
+                "criterion": "local_integrity",
+                "outcome": "PASS",
+                "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+                "evidenceIds": []
+              },
+              {
+                "criterion": "minimumObservedTransactions",
+                "metricId": "observed_transaction_count",
+                "required": 10,
+                "actual": 4,
+                "outcome": "FAIL",
+                "evidenceIds": [
+                  "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                  "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                  "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                  "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+                ],
+                "reason": "Observed 4 within this dataset; consumer requires at least 10."
+              },
+              {
+                "criterion": "monad_publication",
+                "outcome": "PASS",
+                "reason": "Independent Monad record matches this exact version and digest.",
+                "evidenceIds": []
+              }
+            ],
+            "outcome": "NOT_SATISFIED"
+          }
+        ],
+        "eligibleCandidateIds": [],
+        "methodology": "Eligibility only. All satisfying candidates are equally eligible; identifier ordering is not a ranking. Scopes and evidence dates can differ."
+      }
+    },
+    "local": {
+      "status": 200,
+      "body": {
+        "policy": {
+          "policyVersion": "1.0.0",
+          "minimumObservedTransactions": 2
+        },
+        "candidates": [
+          {
+            "candidateId": "agent-2",
+            "agentId": "2",
+            "passportVersion": 1,
+            "digest": "9963102ba6b529b0c66c6a5a9cb655e3970f825ead27c0e07683492154cda760",
+            "policy": {
+              "policyVersion": "1.0.0",
+              "minimumObservedTransactions": 2
+            },
+            "integrity": "valid",
+            "publication": {
+              "localIntegrityValid": true,
+              "publicationFound": false,
+              "publishedHashMatches": false,
+              "registryVerified": true,
+              "publicationProvenanceVerified": false,
+              "status": "not_found",
+              "checkedBlock": "69369480",
+              "checkedBlockHash": "0xbc8ae35956fc898b959e6070bffab414d17285aee94bd680f6ccd15387e1565e",
+              "version": "1"
+            },
+            "coverage": {
+              "coverageStatus": "complete_for_query",
+              "nextBlock": "68955393",
+              "normalizedEvidenceCount": 2,
+              "pageCount": 1,
+              "rawRowsRetrieved": 2,
+              "stopReason": "exhausted"
+            },
+            "scope": {
+              "activityScope": "direct_outgoing_transactions_all_statuses",
+              "chainId": 10143,
+              "description": "Observed activity for the wallet currently designated as this agent's ERC-8004 agentWallet.",
+              "fromBlock": "10830000",
+              "subjectWallet": "0xf043b0d473a2edd7c5d6f4d931334096b77a7edc",
+              "toBlockExclusive": "68955393",
+              "walletAssociationAsOf": "2026-10-07T11:19:48.517Z",
+              "walletAssociationBasis": "current_erc8004_registry_designation"
+            },
+            "limitations": [
+              {
+                "code": "current_association_only",
+                "description": "Current ERC-8004 wallet association does not prove historical association at the time of every observed transaction."
+              },
+              {
+                "code": "transaction_semantics_only",
+                "description": "Direct transactions and successful EVM executions do not establish payments, commerce, service delivery, trading, or business relationships."
+              },
+              {
+                "code": "address_semantics_only",
+                "description": "Recipient addresses are not automatically independent counterparties."
+              },
+              {
+                "code": "query_scope_only",
+                "description": "Coverage applies only to the declared query scope; observations describe the included dataset, not lifetime totals."
+              }
+            ],
+            "generatedAt": "2026-10-07T12:47:03.588Z",
+            "retrievedAt": "2026-10-07T11:19:48.882Z",
+            "checks": [
+              {
+                "criterion": "local_integrity",
+                "outcome": "PASS",
+                "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+                "evidenceIds": []
+              },
+              {
+                "criterion": "minimumObservedTransactions",
+                "metricId": "observed_transaction_count",
+                "required": 2,
+                "actual": 2,
+                "outcome": "PASS",
+                "evidenceIds": [
+                  "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                  "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+                ],
+                "reason": "Observed 2 within this dataset; consumer requires at least 2."
+              }
+            ],
+            "outcome": "SATISFIED"
+          },
+          {
+            "candidateId": "agent-2072",
+            "agentId": "2072",
+            "passportVersion": 2,
+            "digest": "8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+            "policy": {
+              "policyVersion": "1.0.0",
+              "minimumObservedTransactions": 2
+            },
+            "integrity": "valid",
+            "publication": {
+              "localIntegrityValid": true,
+              "publicationFound": true,
+              "publishedHashMatches": true,
+              "registryVerified": true,
+              "publicationProvenanceVerified": true,
+              "status": "verified",
+              "checkedBlock": "69369479",
+              "checkedBlockHash": "0x6210e1a0c0142b0ff84cc7879810d1f6306b020110e3988271f4026dbd9c34a6",
+              "version": "2",
+              "profileHash": "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+              "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+              "contentUri": "",
+              "publishedAt": "1791457045",
+              "publicationBlock": "69236935",
+              "publisherMatchesCurrentAgentWallet": true
+            },
+            "coverage": {
+              "coverageStatus": "complete_for_query",
+              "stopReason": "exhausted",
+              "nextBlock": "69235935",
+              "rawRowsRetrieved": 4,
+              "normalizedEvidenceCount": 4,
+              "pageCount": 1
+            },
+            "scope": {
+              "chainId": 10143,
+              "subjectWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+              "walletAssociationBasis": "current_erc8004_registry_designation",
+              "walletAssociationAsOf": "2026-10-08T10:52:19.626Z",
+              "description": "Observed activity for the wallet currently designated as this agent's ERC-8004 agentWallet.",
+              "activityScope": "direct_outgoing_transactions_all_statuses",
+              "fromBlock": "69126790",
+              "toBlockExclusive": "69235935"
+            },
+            "limitations": [
+              {
+                "code": "current_association_only",
+                "description": "Current ERC-8004 wallet association does not prove historical association at the time of every observed transaction."
+              },
+              {
+                "code": "transaction_semantics_only",
+                "description": "Direct transactions and successful EVM executions do not establish payments, commerce, service delivery, trading, or business relationships."
+              },
+              {
+                "code": "address_semantics_only",
+                "description": "Recipient addresses are not automatically independent counterparties."
+              },
+              {
+                "code": "query_scope_only",
+                "description": "Coverage applies only to the declared query scope; observations describe the included dataset, not lifetime totals."
+              }
+            ],
+            "generatedAt": "2026-10-08T10:52:20.163Z",
+            "retrievedAt": "2026-10-08T10:52:20.163Z",
+            "checks": [
+              {
+                "criterion": "local_integrity",
+                "outcome": "PASS",
+                "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+                "evidenceIds": []
+              },
+              {
+                "criterion": "minimumObservedTransactions",
+                "metricId": "observed_transaction_count",
+                "required": 2,
+                "actual": 4,
+                "outcome": "PASS",
+                "evidenceIds": [
+                  "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                  "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                  "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                  "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+                ],
+                "reason": "Observed 4 within this dataset; consumer requires at least 2."
+              }
+            ],
+            "outcome": "SATISFIED"
+          }
+        ],
+        "eligibleCandidateIds": [
+          "agent-2",
+          "agent-2072"
+        ],
+        "methodology": "Eligibility only. All satisfying candidates are equally eligible; identifier ordering is not a ranking. Scopes and evidence dates can differ."
+      }
+    }
+  },
+  "http": {
+    "/": 200,
+    "/compare": 200,
+    "/api/passport": 200,
+    "foreignOrigin": 403
+  },
+  "noTransactionRequested": true,
+  "m5": {
+    "latest": "2",
+    "verification": "verified"
+  }
+}

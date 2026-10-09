@@ -8,7 +8,7 @@
 
 # Signal Passport — Technical Architecture
 
-**Version:** Monad Metropolis v1  
+**Version:** Monad Metropolis v1
 **Last Updated:** October 8, 2026
 
 **Purpose:** Defines how Signal Passport is technically structured. Product scope belongs in `PRD-MONAD.md`.
@@ -1013,3 +1013,62 @@ Real API preparation/verification is distinct from browser-wallet verification.
 See `verification/MONAD-M5.md` for evidence, pending manual checks and dependency
 limitations. No M6 consumer policies or later sponsor integrations are implemented.
 
+
+
+## Implemented M6 - independent consumer policies and comparison
+
+`packages/policy/src/schema.ts` defines strict policyVersion "1.0.0". Optional
+minimumObservedTransactions, minimumActiveUtcDays and minimumUniqueRecipientAddresses
+are nonnegative safe integers, mapped respectively to observed_transaction_count,
+active_utc_days and unique_recipient_addresses. Optional requireCompleteCoverage,
+requireLocalIntegrity and requireMonadPublication are booleans. Unknown keys, numeric
+strings, fractions, negative/nonfinite/unsafe numbers and unsupported versions reject.
+There are no maximum thresholds, freshness thresholds, weights or scores in version 1.
+
+`verifyCandidate(id, raw, {trust,rpc}?)` snapshots the input, invokes the unchanged M3
+schema/reference/canonical-digest verifier, and optionally invokes the unchanged M4
+independent publication verifier. No raw verification assertion is accepted. Frozen
+contexts have runtime provenance in a private WeakSet; deserialized contexts must be
+verified again. RPC/trust are trusted application dependencies, never imported Passport
+claims. The application controls its own trust root; this is not a central authority.
+
+`evaluatePolicy(context, policy)` is synchronous and deterministic. Local integrity is
+an unconditional precondition, even when the optional local-integrity setting is false.
+Invalid artifacts receive a failing integrity check and no trusted subject/scope/metrics.
+Missing/wrong-type required metrics invalidate the existing strict Passport contract;
+remaining numeric checks say insufficient evidence, never inventing values.
+All numeric thresholds require complete_for_query, including a zero threshold. Partial
+and unknown datasets return INSUFFICIENT_EVIDENCE for numeric checks, even if a lower
+bound would otherwise suffice. Version 1 deliberately has no partial-lower-bound option.
+A complete dataset uses actual >= required; valid zero remains zero. Complete-coverage
+requirements PASS for complete, FAIL for known partial and are insufficient for unknown.
+Publication requirements PASS only for independently verified matching publication,
+FAIL for confirmed absence or hash mismatch, and are insufficient for provider failure,
+unverified Registry or an unchecked publication. A FAIL takes precedence over uncertainty:
+NOT_SATISFIED, otherwise INDETERMINATE if any insufficient check, otherwise SATISFIED.
+Every result retains all checks/reasons, evidence and metric references, digest, agent,
+Passport version, publication snapshot, coverage, scope, limitations and dates.
+
+`compareCandidates` accepts 2-10 runtime-authenticated evaluations of the same policy.
+Duplicate candidate IDs and duplicate subject agents reject (two versions are not two
+agents). Results sort lexically by candidate ID solely for reproducibility; all satisfying
+agents remain equally eligible. It does not normalize incompatible scopes or rank agents.
+
+`/compare` is separate from M5 wallet/publication controls. `/api/policy` GET supplies
+unchanged real fixtures; POST accepts {policy,candidates:[{candidateId,passport}]} with
+1-10 candidates. Same-origin JSON, 2 MB streamed body limit, 5-second body deadline,
+strict envelope, 20 requests/minute/process and 2 concurrent requests bound the route.
+RPC is restricted to four read methods with at most 80 calls and a 20-second budget for
+starting new reads (an in-flight RPC can take its existing 15-second timeout). No URL,
+trust configuration, verification assertion, signer or analysis request is accepted.
+The fixed server trust record is independent of imported data. Per-process limits are
+not distributed deployment protection. External applications use the reusable library
+or CLI directly; the same-origin web route is not an authenticated public service.
+
+Agent 2072 uses schema 2.0.0 / Passport version 2; Agent 2's filename says v2 for its
+schema, while its actual Passport version is 1. Neither fixture is modified. Displayed
+activity dates distinguish February Agent-2 activity from October Agent-2072 activity;
+retrieval/generation dates and query coverage do not imply freshness or commerce.
+The policy package imports no generator, Envio ingestion, compiler or signer. Existing
+v1/v2 offline and publication validators and M5 publication logic remain unchanged.
+See verification/MONAD-M6.md for verification and current acceptance state.
