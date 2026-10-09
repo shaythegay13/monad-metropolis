@@ -16,7 +16,19 @@ scope, coverage, provenance and limitations. The independent offline consumer su
 both v1 and v2. M4 adds authorized onchain publication and independent Alchemy-backed verification.
 M5 adds a Next.js web application with Dynamic/MetaMask connection, existing Passport
 inspection and wallet-mediated version 2 publication. The owner completed the successful wallet flow; v2 publication/read-back are verified.
-M5 functional closeout is accepted with documented manual-test and security limitations; see `docs/verification/MONAD-M5.md`. M6 and later integrations are deferred.
+M5 and M6 functional scopes are accepted with documented limitations. M7's frontend
+redesign is accepted after owner visual and read-only wallet review; see
+`docs/verification/MONAD-M7.md`. This does not grant production security approval.
+
+## Explore the M7 web experience
+
+After starting the local app, visit `/` for the product overview, `/passport` for the
+published Agent 2072 version 2 artifact and independent read-only checks, `/compare`
+for real Agent 2072 versus Agent 2 policies, and `/developers` for the consumer path.
+These routes do not need a wallet. `/wallet` retains the Dynamic/MetaMask publication
+workspace; current onchain version 2 disables its version 2-only preparation action.
+The Passport page downloads the exact accepted version 2 JSON. Its historical link
+downloads immutable version 1. No new transaction is part of M7.
 
 ## Run the web application (M5)
 

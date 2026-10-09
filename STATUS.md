@@ -1,6 +1,6 @@
 # Signal Passport Monad - STATUS
 
-Last updated: October 8, 2026 (America/New_York).
+Last updated: October 9, 2026 (America/New_York).
 
 ACTIVE PROJECT: `signal-passport-monad/`.
 READ ONLY REFERENCES: `../signal-passport/`, `../ledgerlens/`.
@@ -11,7 +11,35 @@ Only this repository receives product work; neither reference is a runtime depen
 PRD-MONAD > HACKATHON_REQUIREMENTS > ARCHITECTURE > STATUS > verified code.
 Obey AGENTS.md and CLAUDE.md. Consumer supplies trust policy; no universal trust score.
 
-## Current milestone: M6 - Consumer Trust Policies + Agent Comparison
+## Current milestone: M8 - Public Deployment & Developer Readiness
+
+**M7 ACCEPTED for functionality and visual design.** The owner approved the M7 layout, typography, navigation
+and functionality, then requested more green depth after the first palette review.
+The corrected distribution uses a substantial deep-forest Home hero, navigation and
+footer, forest Passport identity header, forest Compare introduction/results,
+sage policy editor and stronger forest Developers navigation. The disconnected
+wallet workspace retains the approved green theme.
+Focused polish still distinguishes Passport loading from genuine live-read failure,
+brings evaluated comparison outcomes into view with keyboard focus, improves
+supporting text and compacts expanded evidence. New settled production-browser
+captures of this corrected balance at 1440px desktop, actual 390px mobile and 768px tablet are in
+`docs/verification/MONAD-M7.md`. Independent v2 publication read-back passed.
+237 tests pass; library/web typechecks, library build, production web build and
+dependency tree pass. Audit remains 19 findings (15 moderate, 4 high) with a bounded
+local/testnet build disposition, not production security clearance. Secret and both
+reference-repository checks pass. The owner approved the final color balance and
+personally confirmed the Dynamic/MetaMask account ending B51DD, Monad Testnet 10143,
+Agent 2072's published/verified version 2 and wrong-network warning/blocking.
+These are owner-reported checks; the agent did not observe MetaMask testing. No new
+transaction or public deployment. M7 was committed locally before M8 work and not pushed.
+M8 begins with public hosting and release-specific security review; deployment and
+GitHub push require the owner's later approval checkpoint.
+
+M6 accepted commit: `91ca52470e6a4b3a878c6dc0c03a1a63a4ce3518` on
+`monad-metropolis`; accepted M5 commit:
+`3a427c1634ed0feae8c529fd9c1a8550e60e6e96`.
+
+## Previous milestone: M6 - Consumer Trust Policies + Agent Comparison
 
 **ACCEPTED - bounded M6 functional scope.** Reusable strict versioned consumer policy engine,
 independent verification contexts, deterministic three-state results and unranked comparison
@@ -25,7 +53,7 @@ publication, contract, provider or M7 work. Functional acceptance is not product
 security approval.
 
 M5 is accepted and now committed: `3a427c1634ed0feae8c529fd9c1a8550e60e6e96`.
-M6 changes remain uncommitted/unpushed. Existing audit: 19 (15 moderate, 4 high), with
+M6 changes were committed locally and not pushed. Existing audit: 19 (15 moderate, 4 high), with
 M5 security disposition preserved; production security is not approved.
 
 | Milestone | State |
@@ -34,7 +62,9 @@ M5 security disposition preserved; production security is not approved.
 | M2 / M3 / M4 | Accepted and committed |
 | M5 | Accepted for bounded functionality; committed 3a427c1 |
 | M6 | Accepted; browser/API/core verified and owner wallet regression confirmed |
-| M7+ | Not started |
+| M7 | Accepted; final visual direction and four owner wallet checks confirmed |
+| M8 | In progress; no public deployment or push yet |
+| M9+ | Not started |
 
 ## Working - verified
 
@@ -79,7 +109,8 @@ M5 security disposition preserved; production security is not approved.
 Wrong-wallet behavior is automation-only because the owner has no second account.
 Transaction rejection was not retested with a live publication. The owner personally
 confirmed the other A-H checks; no agent-observed browser testing is claimed.
-Warnings' visual prominence is deferred to later frontend work by owner instruction.
+M7 made wrong-network and unauthorized-account warnings more prominent; the owner
+confirmed the fresh account, chain, version 2 and wrong-network display after the redesign.
 Public hosting, release-specific API/origin controls and production security approval
 remain outside completed M5 scope. Dependency findings remain explicitly documented.
 
@@ -103,8 +134,7 @@ Recorded remaining balance after writes: 0.7787053288 MON (snapshot, not a live 
 
 ## Git and reference state
 
-Branch `monad-metropolis`; HEAD `3a427c1634ed0feae8c529fd9c1a8550e60e6e96`.
-M2 through M5 are committed locally; no automatic push. M6 files are unstaged/uncommitted.
+Branch `monad-metropolis`; M2 through M7 are committed locally; no automatic push.
 Both reference HEADs, status, source files and Git metadata remain unchanged.
 Historical reports and M2/M3 fixtures match committed bytes. Parent STATUS changes
 only routing/state. Exact changed-file list and audit results are in the M4 report.
@@ -127,6 +157,7 @@ Full deployed-app/demo sponsor completion is not claimed.
 
 ## Exact next action
 
-Owner reviews accepted M6 changes and verification evidence. Leave M6 uncommitted until
-explicitly instructed to commit. No push, external deployment, M7 or new transaction is
-authorized; never repeat completed v2 publication.
+Complete M8 public artifact hosting, developer quickstart, production API/security
+review and predeployment tests. Inspect remote/branch/Vercel target, then request
+explicit owner approval before any GitHub push or public deployment. No blockchain
+transaction is authorized; never repeat completed v2 publication.

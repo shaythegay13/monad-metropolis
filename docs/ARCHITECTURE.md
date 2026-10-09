@@ -1071,4 +1071,23 @@ activity dates distinguish February Agent-2 activity from October Agent-2072 act
 retrieval/generation dates and query coverage do not imply freshness or commerce.
 The policy package imports no generator, Envio ingestion, compiler or signer. Existing
 v1/v2 offline and publication validators and M5 publication logic remain unchanged.
-See verification/MONAD-M6.md for verification and current acceptance state.
+See verification/MONAD-M6.md for accepted M6 evidence.
+
+## M7 presentation layer
+
+The Next.js App Router serves five destinations: `/` explains the identity, evidence,
+publication, verification and policy flow; `/passport` renders the immutable accepted
+Agent 2072 version 2 artifact; `/compare` presents the accepted M6 policy controls
+and two real candidates; `/developers` documents the current consumer library and
+same-origin endpoint; `/wallet` isolates the accepted Dynamic publication workspace.
+Shared site components and CSS provide consistent navigation, state labels and
+responsive presentation. All general inspection is wallet-free.
+
+`/passport` invokes existing `/api/policy` for independent local/onchain verification
+and `/api/passport` for the live latest version and Registry-designated wallet. It
+keeps artifact metrics distinct from fresh verification results and says when a live
+check is unavailable. `/compare` keeps the accepted policy request and evaluation
+semantics; controls clear stale results before each new run. No generator, verifier,
+policy engine, fixture, contract or publication handler changed for M7. The visual
+design never converts publication integrity into a general trust judgment.
+See verification/MONAD-M7.md for screenshots and review state.

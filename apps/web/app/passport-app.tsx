@@ -119,12 +119,12 @@ function Workspace() {
     finally { sendLock.current = false; setBusy(""); }
   }
   const bundle = view?.bundle; const v = view?.verification;
-  return <main>
+  return <main id="main" className="wallet-workspace">
     <header><a className="brand" href="/">Signal Passport<span>Portable agent history</span></a><div className="header-actions"><span className="pill">● Monad Testnet</span>
       {address ? <button className="secondary" onClick={() => void handleLogOut().catch(e => setWalletMessage(walletError(e)))}>Disconnect</button>
         : <button onClick={() => { setWalletMessage("If you cancel the connection request, no wallet will be connected."); setShowAuthFlow(true); }}>Connect Wallet</button>}</div></header>
-    <nav><a className="text-link" href="/compare">Compare Agents with your evidence policy →</a></nav>
-    <div className="intro"><p className="eyebrow">ERC-8004 / AGENT {AGENT_ID}</p><h1>History you can inspect.<br/>Integrity you can verify.</h1><p>Evidence-backed observations with a portable Passport and a publication on Monad.</p></div>
+    <nav className="wallet-nav" aria-label="Product navigation"><a href="/">Home</a><a href="/passport">Explore Passport</a><a href="/compare">Compare Agents</a><a href="/developers">Developers</a></nav>
+    <div className="intro"><p className="eyebrow">ERC-8004 / AGENT {AGENT_ID}</p><h1>Your wallet.<br/>Your publication controls.</h1><p>Connect through Dynamic to inspect authorization and existing publication status. Passport inspection and comparison do not require a wallet.</p></div>
     {error && <div className="notice error" role="alert">{error}</div>}
     {walletMessage && <p className="notice" role="status">{walletMessage}</p>}
     <div className="grid"><section className="card"><div className="section-title"><h2>Agent identity</h2><span className="tag">ERC-8004</span></div>
@@ -132,7 +132,7 @@ function Workspace() {
       <Field label="Agent ID">{AGENT_ID}</Field><Field label="Current registry-designated wallet"><code>{view?.agentWallet ?? "Unavailable — current authorization unknown"}</code></Field>
       <Field label="Connected wallet"><code>{address ?? "Not connected"}</code></Field>
       <Field label="Wallet network">{chain === CHAIN_ID ? "Monad Testnet · 10143" : chain ? `Wrong network · ${chain}` : "Not detected"}</Field></dl>
-      <p className={`notice ${authorization === "authorized" ? "good" : ""}`}>{authorizationText[authorization]}</p>
+      <p role="status" className={`notice ${authorization === "authorized" ? "good" : "warning"}`}>{authorizationText[authorization]}</p>
       {authorization === "wrong_network" && <button className="secondary" onClick={async () => { try { await primaryWallet?.switchNetwork(CHAIN_ID); setChain(Number(await primaryWallet?.getNetwork())); }
         catch (e) { setWalletMessage(walletError(e)); } }}>Switch to Monad Testnet</button>}
     </section>

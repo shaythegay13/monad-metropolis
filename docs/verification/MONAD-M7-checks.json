@@ -1,0 +1,42 @@
+[
+  {
+    "command": "npm.cmd run test",
+    "exitCode": 0,
+    "durationMs": 3369,
+    "summary": [
+      "ℹ tests 237",
+      "ℹ suites 4",
+      "ℹ pass 237",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 2876.1496"
+    ]
+  },
+  {
+    "command": "npm.cmd run typecheck",
+    "exitCode": 0,
+    "durationMs": 1762
+  },
+  {
+    "command": "npm.cmd run web:typecheck",
+    "exitCode": 0,
+    "durationMs": 6470
+  },
+  {
+    "command": "npm.cmd run build",
+    "exitCode": 0,
+    "durationMs": 1515
+  },
+  {
+    "command": "npm.cmd ls --all",
+    "exitCode": 0,
+    "durationMs": 1188
+  },
+  {
+    "command": "npm.cmd audit --json",
+    "exitCode": 1,
+    "durationMs": 3399
+  }
+]
