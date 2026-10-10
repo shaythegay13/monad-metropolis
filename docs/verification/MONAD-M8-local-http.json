@@ -1,0 +1,49 @@
+{
+  "base": "http://127.0.0.1:3052",
+  "pages": {
+    "/": 200,
+    "/passport": 200,
+    "/compare": 200,
+    "/developers": 200,
+    "/wallet": 200
+  },
+  "artifacts": {
+    "agent-2072-v2-published.json": {
+      "status": 200,
+      "sha256": "eca35f6a109fe98c6974eb410f0d07f74b8ac4165dd8eb3be29eb2f1b8669e6c"
+    },
+    "agent-2072-v1-historical.json": {
+      "status": 200,
+      "sha256": "e5000c87c18182c6e4c2f18690ccff82942a695915d04e649c71e39eab02dde1"
+    },
+    "agent-2-v1-unpublished.json": {
+      "status": 200,
+      "sha256": "d1d8fcc35100d80c34a977b1670432fea9a3fe1706f345f438b868447787629d"
+    }
+  },
+  "api": {
+    "passport": {
+      "status": 200,
+      "latest": "2",
+      "publicReadOnly": true
+    },
+    "publicationPost": 403,
+    "policy": {
+      "status": 200,
+      "outcomes": [
+        [
+          "agent-2",
+          "NOT_SATISFIED",
+          "not_found"
+        ],
+        [
+          "agent-2072",
+          "SATISFIED",
+          "verified"
+        ]
+      ]
+    },
+    "mutatedCandidate": 422,
+    "foreignOrigin": 403
+  }
+}

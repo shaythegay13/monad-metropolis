@@ -10,7 +10,7 @@ import type { AgentPassportBundleV2 } from "../../../packages/schema/src/agent-p
 import type { PublicationVerification } from "../../../packages/publication/src/verify";
 import type { UnsignedPublication } from "../../../packages/web/src/publication";
 
-type View = { bundle: AgentPassportBundleV2; verification?: PublicationVerification; agentWallet?: string; latest?: string; network?: string };
+type View = { bundle: AgentPassportBundleV2; verification?: PublicationVerification; agentWallet?: string; latest?: string; network?: string; publicReadOnly?: boolean };
 type Prepared = { bundle: AgentPassportBundleV2; transaction: UnsignedPublication };
 type Confirmation = { state: "pending" | "reverted" | "unverified" | "confirmed"; receipt?: Record<string, string>; verification?: PublicationVerification };
 type Pending = { bundle: AgentPassportBundleV2; hash: string };
@@ -132,7 +132,7 @@ function Workspace() {
       <Field label="Agent ID">{AGENT_ID}</Field><Field label="Current registry-designated wallet"><code>{view?.agentWallet ?? "Unavailable — current authorization unknown"}</code></Field>
       <Field label="Connected wallet"><code>{address ?? "Not connected"}</code></Field>
       <Field label="Wallet network">{chain === CHAIN_ID ? "Monad Testnet · 10143" : chain ? `Wrong network · ${chain}` : "Not detected"}</Field></dl>
-      <p role="status" className={`notice ${authorization === "authorized" ? "good" : "warning"}`}>{authorizationText[authorization]}</p>
+      <p role="status" className={`notice ${authorization === "authorized" ? "good" : "warning"}`}>{view?.publicReadOnly && authorization === "disconnected" ? "Connect MetaMask to inspect wallet status. Publication is unavailable on this public site." : authorizationText[authorization]}</p>
       {authorization === "wrong_network" && <button className="secondary" onClick={async () => { try { await primaryWallet?.switchNetwork(CHAIN_ID); setChain(Number(await primaryWallet?.getNetwork())); }
         catch (e) { setWalletMessage(walletError(e)); } }}>Switch to Monad Testnet</button>}
     </section>
@@ -159,7 +159,8 @@ function Workspace() {
     </section>
     <section className="card"><div className="section-title"><h2>Publish the next Passport</h2><span className="tag">VERSION 2</span></div>
       <p>Retrieve a new frozen evidence scope from Envio, then review the digest and fee. Only the current agentWallet can authorize publication.</p>
-      <button disabled={authorization !== "authorized" || Boolean(busy) || Boolean(pending) || view?.latest !== "1"} onClick={() => void prepareNext()}>Prepare next Passport</button>
+      {view?.publicReadOnly && <p className="notice">This public deployment is read-only. Connect a wallet to inspect status; preparation and publication are unavailable here.</p>}
+      <button disabled={view?.publicReadOnly || authorization !== "authorized" || Boolean(busy) || Boolean(pending) || view?.latest !== "1"} onClick={() => void prepareNext()}>Prepare next Passport</button>
       {view?.latest && view.latest !== "1" && <p className="notice">Latest onchain version is {view.latest}. This M5 flow permits version 2 only; a new publication is disabled.</p>}
       {busy && <p role="status">{busy}</p>}
       {prepared && <div className="review"><h3>Review publication</h3><dl>
@@ -171,7 +172,7 @@ function Workspace() {
         <Field label="Content URI">Empty — public artifact hosting is deferred. Download and retain this exact artifact.</Field></dl>
         <button className="secondary" onClick={() => download(prepared.bundle)}>Download version 2 JSON</button>
         <label className="consent"><input type="checkbox" checked={reviewed} onChange={e => setReviewed(e.target.checked)} disabled={Boolean(pending) || Boolean(busy)} />I have reviewed this version, wallet, contract and fee, and authorize one publication.</label>
-        <button disabled={!reviewed || authorization !== "authorized" || Boolean(busy) || Boolean(pending)} onClick={() => void publish()}>Publish with connected wallet</button>
+        <button disabled={view?.publicReadOnly || !reviewed || authorization !== "authorized" || Boolean(busy) || Boolean(pending)} onClick={() => void publish()}>Publish with connected wallet</button>
       </div>}
       {pending && <div className="review" aria-live="polite"><h3>{confirmation?.state === "confirmed" ? "Version 2 confirmed and independently verified" : confirmation?.state === "reverted" ? "Transaction reverted" : "Publication pending or awaiting verification"}</h3>
         <p><a href={`${EXPLORER}/tx/${pending.hash}`} target="_blank" rel="noreferrer"><code>{pending.hash}</code></a></p>

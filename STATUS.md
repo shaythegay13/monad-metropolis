@@ -13,6 +13,21 @@ Obey AGENTS.md and CLAUDE.md. Consumer supplies trust policy; no universal trust
 
 ## Current milestone: M8 - Public Deployment & Developer Readiness
 
+**PREDEPLOYMENT VERIFIED; APPROVAL PENDING.** Three original-byte Passport files
+are served locally from static versioned URLs. The independent external consumer
+example downloads both real agents, checks bytes, validates and verifies on Monad
+using public RPC, then evaluates an explicit policy. Vercel-style local production
+mode disables all Passport publication POSTs and wallet write controls; the public
+comparison endpoint accepts only the two unchanged demo files with bounded reads.
+Final predeployment tests: **239 passed**, both typechecks, library and instrumented
+web builds, dependency tree, local HTTP/browser checks, independent onchain read-back,
+secret scan and reference preservation pass. Audit remains 19 advisories (15 moderate,
+4 high); the four high packages are absent from this exact emitted release build.
+No Vercel project or public URL exists yet. Vercel Firewall limits, Alchemy budget,
+Dynamic public origin and live hosted verification remain pending; M8 is **not
+ACCEPTED**. See `docs/verification/MONAD-M8.md`. No GitHub push, public deployment
+or blockchain transaction has been authorized for this checkpoint.
+
 **M7 ACCEPTED for functionality and visual design.** The owner approved the M7 layout, typography, navigation
 and functionality, then requested more green depth after the first palette review.
 The corrected distribution uses a substantial deep-forest Home hero, navigation and
@@ -63,7 +78,7 @@ M5 security disposition preserved; production security is not approved.
 | M5 | Accepted for bounded functionality; committed 3a427c1 |
 | M6 | Accepted; browser/API/core verified and owner wallet regression confirmed |
 | M7 | Accepted; final visual direction and four owner wallet checks confirmed |
-| M8 | In progress; no public deployment or push yet |
+| M8 | Predeployment verified; public deployment approval and live checks pending |
 | M9+ | Not started |
 
 ## Working - verified
@@ -157,7 +172,8 @@ Full deployed-app/demo sponsor completion is not claimed.
 
 ## Exact next action
 
-Complete M8 public artifact hosting, developer quickstart, production API/security
-review and predeployment tests. Inspect remote/branch/Vercel target, then request
-explicit owner approval before any GitHub push or public deployment. No blockchain
-transaction is authorized; never repeat completed v2 publication.
+Review the M8 predeployment report and change set. Obtain explicit owner approval
+for the push from local `monad-metropolis` to remote `signal-passport-monad` and a
+new Vercel project. Configure Firewall limits and Alchemy budget before exposing
+the URL; verify the actual hosted app, files, APIs and browser before M8 acceptance.
+No blockchain transaction is authorized; never repeat completed v2 publication.

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readState, v1, prepare, preflight, confirm, safeError } from "../../../lib/server";
+import { isPublicReadOnly } from "../../../../../packages/web/src/deployment";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -8,9 +9,10 @@ export async function GET(request: NextRequest) {
   if (request.nextUrl.searchParams.has("download")) return NextResponse.json(v1, { headers: {
     ...headers, "Content-Disposition": 'attachment; filename="agent-2072-passport-v1.json"' } });
   try { return NextResponse.json(await readState(), { headers }); }
-  catch (error) { return NextResponse.json({ ...safeError(error), bundle: v1 }, { status: 503, headers }); }
+  catch (error) { return NextResponse.json({ ...safeError(error), bundle: v1, publicReadOnly: isPublicReadOnly() }, { status: 503, headers }); }
 }
 export async function POST(request: NextRequest) {
+  if (isPublicReadOnly()) return NextResponse.json({ error: "Public deployment is read-only. Publication controls are unavailable." }, { status: 403, headers });
   // No generic RPC proxy, signer or arbitrary agent/contract target is exposed.
   let sameOrigin = false;
   try {

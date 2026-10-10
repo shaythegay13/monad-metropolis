@@ -1,0 +1,18 @@
+{
+  "signal-passport": {
+    "headUnchanged": true,
+    "statusUnchanged": true,
+    "sourceBytesUnchanged": true,
+    "gitMetadataBytesUnchanged": true,
+    "sourceFileCount": 135,
+    "gitFileCount": 211
+  },
+  "ledgerlens": {
+    "headUnchanged": true,
+    "statusUnchanged": true,
+    "sourceBytesUnchanged": true,
+    "gitMetadataBytesUnchanged": true,
+    "sourceFileCount": 40,
+    "gitFileCount": 190
+  }
+}

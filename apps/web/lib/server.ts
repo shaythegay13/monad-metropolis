@@ -9,6 +9,7 @@ import { createEnvioProvider, retrieveAgentActivity } from "../../../packages/ac
 import { generateAgentPassport } from "../../../packages/passport/src/generate";
 import { currentAgentWallet, latestVersion, unsignedPublication, confirmPublication, WebFlowError } from "../../../packages/web/src/publication";
 import { AGENT_ID, V1_HASH } from "../../../packages/web/src/config";
+import { isPublicReadOnly } from "../../../packages/web/src/deployment";
 
 export const trust = deployment.trust as RegistryTrust;
 export const v1 = accepted;
@@ -18,7 +19,7 @@ export async function readState() {
   let agentWallet: string | undefined, latest: string | undefined, network = "available";
   try { await assertTestnet(rpc); agentWallet = await currentAgentWallet(rpc); latest = await latestVersion(rpc); }
   catch (error) { network = error instanceof PublicationError && error.code === "wrong_chain_no_transaction_sent" ? "wrong_chain" : "unavailable"; }
-  return { bundle: v1, verification, agentWallet, latest, network };
+  return { bundle: v1, verification, agentWallet, latest, network, publicReadOnly: isPublicReadOnly() };
 }
 export async function prepare(address: string, chain: number) {
   const rpc = alchemyRpc();
