@@ -1,0 +1,21 @@
+# CRE read-only verifier setup — October 10, 2026
+
+**State: implemented and locally verified; not deployed or accepted as a live sponsor integration.** This owner-directed CRE prototype is separate from unfinished M8 public deployment. It does not change Signal Passport's web app, contracts, evidence pipeline, policy engine, or published Passport.
+
+The official `chainlink-cre-skill` was installed only in `.agents/skills/chainlink-cre-skill/` using `npx skills add smartcontractkit/chainlink-agent-skills --skill chainlink-cre-skill`. Its getting-started, project-scaffolding, workflow-patterns, HTTP, EVM, simulation, and CLI references guided the setup. The built-in `hello-world-ts` template was created with `cre init --non-interactive` and replaced with the Passport verifier. The current CLI's tenant-specific supported-chains output lists `monad-testnet`; no selector or address was invented.
+
+CLI v1.38.0 (`cre version`) and Bun v1.4.3 exceed the skill's TypeScript minimum of Bun v1.2.21. On this Windows ARM64 computer, the ordinary Bun installer selected ARM64; `bunx cre-setup` failed because CRE's Javy setup supports Windows x64. An official Bun v1.4.3 x64 release was installed outside the repository, its architecture verified, and `cre-setup` successfully downloaded and checksum-verified the Javy x64 binary. The x64 Bun directory was prepended to `PATH` for simulation. An untouched official hello-world template also simulated successfully as a toolchain control.
+
+`cre whoami` confirmed the Signal Passport organization login. The CLI reported deployment access disabled. After checking `cre account access --help`, a Hackathon Early Access request describing this read-only use case was submitted; the CLI reported `Access request submitted successfully`. Approval has not been reported. No workflow was deployed, activated, uploaded, broadcast, or given a signer.
+
+The custom workflow uses an hourly six-field cron sample schedule and obtains the real Agent 2072 v2 Passport from the public, commit-pinned GitHub artifact. The public Monad Testnet RPC verifies chain ID 10143 and the Registry runtime code hash from M4. CRE's EVM client then checks the Registry's linked ERC-8004 identity contract, latest version, v2 profile hash, publisher and publication block; it reads the ERC-8004 owner, agent wallet and token URI. The SHA-256 digest is independently recomputed from canonical payload JSON. It emits no universal trust score or claim about the truth of underlying economic evidence. The checked publication is the existing version 2 at block 69236935; no version 3 was created.
+
+Verification:
+
+- CRE workflow unit tests: **5 passed, 0 failed**; changed evidence and wrong agent inputs reject.
+- CRE TypeScript check: `tsc --noEmit` passed.
+- Repository baseline: `npm test` **239 passed, 0 failed**; `npm run typecheck` passed.
+- `cre workflow simulate passport-verifier --target staging-settings --non-interactive --trigger-index 0`: passed, non-broadcast. The workflow log reports `status: verified`, chain `10143`, agent `2072`, version `2`, latest `2`, digest `0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6`, publisher `0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD`, and publication block `69236935`.
+- The same native simulator run with `--target local-simulation` passed and logged the same result.
+
+Limitations: the source is GitHub's immutable M8 commit URL because the public Vercel site is not deployed yet. The workflow checks the fields required for this verification, not the entire Passport schema or every evidence reference. The public RPC bytecode check and CRE finalized contract reads are not all pinned to one exact block. This verifies integrity, Registry publication and current ERC-8004 association, not source-data truth or an application-specific policy outcome. Deployment would require Early Access approval and a separate owner decision; this setup does not authorize it. M8 remains unaccepted.

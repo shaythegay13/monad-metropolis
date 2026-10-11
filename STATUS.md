@@ -1,6 +1,6 @@
 # Signal Passport Monad - STATUS
 
-Last updated: October 9, 2026 (America/New_York).
+Last updated: October 11, 2026 (America/New_York).
 
 ACTIVE PROJECT: `signal-passport-monad/`.
 READ ONLY REFERENCES: `../signal-passport/`, `../ledgerlens/`.
@@ -13,7 +13,7 @@ Obey AGENTS.md and CLAUDE.md. Consumer supplies trust policy; no universal trust
 
 ## Current milestone: M8 - Public Deployment & Developer Readiness
 
-**PREDEPLOYMENT VERIFIED; APPROVAL PENDING.** Three original-byte Passport files
+**PREDEPLOYMENT RE-AUDITED; NO LIVE DEPLOYMENT; NOT ACCEPTED.** Three original-byte Passport files
 are served locally from static versioned URLs. The independent external consumer
 example downloads both real agents, checks bytes, validates and verifies on Monad
 using public RPC, then evaluates an explicit policy. Vercel-style local production
@@ -23,10 +23,35 @@ Final predeployment tests: **239 passed**, both typechecks, library and instrume
 web builds, dependency tree, local HTTP/browser checks, independent onchain read-back,
 secret scan and reference preservation pass. Audit remains 19 advisories (15 moderate,
 4 high); the four high packages are absent from this exact emitted release build.
-No Vercel project or public URL exists yet. Vercel Firewall limits, Alchemy budget,
-Dynamic public origin and live hosted verification remain pending; M8 is **not
-ACCEPTED**. See `docs/verification/MONAD-M8.md`. No GitHub push, public deployment
-or blockchain transaction has been authorized for this checkpoint.
+The verified source commit `9587f96` was first pushed to
+`origin/signal-passport-monad`. On October 11, the owner explicitly directed a
+force-with-lease update of remote `monad-metropolis` to the same commit; its old
+tip `c653e44` is preserved locally as `backup-monad-metropolis`. Vercel
+project `signal-passport-monad` exists without a deployment. Its published
+Firewall rule covers both `/api/` routes at a shared 30 requests/minute/IP,
+returning 429. Alchemy remains Free, with a 30M-CU monthly account quota and
+no payment method shown; a custom $10 per-app cap would require a paid plan,
+which was not authorized. The $0 Free-plan spending ceiling is the current
+cost control, with possible interruption at its CU limit. Production read-only
+flag now reads back as `1`; the Production Alchemy Secret and public Dynamic ID
+are configured. The Vercel project is linked to the correct GitHub repository and
+tracks `monad-metropolis` for Production; both remote branches now point to
+the same release commit. The push did not produce a Vercel deployment. Any
+explicit deployment still requires owner approval. Public origin, actual Vercel build and hosted verification
+remain pending. M8
+is **not ACCEPTED**. See `docs/verification/MONAD-M8.md`. No public deployment or
+blockchain transaction has occurred.
+
+**Owner-directed CRE setup prototype, separate from M8 acceptance:** the project-local
+Chainlink CRE skill, CLI v1.38.0 and TypeScript toolchain are installed. A read-only
+cron verifier for the real Agent 2072 Passport v2 passes native CRE simulations on
+both `staging-settings` and `local-simulation`, confirming its canonical digest,
+Monad Testnet Registry publication and ERC-8004 association. Its five focused tests,
+TypeScript check and the existing 239-test repository baseline pass. A CRE Hackathon
+Early Access request was submitted; deployment access is not yet enabled. No CRE
+workflow was deployed, activated, uploaded or broadcast, and no transaction was sent.
+This prototype does not satisfy the pending public M8 deployment or establish live
+CRE sponsor completion. See `docs/verification/MONAD-CRE-SETUP.md`.
 
 **M7 ACCEPTED for functionality and visual design.** The owner approved the M7 layout, typography, navigation
 and functionality, then requested more green depth after the first palette review.
@@ -78,7 +103,7 @@ M5 security disposition preserved; production security is not approved.
 | M5 | Accepted for bounded functionality; committed 3a427c1 |
 | M6 | Accepted; browser/API/core verified and owner wallet regression confirmed |
 | M7 | Accepted; final visual direction and four owner wallet checks confirmed |
-| M8 | Predeployment verified; public deployment approval and live checks pending |
+| M8 | Predeployment re-audited; both remote branches at release commit, public deployment pending |
 | M9+ | Not started |
 
 ## Working - verified
