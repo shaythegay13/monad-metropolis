@@ -1,5 +1,16 @@
 # M8 — Public deployment and developer readiness
 
+## October 11 latest-work push
+
+After the default-branch alignment below, the owner requested a push of the
+pending work. The M8 re-audit, project-local Chainlink CRE skill and separate
+read-only CRE verifier prototype were reviewed, tested, checked for local
+credential exposure, committed and pushed atomically to both
+`monad-metropolis` and `signal-passport-monad`. The CRE source does not change
+the M8 web build, represent a live sponsor integration or mark M9 accepted.
+Both GitHub branches remain aligned. Vercel still lists no deployment and the
+public homepage returns HTTP 404; hosted M8 checks remain outstanding.
+
 ## October 11 Git branch update (deployment still pending)
 
 At the owner's explicit instruction, `git fetch origin` reconfirmed remote

@@ -35,8 +35,9 @@ which was not authorized. The $0 Free-plan spending ceiling is the current
 cost control, with possible interruption at its CU limit. Production read-only
 flag now reads back as `1`; the Production Alchemy Secret and public Dynamic ID
 are configured. The Vercel project is linked to the correct GitHub repository and
-tracks `monad-metropolis` for Production; both remote branches now point to
-the same release commit. The push did not produce a Vercel deployment. Any
+tracks `monad-metropolis` for Production. Both remote branches were then
+advanced together with the reviewed M8 audit and read-only CRE setup prototype;
+they remain aligned. Neither push produced a Vercel deployment. Any
 explicit deployment still requires owner approval. Public origin, actual Vercel build and hosted verification
 remain pending. M8
 is **not ACCEPTED**. See `docs/verification/MONAD-M8.md`. No public deployment or
