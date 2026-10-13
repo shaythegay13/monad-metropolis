@@ -1,8 +1,7 @@
 # Signal Passport Monad
 
-Signal Passport is a portable economic-history layer for autonomous agents.
-It provides evidence-backed history; the consuming application supplies trust policy.
-No universal trust score.
+Signal Passport is portable, evidence-backed history for AI agents on Monad.
+The consuming application supplies trust policy. No universal trust score.
 
 **Active project:** `signal-passport-monad/`. Sibling `signal-passport/` and
 `ledgerlens/` are READ ONLY prior projects. This repository runs independently.
@@ -33,6 +32,17 @@ verified Agent 2072 v2 and confirmed Agent 2 v1's missing publication with valid
 integrity. See `docs/verification/MONAD-M9A.md` and `MONAD-M9A-DEMO.md`; this is
 unsigned simulation evidence, not a deployed DON or signed report.
 
+The October 13 self-service release is live at the public URL and supersedes the
+earlier read-only public mode. Without a wallet, anyone can look up any Monad Testnet
+ERC-8004 agent and verify an uploaded Passport file. With their own wallet, connected
+through Dynamic, a user can register an agent, sign a gas-free challenge to generate the
+agent's next Passport from bounded Envio evidence, download it, and publish its digest
+from the agent's designated wallet. The server holds no signing key and never sends a
+transaction. Shared Upstash Redis enforces single-use challenges, cooldowns and budgets;
+generation and transaction preparation fail closed without it. Agent 2316 ("Bob") is the
+owner's test agent, created end to end through this flow; its only evidence is its own
+registration transaction, so it demonstrates the workflow, not agent performance.
+
 Submission requirements, field-ready descriptions, recording outlines and the
 approval-gated two-branch push plan are in `docs/submission/`.
 
@@ -47,23 +57,38 @@ evidence identifiers, canonical SHA-256 verification, identity and consumer code
 [REUSE.md](docs/REUSE.md) and its migration manifest identify the exact files and
 source hashes. The Monad submission adds bounded HyperSync ingestion, deterministic
 agent Passports, the authorized Registry, Dynamic wallet flow, independent Alchemy
-verification, consumer policies, the public frontend and independent CRE orchestration.
+verification, consumer policies, the public frontend, independent CRE orchestration and
+self-service verification, generation and wallet publication.
 No percentage-originality claim is made. LedgerLens supplies reference patterns,
 and neither prior repository is a runtime/build/test dependency.
 
-Codex was used to assist implementation, testing and documentation. The owner
+Codex and Claude Code were used to assist implementation, testing and documentation. The owner
 reviewed and accepted milestone results. Observations and verification outcomes
 come from deterministic code and declared evidence, with explicit coverage limits.
 
 ## Explore the public application
 
-At the public URL, or after starting the local app, visit `/` for the product overview, `/passport` for the
-published Agent 2072 version 2 artifact and independent read-only checks, `/compare`
-for real Agent 2072 versus Agent 2 policies, and `/developers` for the consumer path.
-These routes do not need a wallet. `/wallet` retains the Dynamic/MetaMask publication
-workspace; current onchain version 2 disables its version 2-only preparation action.
-The Passport page downloads the exact accepted version 2 JSON. Its historical link
-downloads immutable version 1. Public preparation and publication are disabled.
+At the public URL, or after starting the local app:
+
+- `/` is the product overview; `/passport` shows the published Agent 2072 version 2
+  artifact with independent checks re-run on load; `/compare` evaluates real Agent 2072
+  and Agent 2 Passports under one policy; `/developers` documents the API, the consumer
+  path and the CRE results. No wallet is needed.
+- `/verify` looks up any agent ID (owner, designated wallet, publication history) and
+  verifies an uploaded Passport file against your requirements. No wallet is needed and
+  nothing is stored.
+- `/wallet` (labelled Create) is the self-service workspace: optional ERC-8004
+  registration, signed-challenge generation of the next version, download, and
+  publication from the agent's designated wallet. Every transaction is reviewed and
+  signed in the user's own wallet.
+
+Self-service APIs: GET `/api/agents/{id}`, POST `/api/verify`, and POST
+`/api/self/generate`, `/api/self/prepare` and `/api/self/confirm` (same-origin JSON).
+The server prepares the unsigned publication transaction and confirms its receipt with a
+Registry read-back, but never signs. Passport files are not hosted: users keep the downloaded
+JSON, and the Registry stores only its digest. The Passport page downloads the exact
+accepted version 2 JSON; its historical link downloads immutable version 1. The original
+Agent 2072 demo publication endpoint (`/api/passport`) still rejects preparation with 403.
 
 ## M8 artifact and developer quickstart
 
@@ -76,8 +101,7 @@ empty. After `npm.cmd run build`, run
 `node examples/external-consumer/evaluate.mjs https://signal-passport-monad.vercel.app/` to download, validate,
 check Monad publication and compare the two agents without a wallet or Envio.
 See `examples/external-consumer/README.md` for the pinned trust root and exact-byte
-checks. On Vercel, the wallet workspace is read-only and publication API requests
-are blocked before evidence generation.
+checks.
 
 ## Run the web application (M5)
 
@@ -95,18 +119,20 @@ values take priority). Only the Dynamic project ID is public. `DEPLOYER_PRIVATE_
 is explicitly removed from the web child process and is never used for web signing.
 Enable MetaMask and your local app origin in the Dynamic project as needed; do not
 disable Dynamic origin restrictions to work around a configuration problem.
+Self-service generation and transaction preparation also need `KV_REST_API_URL` and
+`KV_REST_API_TOKEN` (Upstash Redis REST) in the process environment; the launcher does
+not read them from `.env.local`. Without them those two routes return 503, while agent
+lookup and file verification keep working.
 
 The accepted v1 Passport is accessible without a wallet at `/api/passport?download=1`.
 Agent 2072 version 2 has already been published and independently verified. Do not
-prepare, sign or repeat that transaction; no version 3 is part of M8. MetaMask is
-optional for read-only Passport inspection and policy comparison.
+prepare, sign or repeat that transaction. MetaMask is optional for Passport
+inspection, lookup, verification and policy comparison.
 
-The application only supports Agent 2072 / version 2 in the historical M5 wallet
-flow. Existing v1 is immutable; both published versions have empty onchain content
-URIs. M8's static files do not modify those onchain records.
-The public pending hash and submitted bundle are retained in browser localStorage
-for receipt/read-back recovery after a disconnect or reload. No credentials are stored
-there. A reverted or unresolved submission remains blocked from automatic retries.
+The historical M5 Agent 2072-only wallet flow (`apps/web/app/passport-app.tsx`) is kept
+for its tests but is no longer mounted; `/wallet` renders the self-service workspace.
+Existing published versions have empty onchain content URIs. M8's static files do not
+modify those onchain records.
 
 ```powershell
 npm.cmd test
@@ -118,13 +144,12 @@ npm.cmd run web:start -- --hostname 127.0.0.1 --port 3050
 ```
 
 `build` continues to compile the library/CLI; `web:build` builds the web application.
-For a later authorized Vercel deployment, configure Next.js with project root
-`apps/web`, install from the repository root (`cd ../.. && npm ci`), build with
-`cd ../.. && npm run web:build`, and use the default `.next` output. Enable inclusion
-of files outside the root directory. Configure the three web variables in that
-deployment; never add the deployer key. This configuration has not been deployed or
-verified on Vercel. Public API rate limits/abuse controls and the remaining SDK
-dependency advisories must be reviewed before external deployment.
+Production runs on Vercel with project root `apps/web`, installing from the repository
+root (`cd ../.. && npm ci`), building with `cd ../.. && npm run web:build`, the default
+`.next` output and inclusion of files outside the root directory. It is configured with
+the three web variables plus the Upstash Redis REST variables; never add the deployer
+key. The 19 dependency advisories remain disclosed; passing checks are not a security
+audit.
 
 ## Install and verify
 
@@ -167,12 +192,8 @@ Historical M0/M1 reports retain their original context and test counts.
 ## Git boundary
 
 This project has newly initialized history, not a copy/clone of either reference `.git`.
-The GitHub remote preserves the old M0 lineage on `monad-metropolis`. The independent
-bootstrap `ea30c95` is published on `signal-passport-monad`; the local `monad-metropolis`
-branch tracks that remote branch. Accepted M2 is committed locally as
-`9dfc4e7e595175dc9d6397a8aa05296da038014d`; it has not been pushed.
-M3 is committed at `60782f17cf40ef4f7fe707558c34bd0ca00221bc`.
-M4 changes remain uncommitted for owner review. No M4 push was performed.
+Both GitHub branches, `monad-metropolis` (the default) and `signal-passport-monad`,
+carry the same released history; releases are pushed to both by non-force fast-forward.
 
 ## M2 evidence verification
 
