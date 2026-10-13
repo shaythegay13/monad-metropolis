@@ -9,12 +9,15 @@ import { walletAuthorization, authorizationText, walletError } from "../../../pa
 import type { AgentPassportBundleV2 } from "../../../packages/schema/src/agent-passport";
 import type { PublicationVerification } from "../../../packages/publication/src/verify";
 import type { UnsignedPublication } from "../../../packages/web/src/publication";
+import { Badge } from "../components/status";
 
 type View = { bundle: AgentPassportBundleV2; verification?: PublicationVerification; agentWallet?: string; latest?: string; network?: string; publicReadOnly?: boolean };
 type Prepared = { bundle: AgentPassportBundleV2; transaction: UnsignedPublication };
 type Confirmation = { state: "pending" | "reverted" | "unverified" | "confirmed"; receipt?: Record<string, string>; verification?: PublicationVerification };
 type Pending = { bundle: AgentPassportBundleV2; hash: string };
 const recoveryKey = "signal-passport-monad:2072:v2:pending";
+const v2Transaction = "0xf4cd39fb5e51c0ac909ba907efbc8189c981342b12441e74df34c802c410bd9d";
+const authorizationTone = (a: string) => a === "authorized" ? "positive" : a === "disconnected" ? "neutral" : "caution";
 async function post<T>(body: unknown): Promise<T> {
   const response = await fetch("/api/passport", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
   const data = await response.json();
@@ -120,45 +123,55 @@ function Workspace() {
   }
   const bundle = view?.bundle; const v = view?.verification;
   return <main id="main" className="wallet-workspace">
-    <header><a className="brand" href="/">Signal Passport<span>Portable agent history</span></a><div className="header-actions"><span className="pill">● Monad Testnet</span>
-      {address ? <button className="secondary" onClick={() => void handleLogOut().catch(e => setWalletMessage(walletError(e)))}>Disconnect</button>
-        : <button onClick={() => { setWalletMessage("If you cancel the connection request, no wallet will be connected."); setShowAuthFlow(true); }}>Connect Wallet</button>}</div></header>
-    <nav className="wallet-nav" aria-label="Product navigation"><a href="/">Home</a><a href="/passport">Explore Passport</a><a href="/compare">Compare Agents</a><a href="/developers">Developers</a></nav>
-    <div className="intro"><p className="eyebrow">ERC-8004 / AGENT {AGENT_ID}</p><h1>Your wallet.<br/>Your publication controls.</h1><p>Connect through Dynamic to inspect authorization and existing publication status. Passport inspection and comparison do not require a wallet.</p></div>
+    <div className="page-head"><div><p className="crumb">ERC-8004 agent {AGENT_ID}</p><h1>Wallet and publication authority</h1>
+      <p className="lede">Connect through Dynamic to see how your account relates to Agent {AGENT_ID}. Inspecting and comparing Passports never needs a wallet.</p></div>
+      <div className="actions">{address ? <button className="secondary" onClick={() => void handleLogOut().catch(e => setWalletMessage(walletError(e)))}>Disconnect</button>
+        : <button onClick={() => { setWalletMessage("If you cancel the connection request, no wallet will be connected."); setShowAuthFlow(true); }}>Connect wallet</button>}</div></div>
     {error && <div className="notice error" role="alert">{error}</div>}
     {walletMessage && <p className="notice" role="status">{walletMessage}</p>}
-    <div className="grid"><section className="card"><div className="section-title"><h2>Agent identity</h2><span className="tag">ERC-8004</span></div>
-      <h3>{bundle?.payload.subject.registration.document?.name ?? "Agent 2072"}</h3><dl>
-      <Field label="Agent ID">{AGENT_ID}</Field><Field label="Current registry-designated wallet"><code>{view?.agentWallet ?? "Unavailable — current authorization unknown"}</code></Field>
-      <Field label="Connected wallet"><code>{address ?? "Not connected"}</code></Field>
-      <Field label="Wallet network">{chain === CHAIN_ID ? "Monad Testnet · 10143" : chain ? `Wrong network · ${chain}` : "Not detected"}</Field></dl>
-      <p role="status" className={`notice ${authorization === "authorized" ? "good" : "warning"}`}>{view?.publicReadOnly && authorization === "disconnected" ? "Connect MetaMask to inspect wallet status. Publication is unavailable on this public site." : authorizationText[authorization]}</p>
-      {authorization === "wrong_network" && <button className="secondary" onClick={async () => { try { await primaryWallet?.switchNetwork(CHAIN_ID); setChain(Number(await primaryWallet?.getNetwork())); }
-        catch (e) { setWalletMessage(walletError(e)); } }}>Switch to Monad Testnet</button>}
+    {view?.publicReadOnly && <p className="readonly-banner"><strong>Public read-only mode.</strong> This deployment never requests a signature or sends a transaction. Preparation and publication are disabled for everyone.</p>}
+
+    <section className="status-ledger" aria-labelledby="ledger-title"><h2 id="ledger-title" className="sr-only">Wallet status</h2>
+      <div className="ledger-row"><span className="ledger-label">Connected account</span><div className="ledger-value">{address ? <code className="break">{address}</code> : <span className="muted">Not connected</span>}<small>via Dynamic, MetaMask connector</small></div>
+        <Badge tone={address ? "positive" : "neutral"}>{address ? "Connected" : "Disconnected"}</Badge></div>
+      <div className="ledger-row"><span className="ledger-label">Network</span><div className="ledger-value">{chain === CHAIN_ID ? "Monad Testnet, chain 10143" : chain ? `Wrong network, chain ${chain}` : <span className="muted">Not detected</span>}
+        {authorization === "wrong_network" && <button className="secondary small" onClick={async () => { try { await primaryWallet?.switchNetwork(CHAIN_ID); setChain(Number(await primaryWallet?.getNetwork())); }
+          catch (e) { setWalletMessage(walletError(e)); } }}>Switch to Monad Testnet</button>}</div>
+        <Badge tone={chain === CHAIN_ID ? "positive" : chain ? "caution" : "neutral"}>{chain === CHAIN_ID ? "Correct network" : chain ? "Wrong network" : "Unknown"}</Badge></div>
+      <div className="ledger-row"><span className="ledger-label">Agent authorization</span><div className="ledger-value"><p role="status">{view?.publicReadOnly && authorization === "disconnected" ? "Connect MetaMask to inspect wallet status. Publication is unavailable on this public site." : authorizationText[authorization]}</p>
+        <small>Current registry-designated wallet: <code className="break">{view?.agentWallet ?? "Unavailable — current authorization unknown"}</code></small></div>
+        <Badge tone={authorizationTone(authorization)}>{authorization === "authorized" ? "Matches agent wallet" : authorization === "disconnected" ? "Not checked" : "Not authorized"}</Badge></div>
+      <div className="ledger-row"><span className="ledger-label">Publication history</span><div className="ledger-value"><p>Latest onchain version: <strong>{view?.latest ?? (loading ? "checking…" : "unknown")}</strong></p><small>Version 2 was published by the agent wallet through Dynamic and MetaMask.</small></div>
+        <Badge tone={view?.latest ? "brand" : "neutral"}>{view?.latest ? `Version ${view.latest} live` : "Unknown"}</Badge></div>
+      <div className="ledger-row"><span className="ledger-label">New publication</span><div className="ledger-value">{view?.publicReadOnly ? "Disabled on this public deployment." : view?.latest && view.latest !== "1" ? `Disabled: version ${view.latest} is already published.` : "Requires the authorized agent wallet."}</div>
+        <Badge tone={view?.publicReadOnly ? "neutral" : "caution"}>{view?.publicReadOnly ? "Read-only" : "Restricted"}</Badge></div>
     </section>
-    <section className="card"><div className="section-title"><h2>Historical Passport</h2><span className="tag">VERSION 1</span></div>
-      <p>This is the preserved M4 version 1 artifact. Latest onchain version: <strong>{view?.latest ?? "unknown"}</strong>.</p>
-      {bundle ? <><div className="metrics">{["observed_transaction_count", "active_utc_days", "unique_recipient_addresses"].map((id, index) =>
-        <div key={id}><strong>{bundle.payload.metrics.find(m => m.metricId === id)?.value ?? "Unknown"}</strong><span>{["Observed transactions", "Active UTC days", "Recipient addresses"][index]}</span></div>)}</div>
-        <dl><Field label="Schema / Passport version">{bundle.schemaVersion} / {bundle.payload.generation.passportVersion}</Field>
-        <Field label="Coverage">{bundle.payload.coverage.coverageStatus.replaceAll("_", " ")}</Field>
-        <Field label="Frozen block scope">[{bundle.payload.observationScope.fromBlock}, {bundle.payload.observationScope.toBlockExclusive})</Field></dl>
-        <p>These demo transactions concern identity management. They do not establish commerce or service delivery.</p>
-        <a className="text-link" href="/api/passport?download=1">Download accepted Passport JSON ↓</a>
-        <details><summary>View Passport JSON</summary><pre>{JSON.stringify(bundle, null, 2)}</pre></details>
-      </> : <p>{loading ? "Loading accepted Passport…" : "Passport unavailable."}</p>}
-    </section></div>
-    <section className="card"><div className="section-title"><h2>Historical version 1 verification</h2><button className="secondary" disabled={loading} onClick={() => void refresh()}>{loading ? "Checking…" : "Verify again"}</button></div>
-      <div className="checks"><div><span>Local integrity</span><strong>{v ? v.localIntegrityValid ? "Valid SHA-256 payload" : "Invalid" : "Not checked"}</strong></div>
-      <div><span>Onchain publication</span><strong>{v?.publicationFound === true ? "Found" : v?.publicationFound === false ? "Not found" : "Unknown"}</strong></div>
-      <div><span>Hash comparison</span><strong>{v?.publishedHashMatches === true ? "Match" : v?.publishedHashMatches === false ? "No match" : "Unknown"}</strong></div></div>
-      <p className={`notice ${v?.status === "verified" ? "good" : ""}`}>{view?.network === "wrong_chain" ? "Server RPC is on the wrong network. Monad Testnet (10143) is required." : v ? verdicts[v.status] : "Verification unavailable. This is not a claim of zero activity or no publication."}</p>
-      <dl><Field label="Published profile hash"><code>{v?.profileHash ?? "Unavailable"}</code></Field><Field label="Passport Registry"><a href={`${EXPLORER}/address/${REGISTRY}`} target="_blank" rel="noreferrer"><code>{REGISTRY}</code></a></Field>
-      <Field label="Version 1 publication"><a href={`${EXPLORER}/tx/${V1_TRANSACTION}`} target="_blank" rel="noreferrer">View transaction ↗</a> · block {v?.publicationBlock ?? "unknown"}</Field>
-      <Field label="Content URI">Empty in the immutable version 1 record. The artifact is available above.</Field></dl>
-    </section>
-    <section className="card"><div className="section-title"><h2>Publish the next Passport</h2><span className="tag">VERSION 2</span></div>
-      <p>Retrieve a new frozen evidence scope from Envio, then review the digest and fee. Only the current agentWallet can authorize publication.</p>
+
+    <div className="wallet-grid">
+      <section className="wallet-section" aria-labelledby="history-title"><h2 id="history-title">Published versions</h2>
+        <ol className="timeline">
+          <li><div><strong>Version 2</strong><Badge tone="brand">Current</Badge></div><p>Published at block <code>69236935</code> by <code>0xBC63…51DD</code>, signed through Dynamic and MetaMask.</p>
+            <p><a href={`${EXPLORER}/tx/${v2Transaction}`} target="_blank" rel="noreferrer">View transaction ↗</a> · <a href="/passport">Open the version 2 Passport</a></p></li>
+          <li><div><strong>Version 1</strong><Badge>Historical</Badge></div><p>Published at block <code>{v?.publicationBlock ?? "unknown"}</code>. Content URI is empty in the immutable record; the artifact is available here.</p>
+            <p><a href={`${EXPLORER}/tx/${V1_TRANSACTION}`} target="_blank" rel="noreferrer">View transaction ↗</a> · <a href="/api/passport?download=1">Download version 1 JSON</a></p></li></ol>
+        <dl><Field label="Passport Registry"><a href={`${EXPLORER}/address/${REGISTRY}`} target="_blank" rel="noreferrer"><code>{REGISTRY}</code></a></Field><Field label="Agent">{bundle?.payload.subject.registration.document?.name ?? "Agent 2072"}, ID {AGENT_ID}</Field></dl>
+      </section>
+
+      <section className="wallet-section" aria-labelledby="v1-title"><div className="section-title"><h2 id="v1-title">Version 1 verification</h2><button className="secondary small" disabled={loading} onClick={() => void refresh()}>{loading ? "Checking…" : "Verify again"}</button></div>
+        <div className="checks"><div><span>Local integrity</span><strong>{v ? v.localIntegrityValid ? "Valid SHA-256 payload" : "Invalid" : "Not checked"}</strong></div>
+          <div><span>Onchain publication</span><strong>{v?.publicationFound === true ? "Found" : v?.publicationFound === false ? "Not found" : "Unknown"}</strong></div>
+          <div><span>Hash comparison</span><strong>{v?.publishedHashMatches === true ? "Match" : v?.publishedHashMatches === false ? "No match" : "Unknown"}</strong></div></div>
+        <p className={`notice ${v?.status === "verified" ? "good" : ""}`}>{view?.network === "wrong_chain" ? "Server RPC is on the wrong network. Monad Testnet (10143) is required." : v ? verdicts[v.status] : "Verification unavailable. This is not a claim of zero activity or no publication."}</p>
+        <dl><Field label="Published profile hash"><code className="break">{v?.profileHash ?? "Unavailable"}</code></Field></dl>
+        {bundle ? <><dl className="mini-facts"><Field label="Observed transactions">{bundle.payload.metrics.find(m => m.metricId === "observed_transaction_count")?.value ?? "Unknown"}</Field>
+          <Field label="Schema / Passport version">{bundle.schemaVersion} / {bundle.payload.generation.passportVersion}</Field>
+          <Field label="Coverage">{bundle.payload.coverage.coverageStatus.replaceAll("_", " ")}, blocks [{bundle.payload.observationScope.fromBlock}, {bundle.payload.observationScope.toBlockExclusive})</Field></dl>
+          <details><summary>View version 1 Passport JSON</summary><pre tabIndex={0}>{JSON.stringify(bundle, null, 2)}</pre></details></> : <p>{loading ? "Loading accepted Passport…" : "Passport unavailable."}</p>}
+      </section>
+    </div>
+
+    <section className="wallet-section publish-section" aria-labelledby="publish-title"><div className="section-title"><h2 id="publish-title">Publish the next Passport</h2><Badge tone="neutral">{view?.publicReadOnly ? "Unavailable here" : "Agent wallet only"}</Badge></div>
+      <p>The private workflow retrieves a new frozen evidence scope from Envio, then asks the agent wallet to review the digest and fee. Only the current agentWallet can authorize publication.</p>
       {view?.publicReadOnly && <p className="notice">This public deployment is read-only. Connect a wallet to inspect status; preparation and publication are unavailable here.</p>}
       <button disabled={view?.publicReadOnly || authorization !== "authorized" || Boolean(busy) || Boolean(pending) || view?.latest !== "1"} onClick={() => void prepareNext()}>Prepare next Passport</button>
       {view?.latest && view.latest !== "1" && <p className="notice">Latest onchain version is {view.latest}. This M5 flow permits version 2 only; a new publication is disabled.</p>}
@@ -181,8 +194,7 @@ function Workspace() {
         {confirmation?.receipt && <details><summary>View public receipt and verification</summary><pre>{JSON.stringify(confirmation, null, 2)}</pre></details>}
       </div>}
     </section>
-    <section className="limitations"><h2>Scope, not a trust score</h2><ul>{bundle?.payload.limitations.map(l => <li key={l.code}>{l.description}</li>)}</ul></section>
-    <footer>Signal Passport · Monad Testnet · Independent integrity verification does not establish agent quality or safety.</footer>
+    <section className="limitations-panel compact" aria-labelledby="wallet-limits"><div><h2 id="wallet-limits">Scope, not a trust score</h2><p>These demo transactions concern identity management. They do not establish commerce or service delivery.</p></div><ul>{bundle?.payload.limitations.map(l => <li key={l.code}>{l.description}</li>)}</ul></section>
   </main>;
 }
 export default function PassportApp() {
