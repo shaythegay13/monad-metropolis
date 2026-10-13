@@ -124,17 +124,8 @@ export async function verifySubmitted(candidates: { candidateId: string; passpor
 
 /* ---------- Wallet-control challenge (EIP-191 personal_sign, no transaction) ---------- */
 export { challengeMessage } from "./challenge.js";
-export class NonceCache {
-  private seen = new Map<string, number>();
-  constructor(private max = 5000) {}
-  use(nonce: string, expires: number, now: number) {
-    for (const [k, t] of this.seen) if (t < now) this.seen.delete(k);
-    if (this.seen.has(nonce)) throw new WebFlowError("challenge_replayed");
-    if (this.seen.size >= this.max) throw new WebFlowError("busy");
-    this.seen.set(nonce, expires);
-  }
-}
-export function verifyChallenge(input: { message: unknown; signature: unknown }, expectedOrigin: string, nonces: NonceCache, now = Date.now()) {
+/** Stateless checks only (format, origin, freshness, signer). Single use is enforced atomically in the shared store. */
+export function verifyChallenge(input: { message: unknown; signature: unknown }, expectedOrigin: string, now = Date.now()) {
   if (typeof input.message !== "string" || input.message.length > 600 || typeof input.signature !== "string" ||
     !/^0x[0-9a-fA-F]{130}$/.test(input.signature)) throw new WebFlowError("invalid_challenge");
   const m = /^Signal Passport wants to generate a Passport for an agent you control\.\nThis signature proves wallet control\. It sends no transaction and costs no gas\.\nAgent ID: (0|[1-9][0-9]{0,30})\nWallet: (0x[0-9a-f]{40})\nChain ID: 10143\nOrigin: (\S+)\nIssued at: (\S+)\nNonce: ([0-9a-f]{32})$/.exec(input.message);
@@ -147,8 +138,7 @@ export function verifyChallenge(input: { message: unknown; signature: unknown },
   let signer: string;
   try { signer = verifyMessage(input.message, input.signature).toLowerCase(); } catch { throw new WebFlowError("invalid_challenge"); }
   if (signer !== wallet) throw new WebFlowError("invalid_challenge");
-  nonces.use(nonce, issued + CHALLENGE_TTL_MS, now);
-  return { agentId, address: wallet };
+  return { agentId, address: wallet, nonce };
 }
 
 /* ---------- Bounded evidence retrieval and generation ---------- */

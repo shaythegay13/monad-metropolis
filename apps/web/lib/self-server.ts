@@ -6,11 +6,16 @@ import { createRpc, RpcCallError } from "../../../packages/identity/src/resolver
 import type { RegistryTrust } from "../../../packages/publication/src/verify";
 import { createEnvioProvider } from "../../../packages/activity/src/index";
 import { WebFlowError } from "../../../packages/web/src/publication";
-import { findRegistrationBlock, NonceCache } from "../../../packages/web/src/self-service";
+import { findRegistrationBlock } from "../../../packages/web/src/self-service";
+import { upstashStore } from "../../../packages/web/src/limits";
 import { RequestError } from "../../../packages/policy/src/http";
 
 export const trust = deployment.trust as RegistryTrust;
-export const nonces = new NonceCache();
+/** Shared Redis (Upstash) for cross-instance single use, cooldowns and budgets. Missing or broken config fails closed. */
+export function sharedStore() {
+  return upstashStore(process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL, process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN,
+    { allowLocal: process.env.SIGNAL_PASSPORT_ALLOW_LOCAL_REDIS === "1" && process.env.VERCEL !== "1" });
+}
 const headers = { "Cache-Control": "no-store" };
 const READS = ["eth_chainId", "eth_getBlockByNumber", "eth_getCode", "eth_call"];
 const PUBLICATION_READS = [...READS, "eth_estimateGas", "eth_gasPrice", "eth_getBalance", "eth_getTransactionReceipt", "eth_getTransactionByHash"];
@@ -58,14 +63,6 @@ export function gate(perMinute: number, concurrent: number) {
     return () => { if (!done) { active--; done = true; } };
   };
 }
-const cooldowns = new Map<string, number>();
-export function cooldown(key: string, ms: number) {
-  const now = Date.now();
-  for (const [k, t] of cooldowns) if (t < now) cooldowns.delete(k);
-  if ((cooldowns.get(key) ?? 0) > now) throw new RequestError(429, "Please wait a minute before generating again for this agent or wallet.");
-  cooldowns.set(key, now + ms);
-}
-
 export async function envio() {
   const token = process.env.ENVIO_API_TOKEN?.trim();
   if (!token) throw new WebFlowError("generation_unavailable");
@@ -92,7 +89,9 @@ const messages: Record<string, [number, string]> = {
   estimate_failed: [422, "The transaction failed simulation. Nothing was sent; check the version and wallet, then try again."],
   unexpected_receipt: [422, "That transaction does not match this reviewed publication."],
   invalid_transaction_hash: [422, "Invalid transaction hash."],
-  busy: [429, "The server is busy. Try again shortly."]
+  busy: [429, "Too many requests right now. Try again in a minute."],
+  cooldown: [429, "Please wait a minute before generating again for this wallet or agent."],
+  protection_unavailable: [503, "Abuse protection is temporarily unavailable, so generation and publication preparation are paused. Verification still works."]
 };
 export function errorResponse(error: unknown) {
   // Never serialize provider errors, stacks, URLs or request bodies.

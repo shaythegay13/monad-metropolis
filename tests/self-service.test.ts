@@ -4,7 +4,7 @@ import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { keccak256, ZeroAddress, ZeroHash, Wallet, hashMessage } from "ethers";
 import { CHAIN_ID, REGISTRY } from "../packages/web/src/config.js";
-import { challengeMessage, verifyChallenge, NonceCache, prepareUserPublication, confirmUserPublication, generateNextPassport,
+import { challengeMessage, verifyChallenge, prepareUserPublication, confirmUserPublication, generateNextPassport,
   parseAgentId, publicationState } from "../packages/web/src/self-service.js";
 import { WebFlowError } from "../packages/web/src/publication.js";
 import { identityAbi, registryAbi, IDENTITY_REGISTRY } from "../packages/publication/src/abi.js";
@@ -63,23 +63,22 @@ test("self-service: agent IDs must be canonical decimal strings", () => {
 });
 
 test("self-service: a fresh wallet signature from the claimed wallet is required to generate", async () => {
-  const signer = Wallet.createRandom(); const nonces = new NonceCache(); const now = Date.parse("2026-10-13T18:00:00.000Z");
+  const signer = Wallet.createRandom(); const now = Date.parse("2026-10-13T18:00:00.000Z");
   const fields = { agentId: "77", address: signer.address, origin, issuedAt: new Date(now).toISOString(), nonce: "ab".repeat(16) };
   const message = challengeMessage(fields); const signature = await signer.signMessage(message);
-  assert.deepEqual(verifyChallenge({ message, signature }, origin, nonces, now), { agentId: "77", address: signer.address.toLowerCase() });
-  throwsCode(() => verifyChallenge({ message, signature }, origin, nonces, now), "challenge_replayed");
+  assert.deepEqual(verifyChallenge({ message, signature }, origin, now), { agentId: "77", address: signer.address.toLowerCase(), nonce: "ab".repeat(16) });
   const fresh = (over: Partial<typeof fields>) => challengeMessage({ ...fields, nonce: Math.random().toString(16).slice(2).padEnd(32, "0").slice(0, 32), ...over });
-  const m2 = fresh({}); throwsCode(() => verifyChallenge({ message: m2, signature: await_(signer, m2) }, "https://evil.example", new NonceCache(), now), "invalid_challenge");
+  const m2 = fresh({}); throwsCode(() => verifyChallenge({ message: m2, signature: await_(signer, m2) }, "https://evil.example", now), "invalid_challenge");
   const old = fresh({ issuedAt: new Date(now - 6 * 60_000).toISOString() });
-  throwsCode(() => verifyChallenge({ message: old, signature: await_(signer, old) }, origin, new NonceCache(), now), "challenge_expired");
+  throwsCode(() => verifyChallenge({ message: old, signature: await_(signer, old) }, origin, now), "challenge_expired");
   const future = fresh({ issuedAt: new Date(now + 5 * 60_000).toISOString() });
-  throwsCode(() => verifyChallenge({ message: future, signature: await_(signer, future) }, origin, new NonceCache(), now), "challenge_expired");
+  throwsCode(() => verifyChallenge({ message: future, signature: await_(signer, future) }, origin, now), "challenge_expired");
   // Someone else's signature over a message naming the victim wallet is rejected.
   const victim = Wallet.createRandom(); const claim = fresh({ address: victim.address });
-  throwsCode(() => verifyChallenge({ message: claim, signature: await_(signer, claim) }, origin, new NonceCache(), now), "invalid_challenge");
-  throwsCode(() => verifyChallenge({ message: message.replace("Agent ID: 77", "Agent ID: 78"), signature }, origin, new NonceCache(), now), "invalid_challenge");
-  throwsCode(() => verifyChallenge({ message: message + "\nExtra: x", signature }, origin, new NonceCache(), now), "invalid_challenge");
-  throwsCode(() => verifyChallenge({ message, signature: "0x1234" }, origin, new NonceCache(), now), "invalid_challenge");
+  throwsCode(() => verifyChallenge({ message: claim, signature: await_(signer, claim) }, origin, now), "invalid_challenge");
+  throwsCode(() => verifyChallenge({ message: message.replace("Agent ID: 77", "Agent ID: 78"), signature }, origin, now), "invalid_challenge");
+  throwsCode(() => verifyChallenge({ message: message + "\nExtra: x", signature }, origin, now), "invalid_challenge");
+  throwsCode(() => verifyChallenge({ message, signature: "0x1234" }, origin, now), "invalid_challenge");
 });
 /** Synchronous EIP-191 signature for compact assertions. */
 function await_(signer: { signingKey: Wallet["signingKey"] }, message: string) { return signer.signingKey.sign(hashMessage(message)).serialized; }
