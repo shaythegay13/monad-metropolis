@@ -121,6 +121,7 @@ input[type=checkbox] { width: 20px; height: 20px; margin: 2px 0 0; accent-color:
 .hero-side { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; margin-top: 28px; }
 .hero-side .lede { margin: 0; max-width: 52ch; }
 .nowrap { white-space: nowrap; }
+.nav-short { display: none; }
 .outcome-list { display: flex; flex-direction: column; }
 .custody { margin: 64px 0 0; }
 .custody-rail { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(400px, 2.15fr) minmax(0, 1fr) minmax(0, 1fr); gap: 28px; margin: 0; padding: 0; list-style: none; }
@@ -572,6 +573,8 @@ details[open] .expand-sign::after { transform: rotate(0); }
   .site-header nav a { padding: 0 10px; font-size: 14px; white-space: nowrap; }
   .site-header nav a:first-child { padding-left: 0; }
   .nav-long { display: none; }
+  .nav-short { display: inline; }
+  .onboarding { margin-top: 0; margin-bottom: 20px; padding: 18px; }
   .site-header nav .nav-wallet { margin-left: auto; }
   .hero { padding-top: 40px; }
   .custody { margin-top: 40px; }
@@ -647,5 +650,12 @@ details[open] .expand-sign::after { transform: rotate(0); }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
-.register-panel summary { cursor: pointer; min-height: 44px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 16px; }
-.register-panel[open] summary { margin-bottom: 12px; }
+.onboarding { margin: 0 0 24px; padding: 24px; background: var(--lichen); border: 1px solid var(--lichen-strong); border-left: 4px solid var(--forest); border-radius: 14px; }
+.onboarding-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; }
+.onboarding-head > div:first-child { flex: 1 1 420px; }
+.onboarding h2 { font-size: 24px; margin-bottom: 6px; }
+.onboarding-head p { margin: 0; max-width: 62ch; color: var(--ink); }
+.onboarding-form { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--lichen-strong); }
+.onboarding-form .review { background: var(--surface); }
+.link-button { display: inline; min-height: 0; padding: 0; border: 0; background: none; color: var(--forest); font: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.link-button:hover:not(:disabled) { background: none; color: var(--emerald); }

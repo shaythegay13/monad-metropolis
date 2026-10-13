@@ -186,13 +186,15 @@ export async function generateNextPassport(o: { agentId: string; address: string
   if (fromBlock === null || !Number.isSafeInteger(fromBlock)) { fromBlock = Math.max(0, toBlock - FALLBACK_WINDOW_BLOCKS); basis = "recent_window"; }
   if (!Number.isSafeInteger(toBlock) || toBlock <= fromBlock) throw new WebFlowError("evidence_unavailable");
   let activity: Awaited<ReturnType<typeof retrieveAgentActivity>>;
-  try { activity = await retrieveAgentActivity(identity, o.provider, { fromBlock, toBlock, maxPages: Math.min(o.maxPages ?? MAX_GENERATION_PAGES, MAX_GENERATION_PAGES) }); }
+  try { activity = await retrieveAgentActivity(identity, o.provider, { fromBlock, toBlock, maxPages: Math.min(o.maxPages ?? MAX_GENERATION_PAGES, MAX_GENERATION_PAGES), now: o.now }); }
   catch { throw new WebFlowError("evidence_unavailable"); }
   // Provider failures never become zero activity or a fabricated Passport.
   if (activity.state !== "retrieved") throw new WebFlowError("evidence_unavailable");
   const version = Number(latest) + 1;
-  const bundle = generateAgentPassport(identity, activity, { passportVersion: version,
-    ...(previousHash ? { previousVersionHash: previousHash.slice(2) } : {}), generatedAt: (o.now?.() ?? new Date()).toISOString() });
+  let bundle: ReturnType<typeof generateAgentPassport>;
+  try { bundle = generateAgentPassport(identity, activity, { passportVersion: version,
+    ...(previousHash ? { previousVersionHash: previousHash.slice(2) } : {}), generatedAt: (o.now?.() ?? new Date()).toISOString() }); }
+  catch { throw new WebFlowError("generation_failed"); }
   return { bundle, version, scope: { fromBlock, toBlockExclusive: toBlock, basis } };
 }
 

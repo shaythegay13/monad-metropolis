@@ -82,6 +82,7 @@ const messages: Record<string, [number, string]> = {
   invalid_version_link: [422, "This Passport does not link to the agent's latest published version. Generate a fresh one."],
   stale_or_already_published: [409, "This version is already published or the agent's latest version changed. Generate a fresh Passport; do not send."],
   evidence_unavailable: [503, "Envio evidence could not be retrieved, so no Passport was generated. This is not a finding of zero activity."],
+  generation_failed: [422, "The retrieved evidence could not be turned into a valid Passport, so nothing was generated. Try again later."],
   generation_unavailable: [503, "Passport generation is not configured on this server (Envio access is missing). Verification still works."],
   invalid_challenge: [401, "The wallet signature could not be verified. Sign the new request in your wallet and try again."],
   challenge_expired: [401, "The signed request expired. Sign a new one."],

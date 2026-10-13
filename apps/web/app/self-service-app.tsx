@@ -48,6 +48,9 @@ function Workspace() {
   const [tx, setTx] = useState<Tx>(); const [reviewed, setReviewed] = useState(false);
   const [hash, setHash] = useState<string>(); const [confirmation, setConfirmation] = useState<Confirmation>();
   const [busy, setBusy] = useState(""); const [error, setError] = useState(""); const [note, setNote] = useState("");
+  const [regOpen, setRegOpen] = useState(false);
+  const openRegistration = () => { setRegOpen(true);
+    setTimeout(() => document.getElementById("register")?.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }), 0); };
   const [regName, setRegName] = useState(""); const [regDescription, setRegDescription] = useState("");
   const [regTx, setRegTx] = useState<RegTx>(); const [regConsent, setRegConsent] = useState(false); const [regHash, setRegHash] = useState<string>();
   const [regState, setRegState] = useState<"" | "pending" | "registered" | "reverted">(""); const [newAgent, setNewAgent] = useState<string>();
@@ -164,6 +167,28 @@ function Workspace() {
         : <button onClick={() => { setNote("If you cancel the connection request, no wallet is connected."); setShowAuthFlow(true); }}>Connect wallet</button>}</div></div>
     {note && <p className="notice" role="status">{note}</p>}
 
+    <section className="onboarding" id="register" aria-labelledby="register-title">
+      <div className="onboarding-head"><div><h2 id="register-title">New here? Start by registering an agent</h2>
+        <p>A Passport belongs to an ERC-8004 agent. If you don&rsquo;t have one yet, register one on Monad Testnet from your wallet in a single transaction, then continue with step 1.</p></div>
+        <div className="actions"><button aria-expanded={regOpen} aria-controls="register-form" onClick={() => setRegOpen(open => !open)}>{regOpen ? "Hide registration" : "Register a new agent"}</button>
+          <a className="text-link" href="#step-agent">I already have an agent</a></div></div>
+      {regOpen && <div id="register-form" className="onboarding-form">
+      <p>This creates a new ERC-8004 agent identity owned by your connected wallet in the public Identity Registry. The Registry designates your wallet as the agent&rsquo;s agentWallet, so you can then build and publish its Passport. History starts at registration, so a new agent&rsquo;s first Passport shows very little activity.</p>
+      <div className="verify-grid"><label className="field"><span>Agent name</span><input maxLength={60} value={regName} onChange={e => { setRegName(e.target.value); setRegTx(undefined); }} placeholder="My test agent" /></label>
+        <label className="field"><span>Short description (optional)</span><input maxLength={280} value={regDescription} onChange={e => { setRegDescription(e.target.value); setRegTx(undefined); }} placeholder="What this agent does" /></label></div>
+      <button className="secondary" disabled={!address || chain !== CHAIN_ID || Boolean(busy) || regState === "pending"} onClick={() => void reviewRegistration()}>Review registration</button>
+      {regTx && !regHash && <div className="review"><h3>Review the registration transaction</h3><dl className="record-fields">
+        <div><dt>Contract</dt><dd>ERC-8004 Identity Registry <code className="break">{IDENTITY_REGISTRY}</code></dd></div>
+        <div><dt>Function</dt><dd><code>register(string agentURI)</code></dd></div>
+        <div><dt>Network</dt><dd>Monad Testnet, chain {CHAIN_ID}</dd></div>
+        <div><dt>Registration file, stored onchain as a data URI</dt><dd><code className="break">{new TextDecoder().decode(Uint8Array.from(atob(regTx.uri.split(",")[1]), c => c.charCodeAt(0)))}</code></dd></div>
+        <div><dt>Maximum fee</dt><dd>{formatEther(regTx.fee)} MON (safety cap 0.2 MON)</dd></div></dl>
+        <label className="consent"><input type="checkbox" checked={regConsent} onChange={e => setRegConsent(e.target.checked)} />I want to register a new public agent identity owned by my wallet and pay this testnet fee.</label>
+        <button disabled={!regConsent || Boolean(busy)} onClick={() => void register()}>Register with my wallet</button></div>}
+      {regHash && <p className="notice" aria-live="polite">{regState === "registered" ? (newAgent ? <>Registered as agent <strong>{newAgent}</strong>. It is selected below.</> : "Registered. Find your agent ID on Monadscan, then enter it below.") : regState === "reverted" ? "The registration reverted. Nothing was created." : "Waiting for the receipt…"} <a href={`${EXPLORER}/tx/${regHash}`} target="_blank" rel="noreferrer">View transaction ↗</a></p>}
+      </div>}
+    </section>
+
     <section className="status-ledger" aria-label="Your wallet and agent">
       <div className="ledger-row"><span className="ledger-label">Connected account</span><div className="ledger-value">{address ? <code className="break">{address}</code> : <span className="muted">Not connected</span>}<small>via Dynamic, MetaMask connector</small></div>
         <Badge tone={address ? "positive" : "neutral"}>{address ? "Connected" : "Disconnected"}</Badge></div>
@@ -178,28 +203,14 @@ function Workspace() {
     {error && <p className="notice error" role="alert">{error}</p>}
     {busy && <p className="notice" role="status">{busy}</p>}
 
-    <details className="wallet-section publish-section register-panel"><summary><strong>No agent yet? Register one on Monad Testnet</strong> <span className="muted">(optional, one transaction from your wallet)</span></summary>
-      <p>This creates a new ERC-8004 agent identity owned by your connected wallet in the public Identity Registry. The Registry designates your wallet as the agent&rsquo;s agentWallet, so you can then build and publish its Passport. History starts at registration, so a new agent&rsquo;s first Passport shows very little activity.</p>
-      <div className="verify-grid"><label className="field"><span>Agent name</span><input maxLength={60} value={regName} onChange={e => { setRegName(e.target.value); setRegTx(undefined); }} placeholder="My test agent" /></label>
-        <label className="field"><span>Short description (optional)</span><input maxLength={280} value={regDescription} onChange={e => { setRegDescription(e.target.value); setRegTx(undefined); }} placeholder="What this agent does" /></label></div>
-      <button className="secondary" disabled={!address || chain !== CHAIN_ID || Boolean(busy) || regState === "pending"} onClick={() => void reviewRegistration()}>Review registration</button>
-      {regTx && !regHash && <div className="review"><h3>Review the registration transaction</h3><dl className="record-fields">
-        <div><dt>Contract</dt><dd>ERC-8004 Identity Registry <code className="break">{IDENTITY_REGISTRY}</code></dd></div>
-        <div><dt>Function</dt><dd><code>register(string agentURI)</code></dd></div>
-        <div><dt>Network</dt><dd>Monad Testnet, chain {CHAIN_ID}</dd></div>
-        <div><dt>Registration file, stored onchain as a data URI</dt><dd><code className="break">{new TextDecoder().decode(Uint8Array.from(atob(regTx.uri.split(",")[1]), c => c.charCodeAt(0)))}</code></dd></div>
-        <div><dt>Maximum fee</dt><dd>{formatEther(regTx.fee)} MON (safety cap 0.2 MON)</dd></div></dl>
-        <label className="consent"><input type="checkbox" checked={regConsent} onChange={e => setRegConsent(e.target.checked)} />I want to register a new public agent identity owned by my wallet and pay this testnet fee.</label>
-        <button disabled={!regConsent || Boolean(busy)} onClick={() => void register()}>Register with my wallet</button></div>}
-      {regHash && <p className="notice" aria-live="polite">{regState === "registered" ? (newAgent ? <>Registered as agent <strong>{newAgent}</strong>. It is selected below.</> : "Registered. Find your agent ID on Monadscan, then enter it below.") : regState === "reverted" ? "The registration reverted. Nothing was created." : "Waiting for the receipt…"} <a href={`${EXPLORER}/tx/${regHash}`} target="_blank" rel="noreferrer">View transaction ↗</a></p>}
-    </details>
 
     <section className="wallet-section publish-section" aria-labelledby="step-agent"><h2 id="step-agent">1. Choose your agent</h2>
       <form className="lookup-form" onSubmit={e => { e.preventDefault(); if (agentId) void check(); }}>
         <label className="field"><span>Your ERC-8004 agent ID on Monad Testnet</span><input inputMode="numeric" maxLength={31} value={agentId} onChange={e => { setAgentId(e.target.value.replace(/\D/g, "")); }} placeholder="Agent ID" /></label>
         <button className="secondary" disabled={!agentId || Boolean(busy)}>Check agent</button></form>
       {lookup && <p>{lookup.registration.name ?? `Agent ${lookup.agentId}`}: latest published Passport version <strong>{lookup.publication.latestVersion}</strong>, so the next version is <strong>{lookup.publication.nextVersion}</strong>.</p>}
-      <p className="microcopy">A connected wallet is not automatically an agent. Only the wallet the ERC-8004 Identity Registry designates for an agent can generate and publish its Passport.</p>
+      {lookup && address && lookup.agentWallet !== address && <p className="notice">Your connected wallet doesn&rsquo;t control agent {lookup.agentId}. <button type="button" className="link-button" onClick={openRegistration}>Register your own agent</button></p>}
+      <p className="microcopy">A connected wallet is not automatically an agent. Only the wallet the ERC-8004 Identity Registry designates for an agent can generate and publish its Passport. Don&rsquo;t have one? <button type="button" className="link-button" onClick={openRegistration}>Register a new agent</button></p>
     </section>
 
     <section className="wallet-section publish-section" aria-labelledby="step-generate"><h2 id="step-generate">2. Generate from real evidence</h2>

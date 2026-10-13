@@ -7,10 +7,10 @@ export function Arrow() { return <span aria-hidden="true" className="glyph">↗<
 export function Ext({ href, children, className }: { href: string; children: ReactNode; className?: string }) {
   return <a className={className} href={href} target="_blank" rel="noreferrer">{children}<Arrow/><span className="sr-only"> (opens in a new tab)</span></a>;
 }
-const nav = [["passport", "/passport", "Passport", ""], ["verify", "/verify", "Verify", ""], ["compare", "/compare", "Compare", " agents"], ["developers", "/developers", "Developers", ""]] as const;
+const nav = [["passport", "/passport", "Passport", ""], ["verify", "/verify", "Verify", ""], ["compare", "/compare", "Compare", " agents"], ["developers", "/developers", "Docs", "short"]] as const;
 export function SiteHeader({ active }: { active?: string }) {
   return <header className="site-header"><a className="wordmark" href="/" aria-label="Signal Passport home"><Mark/><span>Signal Passport</span></a>
-    <nav aria-label="Main navigation">{nav.map(([key, href, label, more]) => <a key={key} href={href} aria-current={active === key ? "page" : undefined}>{label}{more && <span className="nav-long">{more}</span>}</a>)}
+    <nav aria-label="Main navigation">{nav.map(([key, href, label, more]) => <a key={key} href={href} aria-current={active === key ? "page" : undefined}>{more === "short" ? <><span className="nav-long">Developers</span><span className="nav-short">{label}</span></> : <>{label}{more && <span className="nav-long">{more}</span>}</>}</a>)}
       <a className="nav-wallet" href="/wallet" aria-current={active === "wallet" ? "page" : undefined}>Create</a></nav></header>;
 }
 export function SiteFooter() {
