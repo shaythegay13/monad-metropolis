@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-13T02:59:52.367Z",
+  "readOnlyGitCommandsWithOptionalLocksDisabled": true,
+  "repositories": {
+    "signal-passport": {
+      "head": "fc79feb3eddff29439a3fe462e740ccdf3af3923",
+      "headUnchanged": true,
+      "statusUnchanged": true,
+      "sourceBytesUnchanged": true,
+      "gitMetadataBytesUnchanged": true,
+      "sourceFilesChecked": 133,
+      "gitFilesChecked": 211,
+      "sourceMismatchFiles": [],
+      "gitMetadataMismatchFiles": []
+    },
+    "ledgerlens": {
+      "head": "bd9b41ce31d1584059677456d2866afcf455786a",
+      "headUnchanged": true,
+      "statusUnchanged": true,
+      "sourceBytesUnchanged": true,
+      "gitMetadataBytesUnchanged": true,
+      "sourceFilesChecked": 40,
+      "gitFilesChecked": 190,
+      "sourceMismatchFiles": [],
+      "gitMetadataMismatchFiles": []
+    }
+  }
+}

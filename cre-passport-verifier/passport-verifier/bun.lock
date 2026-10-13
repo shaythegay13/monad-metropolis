@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "typescript-simple-template",
+      "name": "signal-passport-cre-verifier",
       "dependencies": {
         "@chainlink/cre-sdk": "^1.22.0",
         "viem": "^2.57.4",

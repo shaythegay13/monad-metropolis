@@ -19,29 +19,61 @@ inspection and wallet-mediated version 2 publication. The owner completed the su
 M5 and M6 functional scopes are accepted with documented limitations. M7's frontend
 redesign is accepted after owner visual and read-only wallet review; see
 `docs/verification/MONAD-M7.md`. This does not grant production security approval.
-M8 prepares public read-only artifact hosting, a bounded demo API and an independent
-consumer quickstart. Its local checks pass, but public deployment and live-hosted
-verification await owner approval; see `docs/verification/MONAD-M8.md`.
+M8 is accepted for the bounded public, read-only Monad Testnet demo at
+**https://signal-passport-monad.vercel.app**. Anonymous pages/APIs, exact hosted
+artifacts, independent onchain verification, policies and the external consumer
+pass; the owner confirmed the real public MetaMask/read-only check. The 19
+dependency advisories remain disclosed; see `docs/verification/MONAD-M8.md`.
 
-## Explore the M7 web experience
+M9A is owner-reviewed and accepted as a genuine native-simulated Chainlink CRE
+integration. The existing cron workflow retrieves raw public artifacts through CRE
+HTTPClient, validates schema/references and hashes, and directly reads Monad Registry
+and ERC-8004 state through CRE EVMClient at a consistent finalized block. Real runs
+verified Agent 2072 v2 and confirmed Agent 2 v1's missing publication with valid local
+integrity. See `docs/verification/MONAD-M9A.md` and `MONAD-M9A-DEMO.md`; this is
+unsigned simulation evidence, not a deployed DON or signed report.
 
-After starting the local app, visit `/` for the product overview, `/passport` for the
+Submission requirements, field-ready descriptions, recording outlines and the
+approval-gated two-branch push plan are in `docs/submission/`.
+
+## License, reuse and AI-assisted development
+
+Original project code is licensed under [MIT](LICENSE). The owner authorized this
+license and confirmed rights to the reused foundation. Third-party components
+retain their licenses; see [third-party notices](docs/THIRD-PARTY-NOTICES.md).
+
+The pre-existing Signal Passport foundation contributed selected schemas, stable
+evidence identifiers, canonical SHA-256 verification, identity and consumer code.
+[REUSE.md](docs/REUSE.md) and its migration manifest identify the exact files and
+source hashes. The Monad submission adds bounded HyperSync ingestion, deterministic
+agent Passports, the authorized Registry, Dynamic wallet flow, independent Alchemy
+verification, consumer policies, the public frontend and independent CRE orchestration.
+No percentage-originality claim is made. LedgerLens supplies reference patterns,
+and neither prior repository is a runtime/build/test dependency.
+
+Codex was used to assist implementation, testing and documentation. The owner
+reviewed and accepted milestone results. Observations and verification outcomes
+come from deterministic code and declared evidence, with explicit coverage limits.
+
+## Explore the public application
+
+At the public URL, or after starting the local app, visit `/` for the product overview, `/passport` for the
 published Agent 2072 version 2 artifact and independent read-only checks, `/compare`
 for real Agent 2072 versus Agent 2 policies, and `/developers` for the consumer path.
 These routes do not need a wallet. `/wallet` retains the Dynamic/MetaMask publication
 workspace; current onchain version 2 disables its version 2-only preparation action.
 The Passport page downloads the exact accepted version 2 JSON. Its historical link
-downloads immutable version 1. No new transaction is part of M7.
+downloads immutable version 1. Public preparation and publication are disabled.
 
 ## M8 artifact and developer quickstart
 
 The production app serves original-byte files at
 `/passports/agent-2072-v2-published.json`,
 `/passports/agent-2072-v1-historical.json`, and
-`/passports/agent-2-v1-unpublished.json`. These paths are locally verified but do
-not yet have a public deployment URL. The existing onchain content URIs remain
+`/passports/agent-2-v1-unpublished.json`. All three paths are publicly verified
+at https://signal-passport-monad.vercel.app. The existing onchain content URIs remain
 empty. After `npm.cmd run build`, run
-`node examples/external-consumer/evaluate.mjs <site-url>` to download, validate,
+`node examples/external-consumer/evaluate.mjs https://signal-passport-monad.vercel.app/` to download, validate,
 check Monad publication and compare the two agents without a wallet or Envio.
 See `examples/external-consumer/README.md` for the pinned trust root and exact-byte
 checks. On Vercel, the wallet workspace is read-only and publication API requests

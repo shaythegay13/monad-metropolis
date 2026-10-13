@@ -1,0 +1,13 @@
+{
+  "schedule": "0 0 * * * *",
+  "passportUrl": "https://signal-passport-monad.vercel.app/passports/agent-2-v1-unpublished.json",
+  "rpcUrl": "https://testnet-rpc.monad.xyz",
+  "chainSelectorName": "monad-testnet",
+  "chainId": 10143,
+  "registryAddress": "0x7d9cc86196241485cf1efaf8a96c7819ea95b194",
+  "registryCodeHash": "0x7a3b3ea5b702aa55c5bfae2cd57cac3598877192945f0d5558792024ca7baa43",
+  "identityRegistryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
+  "agentId": "2",
+  "passportVersion": 1,
+  "expectedRawSha256": "0xd1d8fcc35100d80c34a977b1670432fea9a3fe1706f345f438b868447787629d"
+}

@@ -1,0 +1,126 @@
+{
+  "checkedAt": "2026-10-13T02:59:52.931Z",
+  "scope": "Read-only native CRE simulation integration; no DON deployment or signed attestation",
+  "cliVersion": "1.38.0",
+  "sdkVersion": "1.23.0",
+  "bunVersion": "1.4.3",
+  "supportedNetwork": "monad-testnet",
+  "chainId": 10143,
+  "toolchainMinimumBunFromSkill": "1.2.21",
+  "sourceHashes": {
+    "main.ts": "2b09f78503081122677d459ca9814caeb36d87e31c6cecf30cdd154f4f542b85",
+    "passport.ts": "0161deb9017cda6de29eb18aadc08cae275c5fcbe9fb4d0663b29a5198197bcf",
+    "schema.ts": "603a11ebf22d693c9dc4118895e58a35d60e84c72db2e9ab7b345f8167469bd4",
+    "canonical.ts": "eace57e793da55150927e03593a69b787956d1f960b53aa1f604d08a05f4c98d",
+    "config.local-simulation.json": "a58587b861bdf0a305ca5c4862c155c86e7d83c4a8c6df3421c5d253719ce430",
+    "config.staging.json": "a58587b861bdf0a305ca5c4862c155c86e7d83c4a8c6df3421c5d253719ce430",
+    "config.production.json": "a58587b861bdf0a305ca5c4862c155c86e7d83c4a8c6df3421c5d253719ce430",
+    "config.agent-2.json": "bb5909f380d3bf9d003597930dffd52f7ea6571f0f94eb6e12a83bc7123864b8",
+    "package.json": "8b96d219c798f28b2f9467d4c5a8a4f084b8e285d71c34667457dda4a5beb3b1",
+    "bun.lock": "618676bd8cf66d7757811e394c31ae70c34f822a3c2442a51ca30e95be8fbf32",
+    "../../packages/schema/src/agent-passport.ts": "01fcd4e8b947d9c850199ab55f94d270cf24c0c06bde86dd69715e01fe9749b4",
+    "../../packages/schema/src/activity.ts": "bbbb8bf60bd428a7f73c940cac1bf765de36a691c1fafe3bd8b3e35e897d5daf",
+    "../../packages/schema/src/evidence.ts": "a8d705951a25e780afa54e910b856e187a01f8699aa7a30bc78d340b7473978a",
+    "../../packages/schema/src/identity.ts": "af618349e93a109717c5f3f71a3fcfaeb2341da61587d0910275f300de5d889b",
+    "../../packages/schema/src/coverage.ts": "9a9725fd06b20b78af4552c4f896a3accbb2556fea4d2503e1ccbc9b2ca0bc85"
+  },
+  "simulations": [
+    {
+      "name": "agent-2072-local",
+      "command": "cre workflow simulate passport-verifier --target local-simulation --non-interactive --trigger-index 0",
+      "workingDirectory": "cre-passport-verifier",
+      "exitCode": 0,
+      "defaultLimits": true,
+      "broadcast": false,
+      "binaryHash": "461469467ad2e363ed46772c3dd30adcf4f7b84d6a35d5df6a1fc4181100c147",
+      "configHash": "a58587b861bdf0a305ca5c4862c155c86e7d83c4a8c6df3421c5d253719ce430",
+      "logPath": "m9a-simulations/agent-2072-local.log",
+      "resultPath": "m9a-simulations/agent-2072-local.json",
+      "resultSha256": "3629c2e1dc78284ff4e4b2c34751f80866c1ee9b5b36439d9c36bd159ccbc93f",
+      "executionTime": "2026-10-13T02:56:33.460Z",
+      "localIntegrityValid": true,
+      "publicationStatus": "verified",
+      "overallOutcome": "verified",
+      "snapshot": {
+        "blockNumber": "70569278",
+        "blockHash": "0x6475f4f282326ec28cad6c0f9c01459b5eb2292d8b5138d87075cec04fd3e1fb",
+        "finality": "finalized",
+        "consistent": true
+      }
+    },
+    {
+      "name": "agent-2-local",
+      "command": "cre workflow simulate passport-verifier --target local-simulation --non-interactive --trigger-index 0 --config ./config.agent-2.json",
+      "workingDirectory": "cre-passport-verifier",
+      "exitCode": 0,
+      "defaultLimits": true,
+      "broadcast": false,
+      "binaryHash": "461469467ad2e363ed46772c3dd30adcf4f7b84d6a35d5df6a1fc4181100c147",
+      "configHash": "bb5909f380d3bf9d003597930dffd52f7ea6571f0f94eb6e12a83bc7123864b8",
+      "logPath": "m9a-simulations/agent-2-local.log",
+      "resultPath": "m9a-simulations/agent-2-local.json",
+      "resultSha256": "2e876e40e83361c93131dd3fe471e5a6143f7cfc2b215efe97e56325c7a3dc90",
+      "executionTime": "2026-10-13T02:57:51.955Z",
+      "localIntegrityValid": true,
+      "publicationStatus": "not_found",
+      "overallOutcome": "unpublished",
+      "snapshot": {
+        "blockNumber": "70569534",
+        "blockHash": "0x23f32fb8991334132c886190091d4ded8fe800e4bbdf6cdba16014321f88ab6d",
+        "finality": "finalized",
+        "consistent": true
+      }
+    }
+  ],
+  "verification": {
+    "creTests": {
+      "passed": 18,
+      "failed": 0,
+      "exitCode": 0,
+      "log": "m9a-simulations/cre-tests.log"
+    },
+    "creTypecheck": {
+      "exitCode": 0,
+      "log": "m9a-simulations/cre-typecheck.log"
+    },
+    "coreTests": {
+      "passed": 239,
+      "suites": 4,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "exitCode": 0,
+      "log": "m9a-simulations/core-tests.log"
+    },
+    "coreTypecheck": {
+      "exitCode": 0,
+      "log": "m9a-simulations/core-typecheck.log"
+    },
+    "acceptedProductSourceUnchanged": true
+  },
+  "writeActions": {
+    "blockchainTransactions": 0,
+    "contractDeployments": 0,
+    "passportPublications": 0,
+    "creLifecycleOperations": 0,
+    "publicWebsiteDeployments": 0,
+    "gitPushes": 0,
+    "paidConfigurations": 0
+  },
+  "initialFailures": [
+    {
+      "issue": "Full schema Zod URL check rejected real artifact in QuickJS due to missing URL constructor",
+      "log": "m9a-simulations/agent-2072-debug.log",
+      "disposition": "CRE-only stricter sourceReference literal adapter; successful final native runs retained"
+    },
+    {
+      "issue": "Config override is resolved relative to workflow directory, not project root",
+      "log": "m9a-simulations/agent-2-config-path-failure.log",
+      "disposition": "Use --config ./config.agent-2.json; corrected native run passed"
+    }
+  ],
+  "securityEvidence": "MONAD-M9A-security-checks.json",
+  "referenceEvidence": "MONAD-M9A-reference-checks.json",
+  "verdict": "ACCEPTED for bounded read-only native CRE simulation"
+}

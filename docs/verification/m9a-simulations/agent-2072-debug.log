@@ -1,0 +1,27 @@
+Initializing...
+Loading settings...
+! Using default private key for chain write simulation. To use your own key, set CRE_ETH_PRIVATE_KEY in your .env file or system environment.
+Checking RPC connectivity...
+Compiling workflow...
+✓ Workflow compiled
+✓ Simulation limits enabled
+  HTTP: req=120kb resp=250kb timeout=10s | ConfHTTP: req=125kb resp=500kb timeout=1m30s | Consensus obs=25kb | ChainWrite evm_report=50kb evm_gas=10000000 solana_report=265b solana_cu=300000 | WASM binary=100mb compressed=20mb
+  Binary hash: 1515246a17e270e7e96b10a5b42684103b5c89bdd44f7a8ced9ff4333b66da8f
+  Config hash: a58587b861bdf0a305ca5c4862c155c86e7d83c4a8c6df3421c5d253719ce430
+2026-10-12T22:55:00Z [SIMULATION] Simulator Initialized
+
+2026-10-12T22:55:00Z [SIMULATION] Running trigger trigger=cron-trigger@1.0.0
+2026-10-12T22:55:00Z [USER LOG] CRE HTTPClient: retrieving raw Passport artifact with identical aggregation
+2026-10-12T22:55:01Z [USER LOG] Signal Passport CRE verification: {"schemaVersion":"signal-passport-cre-verification/1.0.0","executionTime":"2026-10-13T02:55:00.708Z","outputType":"unsigned-workflow-result","chainId":10143,"agentId":"2072","passportVersion":"2","sourceArtifactUrl":"https://signal-passport-monad.vercel.app/passports/agent-2072-v2-published.json","rawFileSha256":"0xeca35f6a109fe98c6974eb410f0d07f74b8ac4165dd8eb3be29eb2f1b8669e6c","canonicalDigest":null,"downloadedBytes":19508,"localIntegrityValid":false,"registryAddress":"0x7d9cc86196241485cf1efaf8a96c7819ea95b194","snapshot":null,"publication":{"status":"invalid_local","found":null,"latestVersion":null,"isLatest":null,"record":null},"identityAssociation":{"registryAddress":"0x8004a818bfb912233c491871b3d84c89a494bd9e","ownerAddress":null,"agentWallet":null,"agentUri":null,"walletMatchesArtifact":null,"ownerMatchesArtifact":null,"uriMatchesArtifact":null,"publisherMatchesCurrentWallet":null},"criteria":{"download":{"status":"PASS","detail":"Bounded raw  ...(truncated)
+
+✓ Workflow Simulation Result:
+"{\"schemaVersion\":\"signal-passport-cre-verification/1.0.0\",\"executionTime\":\"2026-10-13T02:55:00.708Z\",\"outputType\":\"unsigned-workflow-result\",\"chainId\":10143,\"agentId\":\"2072\",\"passportVersion\":\"2\",\"sourceArtifactUrl\":\"https://signal-passport-monad.vercel.app/passports/agent-2072-v2-published.json\",\"rawFileSha256\":\"0xeca35f6a109fe98c6974eb410f0d07f74b8ac4165dd8eb3be29eb2f1b8669e6c\",\"canonicalDigest\":null,\"downloadedBytes\":19508,\"localIntegrityValid\":false,\"registryAddress\":\"0x7d9cc86196241485cf1efaf8a96c7819ea95b194\",\"snapshot\":null,\"publication\":{\"status\":\"invalid_local\",\"found\":null,\"latestVersion\":null,\"isLatest\":null,\"record\":null},\"identityAssociation\":{\"registryAddress\":\"0x8004a818bfb912233c491871b3d84c89a494bd9e\",\"ownerAddress\":null,\"agentWallet\":null,\"agentUri\":null,\"walletMatchesArtifact\":null,\"ownerMatchesArtifact\":null,\"uriMatchesArtifact\":null,\"publisherMatchesCurrentWallet\":null},\"criteria\":{\"download\":{\"status\":\"PASS\",\"detail\":\"Bounded raw artifact retrieved through CRE HTTPClient\"},\"raw_file_hash\":{\"status\":\"PASS\",\"detail\":\"Raw file SHA-256 matches independently pinned artifact bytes\"},\"schema\":{\"status\":\"FAIL\",\"detail\":\"Invalid complete Passport schema: payload.evidence.0.sourceReference: sourceReference must be a valid explorer URL; payload.evidence.1.sourceReference: sourceReference must be a valid explorer URL; payload.evidence.2.sourceReference: sourceReference must be a valid explorer URL\"},\"evidence_references\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"canonical_digest\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"chain\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"finalized_snapshot\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"registry_bytecode\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"identity_registry\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"publication\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"published_hash\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"publication_provenance\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"current_wallet\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"current_owner\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"},\"current_uri\":{\"status\":\"UNKNOWN\",\"detail\":\"Not checked\"}},\"limitations\":[\"Unsigned read-only CRE workflow output; native simulation is not a decentralized production attestation or signed DON report.\",\"Integrity and authorized publication do not prove underlying economic evidence, service delivery or universal trustworthiness.\",\"Current ERC-8004 association is checked at the snapshot; it does not prove wallet association at every historical transaction.\",\"Registry address, runtime code hash and identity dependency are independently configured trust roots; RPC/chain assumptions remain.\"],\"overallOutcome\":\"invalid\",\"failureStage\":\"artifact-validation\"}"
+
+2026-10-12T22:55:01Z [SIMULATION] Execution finished signal received
+2026-10-12T22:55:01Z [SIMULATION] Skipping WorkflowEngineV2
+
+╭──────────────────────────────────────────────────────╮
+│ Simulation complete! Ready to deploy your workflow?  │
+│                                                      │
+│ Run cre account access to request deployment access. │
+╰──────────────────────────────────────────────────────╯

@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-10-13T03:28:08.276Z",
+  "purpose": "Owner-authorized clean local commit; push remains unapproved",
+  "review": {
+    "m8Accepted": true,
+    "m9aOwnerReviewedAndAccepted": true,
+    "nativeRuntimeConfigAndSchemaHashesUnchanged": true,
+    "nativeReturnedJsonHashesUnchanged": true,
+    "onlyPostSimulationMetadataChange": "Owner-authorized package license UNLICENSED -> MIT; no dependency version/runtime change"
+  },
+  "verification": {
+    "coreTests": 239,
+    "creTests": 18,
+    "failures": 0,
+    "coreTypecheckExitCode": 0,
+    "creTypecheckExitCode": 0,
+    "productionCodeUnchanged": true,
+    "liveRecheck": "LIVE-RECHECK.json",
+    "externalConsumerExitCode": 0
+  },
+  "references": {
+    "signal-passport": {
+      "head": "fc79feb3eddff29439a3fe462e740ccdf3af3923",
+      "headAndStatusUnchanged": true,
+      "sourceAndGitBytesUnchanged": true,
+      "sourceFilesChecked": 133,
+      "gitFilesChecked": 211
+    },
+    "ledgerlens": {
+      "head": "bd9b41ce31d1584059677456d2866afcf455786a",
+      "headAndStatusUnchanged": true,
+      "sourceAndGitBytesUnchanged": true,
+      "sourceFilesChecked": 40,
+      "gitFilesChecked": 190
+    }
+  },
+  "licensing": {
+    "ownerAuthorizedMIT": true,
+    "ownerConfirmedReuseRights": true,
+    "thirdPartyNoticesPreserved": true,
+    "aiAssistanceDisclosed": true
+  },
+  "remoteTipSnapshot": {
+    "monad-metropolis": "584a2abf11b673f16e26ad321b0d9ae42000640a",
+    "signal-passport-monad": "584a2abf11b673f16e26ad321b0d9ae42000640a"
+  },
+  "publicDeploymentUnchanged": "dpl_FqH7PT5vNASPuaBsmi2y3prq5ERY",
+  "pushPerformed": false,
+  "redeploymentPerformed": false,
+  "blockchainWrites": 0,
+  "credentialValuesReadOrPrinted": false,
+  "stagedReview": {
+    "checkedAt": "2026-10-13T03:30:29.028Z",
+    "stagedFiles": 59,
+    "credentialPatternMatches": 0,
+    "jsonBlobsParsed": 18,
+    "noEnvironmentFiles": true,
+    "noGeneratedCaches": true,
+    "noUnrelatedChanges": true,
+    "oneLinerCharacters": 136,
+    "privateFilesOpened": false
+  },
+  "logFormatting": {
+    "normalizedTerminalPaddingAndEofOnly": [
+      "docs/verification/m9a-simulations/agent-2-config-path-failure.log",
+      "docs/verification/m9a-simulations/core-typecheck.log"
+    ],
+    "successfulSimulationLogsUnchanged": true,
+    "returnedJsonHashesUnchanged": true
+  }
+}

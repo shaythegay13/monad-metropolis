@@ -1,6 +1,6 @@
 # Signal Passport Monad - STATUS
 
-Last updated: October 11, 2026 (America/New_York).
+Last updated: October 12, 2026 (America/New_York).
 
 ACTIVE PROJECT: `signal-passport-monad/`.
 READ ONLY REFERENCES: `../signal-passport/`, `../ledgerlens/`.
@@ -11,39 +11,82 @@ Only this repository receives product work; neither reference is a runtime depen
 PRD-MONAD > HACKATHON_REQUIREMENTS > ARCHITECTURE > STATUS > verified code.
 Obey AGENTS.md and CLAUDE.md. Consumer supplies trust policy; no universal trust score.
 
-## Current milestone: M8 - Public Deployment & Developer Readiness
+## Current focus: submission readiness after accepted M8/M9A
 
-**PREDEPLOYMENT RE-AUDITED; NO LIVE DEPLOYMENT; NOT ACCEPTED.** Three original-byte Passport files
-are served locally from static versioned URLs. The independent external consumer
-example downloads both real agents, checks bytes, validates and verifies on Monad
-using public RPC, then evaluates an explicit policy. Vercel-style local production
-mode disables all Passport publication POSTs and wallet write controls; the public
-comparison endpoint accepts only the two unchanged demo files with bounded reads.
-Final predeployment tests: **239 passed**, both typechecks, library and instrumented
-web builds, dependency tree, local HTTP/browser checks, independent onchain read-back,
-secret scan and reference preservation pass. Audit remains 19 advisories (15 moderate,
-4 high); the four high packages are absent from this exact emitted release build.
-The verified source commit `9587f96` was first pushed to
-`origin/signal-passport-monad`. On October 11, the owner explicitly directed a
-force-with-lease update of remote `monad-metropolis` to the same commit; its old
-tip `c653e44` is preserved locally as `backup-monad-metropolis`. Vercel
-project `signal-passport-monad` exists without a deployment. Its published
-Firewall rule covers both `/api/` routes at a shared 30 requests/minute/IP,
-returning 429. Alchemy remains Free, with a 30M-CU monthly account quota and
-no payment method shown; a custom $10 per-app cap would require a paid plan,
-which was not authorized. The $0 Free-plan spending ceiling is the current
-cost control, with possible interruption at its CU limit. Production read-only
-flag now reads back as `1`; the Production Alchemy Secret and public Dynamic ID
-are configured. The Vercel project is linked to the correct GitHub repository and
-tracks `monad-metropolis` for Production. Both remote branches were then
-advanced together with the reviewed M8 audit and read-only CRE setup prototype;
-they remain aligned. Neither push produced a Vercel deployment. Any
-explicit deployment still requires owner approval. Public origin, actual Vercel build and hosted verification
-remain pending. M8
-is **not ACCEPTED**. See `docs/verification/MONAD-M8.md`. No public deployment or
-blockchain transaction has occurred.
+The owner has reviewed and accepted M9A. The signed-in official portal was inspected
+read-only: deadline October 13 at 23:59 EDT, main demo <=3 minutes, pitch <=2 minutes,
+required CRE clip <=2 minutes. Its form's logo constraint is 2 MB/500–2000 px.
+Prepared copy replaces stale trading-reputation claims; required go-to-market, links,
+videos and sponsor narratives are still blank in the saved entry. No portal edits
+or submission occurred. Nansen remains selected but unimplemented; Community Team
+is unselected. MIT and reuse rights were explicitly authorized by the owner;
+LICENSE, attribution and AI-assisted development disclosure are prepared.
 
-**Owner-directed CRE setup prototype, separate from M8 acceptance:** the project-local
+The live site's five pages/APIs, three hashes, public read-only restriction, policy
+verification and external consumer were rechecked. Vercel still serves the accepted
+deployment and has Git link null. 239 core/18 CRE tests and both typechecks pass.
+See `docs/submission/READINESS.md` for prioritized owner actions, truthful copy,
+recording outlines and the <=60-minute Nansen assessment proposal (not started).
+
+The owner authorizes a clean local combined M8/M9A/submission commit. Both remote
+branches were observed at 584a2abf11b673f16e26ad321b0d9ae42000640a; a normal atomic
+fast-forward push is planned only after approval of the final commit hash.
+No Git push, redeployment, blockchain write, paid setting or M9B implementation.
+
+## Accepted M9A - Independent Chainlink CRE Verification
+
+**M9A ACCEPTED — bounded read-only native CRE simulation integration.** The existing
+cron verifier retrieves actual hosted artifacts through CRE HTTPClient, validates
+full schema/references and both hashes, and reads the Registry/ERC-8004 through
+CRE EVMClient at one finalized snapshot. Agent 2072 v2 is verified at block
+70569278; Agent 2 v1 has valid local integrity and a confirmed `not_found` publication
+at block 70569534. Both actual CLI/WASM runs pass with consistent snapshot hashes.
+18 CRE tests and CRE typechecking pass; the 239-test core suite and root typecheck
+pass. Credential-pattern, accepted-product-source and both reference preservation
+checks pass. Native outputs/logs and exact commands are retained in
+`docs/verification/MONAD-M9A.md`; sponsor reproduction is in `MONAD-M9A-DEMO.md`.
+This is unsigned simulated orchestration, not a DON deployment/attestation or
+final bounty award approval. No public site, contract, Passport, paid service,
+blockchain transaction or dependency version changed during M9A.
+
+The owner reviewed the M8 closeout and M9A source/evidence. Combined local commit
+is authorized; a push remains approval-gated. M9B has not started and is not automatic.
+
+## Accepted public release: M8 - Public Deployment & Developer Readiness
+
+**M8 ACCEPTED — bounded public, read-only Monad Testnet demo.**
+https://signal-passport-monad.vercel.app is anonymously accessible. The exact
+Ready deployment `dpl_FqH7PT5vNASPuaBsmi2y3prq5ERY`, source commit
+`584a2abf11b673f16e26ad321b0d9ae42000640a`, was promoted without rebuilding.
+Both remote branches retain that commit. Standard Protection stays enabled
+for Preview/deployment URLs while the canonical production domain is public.
+All five pages, both GET APIs, three exact-byte Passport files, onchain v2
+verification, all policy presets and the credential-free external consumer pass.
+Desktop and 390px mobile browser checks pass; evaluation makes results visible.
+Public preparation/publication POSTs return 403. Cross-origin/malformed/altered
+policy requests reject. The Firewall returns 429 on request 31 after 30 accepted
+fixed-data GETs, and normal API/evaluation behavior recovered afterward.
+Production variables and secret isolation pass; Dynamic permits the canonical
+origin and the two prior local demo origins. Alchemy remains Free with no payment
+method listed and a 30M-CU monthly account quota. No paid setting changed.
+October 12: 239 tests pass. Recorded typechecks and dependency-tree checks pass; the accepted
+library/local/Vercel builds remain valid. Audit remains 19 (15 moderate, 4 high),
+with the disclosed unpatched Solana disposition, not production security clearance.
+Reference source/Git bytes and statuses remain unchanged. Git integration is
+disconnected; automatic deployments are a later authorized maintenance task.
+On October 12 the owner confirmed public MetaMask connection as B51DD on
+Monad Testnet 10143, read-only mode and unavailable preparation/publication
+controls. These are owner-reported, not agent-observed wallet checks. All M8
+functional gates are satisfied, and the site is ready for an unauthenticated
+judge. The disclosed dependency disposition remains; acceptance is not production
+security certification or completed sponsor/submission eligibility. See
+`docs/verification/MONAD-M8.md`. Closeout files await review; no commit, Git push,
+blockchain transaction or new deployment/build occurred during M8 closeout.
+M8 acceptance was reported before the owner-authorized M9A implementation.
+Its public release stays unchanged. M9A results are recorded above; timeboxed
+M9B Nansen assessment follows only on a separate owner instruction.
+
+**Historical October 10 CRE setup prototype, separate from M8 acceptance:** the project-local
 Chainlink CRE skill, CLI v1.38.0 and TypeScript toolchain are installed. A read-only
 cron verifier for the real Agent 2072 Passport v2 passes native CRE simulations on
 both `staging-settings` and `local-simulation`, confirming its canonical digest,
@@ -51,8 +94,13 @@ Monad Testnet Registry publication and ERC-8004 association. Its five focused te
 TypeScript check and the existing 239-test repository baseline pass. A CRE Hackathon
 Early Access request was submitted; deployment access is not yet enabled. No CRE
 workflow was deployed, activated, uploaded or broadcast, and no transaction was sent.
-This prototype does not satisfy the pending public M8 deployment or establish live
-CRE sponsor completion. See `docs/verification/MONAD-CRE-SETUP.md`.
+This prototype does not establish accepted M9 or live CRE sponsor completion.
+See `docs/verification/MONAD-CRE-SETUP.md`.
+
+## Earlier accepted milestones — historical checkpoints
+
+The earlier Git/push/deployment statements below describe those milestone dates;
+the current release and acceptance state is the M8 closeout above.
 
 **M7 ACCEPTED for functionality and visual design.** The owner approved the M7 layout, typography, navigation
 and functionality, then requested more green depth after the first palette review.
@@ -104,8 +152,9 @@ M5 security disposition preserved; production security is not approved.
 | M5 | Accepted for bounded functionality; committed 3a427c1 |
 | M6 | Accepted; browser/API/core verified and owner wallet regression confirmed |
 | M7 | Accepted; final visual direction and four owner wallet checks confirmed |
-| M8 | Predeployment re-audited; both remote branches at release commit, public deployment pending |
-| M9+ | Not started |
+| M8 | Accepted for bounded public demo; anonymous checks and owner wallet regression verified |
+| M9A | Accepted for real-data native CRE simulation; 18 tests, positive/unpublished paths verified |
+| M9B / later | Not started |
 
 ## Working - verified
 
@@ -196,10 +245,9 @@ Identity Registry assumptions remain; this is not a consensus proof or security 
 No Dynamic, Nansen, policies, AI, other sponsors, mainnet or final frontend work in M4.
 Full deployed-app/demo sponsor completion is not claimed.
 
-## Exact next action
+## Current next action
 
-Review the M8 predeployment report and change set. Obtain explicit owner approval
-for the push from local `monad-metropolis` to remote `signal-passport-monad` and a
-new Vercel project. Configure Firewall limits and Alchemy budget before exposing
-the URL; verify the actual hosted app, files, APIs and browser before M8 acceptance.
-No blockchain transaction is authorized; never repeat completed v2 publication.
+Return the owner-authorized combined local commit's exact hash and safe two-branch
+push plan, and wait for push approval. Owner completes videos and saved
+portal fields, resolves Nansen selection and submits. The approved public application
+stays unchanged. Never repeat the completed v2 publication.

@@ -1,6 +1,6 @@
 {
   "schedule": "0 0 * * * *",
-  "passportUrl": "https://raw.githubusercontent.com/shaythegay13/monad-metropolis/9587f964baabe9b23da691e0afaef537a14e81ac/apps/web/public/passports/agent-2072-v2-published.json",
+  "passportUrl": "https://signal-passport-monad.vercel.app/passports/agent-2072-v2-published.json",
   "rpcUrl": "https://testnet-rpc.monad.xyz",
   "chainSelectorName": "monad-testnet",
   "chainId": 10143,
@@ -8,5 +8,6 @@
   "registryCodeHash": "0x7a3b3ea5b702aa55c5bfae2cd57cac3598877192945f0d5558792024ca7baa43",
   "identityRegistryAddress": "0x8004a818bfb912233c491871b3d84c89a494bd9e",
   "agentId": "2072",
-  "passportVersion": 2
+  "passportVersion": 2,
+  "expectedRawSha256": "0xeca35f6a109fe98c6974eb410f0d07f74b8ac4165dd8eb3be29eb2f1b8669e6c"
 }

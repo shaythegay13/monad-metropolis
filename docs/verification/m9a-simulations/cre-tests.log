@@ -1,0 +1,26 @@
+bun test v1.4.3 (c6da4a4d3)
+
+main.test.ts:
+(pass) Signal Passport CRE verifier > recomputes the real published v2 payload digest [10.39ms]
+(pass) Signal Passport CRE verifier > rejects changed evidence even when the envelope digest is retained [9.37ms]
+(pass) Signal Passport CRE verifier > rejects a different configured agent [1.92ms]
+(pass) Signal Passport CRE verifier > canonical serialization sorts object keys and preserves array order [1.55ms]
+(pass) Signal Passport CRE verifier > registers the selected six-field cron trigger [2.31ms]
+(pass) Signal Passport CRE verifier > validates the full real Agent 2 artifact without requiring publication [10.19ms]
+(pass) Signal Passport CRE verifier > rejects a malformed field outside the prototype schema subset [6.02ms]
+(pass) Signal Passport CRE verifier > QuickJS schema adapter rejects malformed or non-provenance source URLs [7.30ms]
+(pass) Signal Passport CRE verifier > rejects dangling evidence references even after coherent rehashing [12.36ms]
+(pass) Signal Passport CRE verifier > rejects wrong configured version and identity registry [2.94ms]
+(pass) Signal Passport CRE verifier > configuration rejects unsafe numbers, uint256 overflow, wrong chain and unknown write fields [11.41ms]
+(pass) Signal Passport CRE verifier > verified historical publication remains valid after a current wallet rotation [15.04ms]
+(pass) Signal Passport CRE verifier > confirmed zero Registry record is not_found and preserves valid local integrity [1.64ms]
+(pass) Signal Passport CRE verifier > inconsistent absent record or future publication is invalid_registry [0.15ms]
+(pass) Signal Passport CRE verifier > coherently rehashed but changed artifact is locally valid and mismatches publication [3.24ms]
+(pass) Signal Passport CRE verifier > provider/snapshot failure is unavailable, never confirmed absence or success [5.12ms]
+(pass) Signal Passport CRE verifier > raw hash covers exact UTF-8 bytes, separately from canonical payload [6.74ms]
+(pass) Signal Passport CRE verifier > download bound uses bytes and rejects HTTP failures [1.63ms]
+
+ 18 pass
+ 0 fail
+ 46 expect() calls
+Ran 18 tests across 1 file. [642.00ms]

@@ -1,0 +1,654 @@
+{
+  "checkedAt": "2026-10-11T23:48:41.194Z",
+  "base": "https://signal-passport-monad.vercel.app",
+  "authentication": "Node fetch without cookies, authorization headers or bypass tokens",
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 22889,
+      "redirect": null
+    },
+    {
+      "path": "/passport",
+      "status": 200,
+      "bytes": 46007,
+      "redirect": null
+    },
+    {
+      "path": "/compare",
+      "status": 200,
+      "bytes": 9646,
+      "redirect": null
+    },
+    {
+      "path": "/developers",
+      "status": 200,
+      "bytes": 29065,
+      "redirect": null
+    },
+    {
+      "path": "/wallet",
+      "status": 200,
+      "bytes": 5670,
+      "redirect": null
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "agent-2072-v2-published.json",
+      "status": 200,
+      "sha256": "eca35f6a109fe98c6974eb410f0d07f74b8ac4165dd8eb3be29eb2f1b8669e6c",
+      "bytes": 19508,
+      "contentType": "application/json; charset=utf-8",
+      "nosniff": "nosniff",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "name": "agent-2072-v1-historical.json",
+      "status": 200,
+      "sha256": "e5000c87c18182c6e4c2f18690ccff82942a695915d04e649c71e39eab02dde1",
+      "bytes": 11978,
+      "contentType": "application/json; charset=utf-8",
+      "nosniff": "nosniff",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "name": "agent-2-v1-unpublished.json",
+      "status": 200,
+      "sha256": "d1d8fcc35100d80c34a977b1670432fea9a3fe1706f345f438b868447787629d",
+      "bytes": 10199,
+      "contentType": "application/json; charset=utf-8",
+      "nosniff": "nosniff",
+      "cacheControl": "public, max-age=31536000, immutable"
+    }
+  ],
+  "policies": {
+    "modest": {
+      "status": 200,
+      "results": [
+        {
+          "id": "agent-2072",
+          "agentId": "2072",
+          "version": 2,
+          "integrity": "valid",
+          "digest": "8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+          "outcome": "SATISFIED",
+          "publication": {
+            "localIntegrityValid": true,
+            "publicationFound": true,
+            "publishedHashMatches": true,
+            "registryVerified": true,
+            "publicationProvenanceVerified": true,
+            "status": "verified",
+            "checkedBlock": "70246552",
+            "checkedBlockHash": "0xc03d79001fdbce40d8084f9608d656d18a90102c1baf590909118c18e08af662",
+            "version": "2",
+            "profileHash": "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+            "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+            "contentUri": "",
+            "publishedAt": "1791457045",
+            "publicationBlock": "69236935",
+            "publisherMatchesCurrentAgentWallet": true
+          },
+          "checks": [
+            {
+              "criterion": "local_integrity",
+              "outcome": "PASS",
+              "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "minimumObservedTransactions",
+              "metricId": "observed_transaction_count",
+              "required": 2,
+              "actual": 4,
+              "outcome": "PASS",
+              "evidenceIds": [
+                "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+              ],
+              "reason": "Observed 4 within this dataset; consumer requires at least 2."
+            },
+            {
+              "criterion": "minimumActiveUtcDays",
+              "metricId": "active_utc_days",
+              "required": 1,
+              "actual": 1,
+              "outcome": "PASS",
+              "evidenceIds": [
+                "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+              ],
+              "reason": "Observed 1 within this dataset; consumer requires at least 1."
+            },
+            {
+              "criterion": "minimumUniqueRecipientAddresses",
+              "metricId": "unique_recipient_addresses",
+              "required": 1,
+              "actual": 2,
+              "outcome": "PASS",
+              "evidenceIds": [
+                "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+              ],
+              "reason": "Observed 2 within this dataset; consumer requires at least 1."
+            },
+            {
+              "criterion": "complete_coverage",
+              "outcome": "PASS",
+              "reason": "Query coverage is complete_for_query; it is not lifetime coverage.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "monad_publication",
+              "outcome": "PASS",
+              "reason": "Independent Monad record matches this exact version and digest.",
+              "evidenceIds": []
+            }
+          ]
+        },
+        {
+          "id": "agent-2",
+          "agentId": "2",
+          "version": 1,
+          "integrity": "valid",
+          "digest": "9963102ba6b529b0c66c6a5a9cb655e3970f825ead27c0e07683492154cda760",
+          "outcome": "NOT_SATISFIED",
+          "publication": {
+            "localIntegrityValid": true,
+            "publicationFound": false,
+            "publishedHashMatches": false,
+            "registryVerified": true,
+            "publicationProvenanceVerified": false,
+            "status": "not_found",
+            "checkedBlock": "70246553",
+            "checkedBlockHash": "0x12794c8743875c62b30006798845d58a13783aae12e6c6efe5922092fb853eb7",
+            "version": "1"
+          },
+          "checks": [
+            {
+              "criterion": "local_integrity",
+              "outcome": "PASS",
+              "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "minimumObservedTransactions",
+              "metricId": "observed_transaction_count",
+              "required": 2,
+              "actual": 2,
+              "outcome": "PASS",
+              "evidenceIds": [
+                "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+              ],
+              "reason": "Observed 2 within this dataset; consumer requires at least 2."
+            },
+            {
+              "criterion": "minimumActiveUtcDays",
+              "metricId": "active_utc_days",
+              "required": 1,
+              "actual": 1,
+              "outcome": "PASS",
+              "evidenceIds": [
+                "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+              ],
+              "reason": "Observed 1 within this dataset; consumer requires at least 1."
+            },
+            {
+              "criterion": "minimumUniqueRecipientAddresses",
+              "metricId": "unique_recipient_addresses",
+              "required": 1,
+              "actual": 1,
+              "outcome": "PASS",
+              "evidenceIds": [
+                "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+              ],
+              "reason": "Observed 1 within this dataset; consumer requires at least 1."
+            },
+            {
+              "criterion": "complete_coverage",
+              "outcome": "PASS",
+              "reason": "Query coverage is complete_for_query; it is not lifetime coverage.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "monad_publication",
+              "outcome": "FAIL",
+              "reason": "Confirmed absent for this agent/version at the checked Registry block.",
+              "evidenceIds": []
+            }
+          ]
+        }
+      ]
+    },
+    "strict": {
+      "status": 200,
+      "results": [
+        {
+          "id": "agent-2072",
+          "agentId": "2072",
+          "version": 2,
+          "integrity": "valid",
+          "digest": "8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+          "outcome": "NOT_SATISFIED",
+          "publication": {
+            "localIntegrityValid": true,
+            "publicationFound": true,
+            "publishedHashMatches": true,
+            "registryVerified": true,
+            "publicationProvenanceVerified": true,
+            "status": "verified",
+            "checkedBlock": "70246552",
+            "checkedBlockHash": "0xc03d79001fdbce40d8084f9608d656d18a90102c1baf590909118c18e08af662",
+            "version": "2",
+            "profileHash": "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+            "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+            "contentUri": "",
+            "publishedAt": "1791457045",
+            "publicationBlock": "69236935",
+            "publisherMatchesCurrentAgentWallet": true
+          },
+          "checks": [
+            {
+              "criterion": "local_integrity",
+              "outcome": "PASS",
+              "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "minimumObservedTransactions",
+              "metricId": "observed_transaction_count",
+              "required": 10,
+              "actual": 4,
+              "outcome": "FAIL",
+              "evidenceIds": [
+                "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+              ],
+              "reason": "Observed 4 within this dataset; consumer requires at least 10."
+            },
+            {
+              "criterion": "monad_publication",
+              "outcome": "PASS",
+              "reason": "Independent Monad record matches this exact version and digest.",
+              "evidenceIds": []
+            }
+          ]
+        },
+        {
+          "id": "agent-2",
+          "agentId": "2",
+          "version": 1,
+          "integrity": "valid",
+          "digest": "9963102ba6b529b0c66c6a5a9cb655e3970f825ead27c0e07683492154cda760",
+          "outcome": "NOT_SATISFIED",
+          "publication": {
+            "localIntegrityValid": true,
+            "publicationFound": false,
+            "publishedHashMatches": false,
+            "registryVerified": true,
+            "publicationProvenanceVerified": false,
+            "status": "not_found",
+            "checkedBlock": "70246553",
+            "checkedBlockHash": "0x12794c8743875c62b30006798845d58a13783aae12e6c6efe5922092fb853eb7",
+            "version": "1"
+          },
+          "checks": [
+            {
+              "criterion": "local_integrity",
+              "outcome": "PASS",
+              "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "minimumObservedTransactions",
+              "metricId": "observed_transaction_count",
+              "required": 10,
+              "actual": 2,
+              "outcome": "FAIL",
+              "evidenceIds": [
+                "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+              ],
+              "reason": "Observed 2 within this dataset; consumer requires at least 10."
+            },
+            {
+              "criterion": "monad_publication",
+              "outcome": "FAIL",
+              "reason": "Confirmed absent for this agent/version at the checked Registry block.",
+              "evidenceIds": []
+            }
+          ]
+        }
+      ]
+    },
+    "local": {
+      "status": 200,
+      "results": [
+        {
+          "id": "agent-2072",
+          "agentId": "2072",
+          "version": 2,
+          "integrity": "valid",
+          "digest": "8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+          "outcome": "SATISFIED",
+          "publication": {
+            "localIntegrityValid": true,
+            "publicationFound": true,
+            "publishedHashMatches": true,
+            "registryVerified": true,
+            "publicationProvenanceVerified": true,
+            "status": "verified",
+            "checkedBlock": "70246552",
+            "checkedBlockHash": "0xc03d79001fdbce40d8084f9608d656d18a90102c1baf590909118c18e08af662",
+            "version": "2",
+            "profileHash": "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+            "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+            "contentUri": "",
+            "publishedAt": "1791457045",
+            "publicationBlock": "69236935",
+            "publisherMatchesCurrentAgentWallet": true
+          },
+          "checks": [
+            {
+              "criterion": "local_integrity",
+              "outcome": "PASS",
+              "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "minimumObservedTransactions",
+              "metricId": "observed_transaction_count",
+              "required": 2,
+              "actual": 4,
+              "outcome": "PASS",
+              "evidenceIds": [
+                "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+              ],
+              "reason": "Observed 4 within this dataset; consumer requires at least 2."
+            }
+          ]
+        },
+        {
+          "id": "agent-2",
+          "agentId": "2",
+          "version": 1,
+          "integrity": "valid",
+          "digest": "9963102ba6b529b0c66c6a5a9cb655e3970f825ead27c0e07683492154cda760",
+          "outcome": "SATISFIED",
+          "publication": {
+            "localIntegrityValid": true,
+            "publicationFound": false,
+            "publishedHashMatches": false,
+            "registryVerified": true,
+            "publicationProvenanceVerified": false,
+            "status": "not_found",
+            "checkedBlock": "70246553",
+            "checkedBlockHash": "0x12794c8743875c62b30006798845d58a13783aae12e6c6efe5922092fb853eb7",
+            "version": "1"
+          },
+          "checks": [
+            {
+              "criterion": "local_integrity",
+              "outcome": "PASS",
+              "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "minimumObservedTransactions",
+              "metricId": "observed_transaction_count",
+              "required": 2,
+              "actual": 2,
+              "outcome": "PASS",
+              "evidenceIds": [
+                "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+              ],
+              "reason": "Observed 2 within this dataset; consumer requires at least 2."
+            }
+          ]
+        }
+      ]
+    },
+    "changed": {
+      "status": 200,
+      "results": [
+        {
+          "id": "agent-2072",
+          "agentId": "2072",
+          "version": 2,
+          "integrity": "valid",
+          "digest": "8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+          "outcome": "SATISFIED",
+          "publication": {
+            "localIntegrityValid": true,
+            "publicationFound": true,
+            "publishedHashMatches": true,
+            "registryVerified": true,
+            "publicationProvenanceVerified": true,
+            "status": "verified",
+            "checkedBlock": "70246552",
+            "checkedBlockHash": "0xc03d79001fdbce40d8084f9608d656d18a90102c1baf590909118c18e08af662",
+            "version": "2",
+            "profileHash": "0x8dde9e22c9bfb0cf0940923de193f4a9f997156b2035232004d73ce2e1cadef6",
+            "publisher": "0xBC63Bf8DBa3aecA97801b85C600f8D0208fB51DD",
+            "contentUri": "",
+            "publishedAt": "1791457045",
+            "publicationBlock": "69236935",
+            "publisherMatchesCurrentAgentWallet": true
+          },
+          "checks": [
+            {
+              "criterion": "local_integrity",
+              "outcome": "PASS",
+              "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "minimumObservedTransactions",
+              "metricId": "observed_transaction_count",
+              "required": 3,
+              "actual": 4,
+              "outcome": "PASS",
+              "evidenceIds": [
+                "10143:0x40d355cd6ff4a6f4bae9d35944d89be5ed3fba0a51e333b9f1c7daf0ff1cf1e8",
+                "10143:0x77d5fb75278c92ff6f5a0900e06ea9f297099dddae6dd9bfad926490720a5f38",
+                "10143:0x8dcf060f88c31f71a4b675e5c2c2ca6476b8f17ee808d93998838c6f83c53320",
+                "10143:0xf0472376cf99d0819a08f28e216c39019e96c3c081ec5a4415d3de6857d4140d"
+              ],
+              "reason": "Observed 4 within this dataset; consumer requires at least 3."
+            }
+          ]
+        },
+        {
+          "id": "agent-2",
+          "agentId": "2",
+          "version": 1,
+          "integrity": "valid",
+          "digest": "9963102ba6b529b0c66c6a5a9cb655e3970f825ead27c0e07683492154cda760",
+          "outcome": "NOT_SATISFIED",
+          "publication": {
+            "localIntegrityValid": true,
+            "publicationFound": false,
+            "publishedHashMatches": false,
+            "registryVerified": true,
+            "publicationProvenanceVerified": false,
+            "status": "not_found",
+            "checkedBlock": "70246553",
+            "checkedBlockHash": "0x12794c8743875c62b30006798845d58a13783aae12e6c6efe5922092fb853eb7",
+            "version": "1"
+          },
+          "checks": [
+            {
+              "criterion": "local_integrity",
+              "outcome": "PASS",
+              "reason": "Schema, references and canonical digest verified; this does not prove source-data truth.",
+              "evidenceIds": []
+            },
+            {
+              "criterion": "minimumObservedTransactions",
+              "metricId": "observed_transaction_count",
+              "required": 3,
+              "actual": 2,
+              "outcome": "FAIL",
+              "evidenceIds": [
+                "10143:0x3b16b6493f3bfa522d050a288cb2663b492ea8d9cb570bc871f5ed0f038c83fd",
+                "10143:0x64ddb546e7906959043647ef745b24961260f86a3b3614224d09164ccbe9a2a3"
+              ],
+              "reason": "Observed 2 within this dataset; consumer requires at least 3."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "security": {
+    "prepare": {
+      "status": 403,
+      "error": "Public deployment is read-only. Publication controls are unavailable."
+    },
+    "confirm": {
+      "status": 403,
+      "error": "Public deployment is read-only. Publication controls are unavailable."
+    },
+    "crossOriginPolicy": {
+      "status": 403,
+      "error": "Same-origin requests required. External consumers can use the library locally."
+    },
+    "malformedPolicy": {
+      "status": 400,
+      "error": "Invalid or incomplete JSON."
+    },
+    "unsupportedPolicy": {
+      "status": 422,
+      "error": "Invalid policy or candidates; use supported criteria and 1 to 10 unique identifiers."
+    },
+    "alteredCandidate": {
+      "status": 422,
+      "error": "Public comparison accepts only the two displayed, unchanged demo Passports. Use the local consumer library for other agents."
+    },
+    "secretScan": {
+      "downloadedResponses": 30,
+      "browserAssets": 10,
+      "assetBytes": 665938,
+      "exactPrivateValueMatches": {
+        "ENVIO_API_TOKEN": 0,
+        "ALCHEMY_API_TOKEN": 0,
+        "ALCHEMY_MONAD_TESTNET_RPC_URL": 0,
+        "DEPLOYER_PRIVATE_KEY": 0,
+        "NANSEN_API_KEY": 0
+      },
+      "forbiddenVariableNameResponses": 0
+    },
+    "walletLazyLoadedAssetScan": {
+      "scriptCount": 29,
+      "downloadedBytes": 6324359,
+      "exactPrivateValueMatches": {
+        "ENVIO_API_TOKEN": 0,
+        "ALCHEMY_MONAD_TESTNET_RPC_URL": 0,
+        "DEPLOYER_PRIVATE_KEY": 0,
+        "NANSEN_API_KEY": 0
+      },
+      "forbiddenVariableNameFiles": 0
+    }
+  },
+  "walletState": {
+    "status": 200,
+    "publicReadOnly": true,
+    "latest": "2",
+    "network": "available",
+    "agentWallet": "0xbc63bf8dba3aeca97801b85c600f8d0208fb51dd",
+    "historicalVersion": "1",
+    "historicalVerification": "verified"
+  },
+  "candidateList": {
+    "status": 200,
+    "ids": [
+      "agent-2072",
+      "agent-2"
+    ]
+  },
+  "firewall": {
+    "checkedAt": "2026-10-11T23:54:18.097Z",
+    "route": "/api/policy",
+    "method": "GET",
+    "authentication": "none",
+    "providerRPCRequests": 0,
+    "statuses": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      429
+    ],
+    "first429": {
+      "request": 31,
+      "status": 429,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Vercel",
+        "x-vercel-id": "iad1::7vj9j-1791762857040-e855d0497878",
+        "x-vercel-mitigated": "deny"
+      }
+    },
+    "sharedPassportRoute429": true,
+    "recovery": {
+      "checkedAt": "2026-10-11T23:56:35.001Z",
+      "policyGET": 200,
+      "passportGET": 200,
+      "evaluationPOST": 200,
+      "publicReadOnly": true,
+      "outcomes": [
+        {
+          "id": "agent-2",
+          "outcome": "NOT_SATISFIED"
+        },
+        {
+          "id": "agent-2072",
+          "outcome": "SATISFIED"
+        }
+      ]
+    }
+  }
+}

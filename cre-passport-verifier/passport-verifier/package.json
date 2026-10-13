@@ -1,12 +1,12 @@
 {
-  "name": "typescript-simple-template",
+  "name": "signal-passport-cre-verifier",
   "version": "1.0.0",
   "main": "dist/main.js",
   "private": true,
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "@chainlink/cre-sdk": "^1.22.0",
     "viem": "^2.57.4",

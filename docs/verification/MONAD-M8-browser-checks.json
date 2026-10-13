@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-10-11T23:53:23.283Z",
+  "browser": "Edge",
+  "ownerReportedWalletChecks": {
+    "confirmedDate": "2026-10-12",
+    "provenance": "Owner explicitly confirmed all four pending public wallet checks; not agent-observed",
+    "canonicalOrigin": "https://signal-passport-monad.vercel.app",
+    "metaMaskConnected": true,
+    "accountSuffix": "B51DD",
+    "chainId": 10143,
+    "publicReadOnly": true,
+    "preparationAndPublicationUnavailable": true,
+    "signatureRequired": false,
+    "blockchainTransactionRequired": false
+  },
+  "anonymousProof": "Separate cookie-free Node HTTP checks; browser account state was not cleared",
+  "desktopWidth": 1417,
+  "policies": [
+    {
+      "preset": "modest",
+      "outcomes": [
+        "    - code: SATISFIED",
+        "    - code: NOT_SATISFIED",
+        "    - generic: Independently verified Monad publication",
+        "    - generic: \"Confirmed: no publication for this version\""
+      ]
+    },
+    {
+      "preset": "strict",
+      "outcomes": [
+        "    - code: NOT_SATISFIED",
+        "    - code: NOT_SATISFIED",
+        "    - generic: Independently verified Monad publication",
+        "    - generic: \"Confirmed: no publication for this version\""
+      ]
+    },
+    {
+      "preset": "local",
+      "outcomes": [
+        "    - code: SATISFIED",
+        "    - code: SATISFIED",
+        "    - generic: Independently verified Monad publication",
+        "    - generic: \"Confirmed: no publication for this version\""
+      ]
+    }
+  ],
+  "mobileViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "mobile": [
+    {
+      "page": "home",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "page": "passport",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "page": "compare",
+      "focused": "RESULTS / SELECTED REQUIREMENTSHere is what your policy found.These outcomes apply only to the requirements above.Agent 2072Meets your requirementsSATISFIEDAgent 2Requirements not metNOT_SATISFIED",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "page": "developers",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "page": "wallet",
+      "scrollWidth": 375,
+      "width": 375
+    }
+  ],
+  "walletPreparationDisabled": true
+}

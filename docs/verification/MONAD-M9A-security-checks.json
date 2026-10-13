@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-13T03:05:08.015Z",
+  "credentialValuesReadOrPrinted": false,
+  "scanType": "Credential-prefix, private-key, assignment and credential-RPC-URL patterns; no private files opened",
+  "currentChangedFilesScanned": 47,
+  "stagedFilesScanned": 21,
+  "credentialPatternMatches": 0,
+  "stagedCredentialPatternMatches": 0,
+  "jsonFilesParsed": 15,
+  "environmentFiles": [
+    {
+      "path": ".env.local",
+      "ignored": true,
+      "tracked": false
+    },
+    {
+      "path": "cre-passport-verifier/.env",
+      "ignored": true,
+      "tracked": false
+    }
+  ],
+  "acceptedProductSourceUnchanged": true,
+  "workflowCallsBackendVerification": false,
+  "workflowImportsAnalysisOrGeneration": false,
+  "workflowHasSigningReportOrWritePath": false,
+  "diffChecksPassed": true,
+  "m8IndexPreserved": true,
+  "m9aChangesStaged": false,
+  "simulatedSourceHashesMatchCurrentFiles": true
+}

@@ -1,0 +1,101 @@
+{
+  "observedAt": "2026-10-13T03:20:12.959Z",
+  "provenance": "Read-only inspection of the owner-signed-in official portal in Edge; no field changes, uploads, save or submit",
+  "sources": {
+    "form": "https://hackathon.monad.xyz/project?tab=submission",
+    "track": "https://hackathon.monad.xyz/tracks/trust-identity-ai",
+    "bounties": "https://hackathon.monad.xyz/tracks",
+    "rules": "https://hackathon.monad.xyz/dashboard (Rules modal, version 3.0, updated September 3 2026)"
+  },
+  "deadline": {
+    "local": "October 13, 2026 23:59 EDT",
+    "utc": "2026-10-14T03:59:00Z",
+    "source": "Signed-in dashboard, track detail and submission form"
+  },
+  "required": {
+    "primaryTrack": "Trust, Identity & AI Infrastructure",
+    "projectNameMaxCharacters": 120,
+    "oneLinerMaxCharacters": 200,
+    "descriptionMaxCharacters": 8000,
+    "goToMarketMaxCharacters": 8000,
+    "logo": {
+      "acceptedFormats": [
+        "PNG",
+        "JPG",
+        "WEBP"
+      ],
+      "maxBytesDisplay": "2 MB",
+      "minPixels": 500,
+      "maxDimensions": "2000 x 2000"
+    },
+    "githubRepository": "Public source required by Rules; form also permits sharing with metropolis@hackathon.monad.xyz",
+    "liveProduct": "Monad Mainnet or Testnet",
+    "technicalVideoMaxSeconds": 180,
+    "pitchVideoMaxSeconds": 120,
+    "sponsorDescriptionMaxCharacters": 8000,
+    "chainlinkVideoMaxSeconds": 120
+  },
+  "optional": {
+    "judgeAccessInstructionsMaxCharacters": 8000,
+    "envioVideoMaxSeconds": 120,
+    "dynamicVideoMaxSeconds": 120,
+    "alchemyVideoMaxSeconds": 120,
+    "nansenVideoMaxSeconds": 120,
+    "promotionVideoMaxSeconds": 30,
+    "projectXLink": true,
+    "publicVideoDisplayConsent": true
+  },
+  "rulesRequirements": {
+    "osiApprovedLicense": true,
+    "readmeSetupAndArchitecture": true,
+    "externalCodeAttribution": true,
+    "preexistingFoundationDisclosure": true,
+    "substantialNewBuildWindowWork": true,
+    "aiCodingToolDisclosure": true,
+    "commitHistory": true,
+    "teamSize": "1-5",
+    "singleProjectSinglePrimaryTrack": true,
+    "ownerEligibilityAndRightsReviewRequired": true
+  },
+  "portalState": {
+    "checklistComplete": 1,
+    "checklistTotal": 6,
+    "primaryTrackComplete": true,
+    "projectNamePresent": true,
+    "savedPositioningOutdatedTradingReputation": true,
+    "goToMarketBlank": true,
+    "repositoryUrlBlank": true,
+    "liveProductUrlBlank": true,
+    "logoMissing": true,
+    "technicalVideoBlank": true,
+    "pitchVideoBlank": true,
+    "allSponsorNarrativesBlank": true,
+    "chainlinkRequiredVideoBlank": true,
+    "selectedSponsors": [
+      "Envio",
+      "Dynamic",
+      "Alchemy",
+      "Chainlink CRE",
+      "Nansen"
+    ],
+    "communityTeamSelected": false,
+    "submitted": false
+  },
+  "conflicts": {
+    "logo": "Track page says 3 MB; actual form says 2 MB. Use PNG below 2 MB.",
+    "judging": "Primary track page gives 20/20/15/25/20 weights; Rules general criteria give five equal 20 percent criteria. Cover both; no eligibility or prize guarantee.",
+    "dates": "Dashboard and older Rules differ on post-submission judging dates; deadline agrees. Do not rely on the conflicting later schedule."
+  },
+  "notDone": [
+    "No portal edits or final submission",
+    "No Nansen API call or implementation",
+    "No Git push or new deployment"
+  ],
+  "licensing": {
+    "ownerAuthorized": "MIT",
+    "ownerConfirmedReuseRights": true,
+    "copyrightHolder": "2026 Signal Passport contributors",
+    "rootLicenseAdded": true,
+    "thirdPartyNoticesPreserved": true
+  }
+}
