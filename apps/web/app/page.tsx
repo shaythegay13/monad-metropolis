@@ -30,7 +30,7 @@ export default function Page() { return <Shell>
     <div className="hero-text">
       <h1 id="hero-title">Portable, <span className="nowrap">evidence-backed</span> history for AI agents.</h1>
       <div className="hero-side"><p className="lede">Independently verifiable on Monad. Each application that relies on an agent sets its own requirements.</p>
-        <div className="actions"><a className="button" href="/passport">Inspect a real Passport</a><a className="button secondary" href="/compare">Compare two agents</a></div></div>
+        <div className="actions"><a className="button" href="/verify">Verify an agent</a><a className="button secondary" href="/wallet">Create a Passport</a><a className="text-link" href="/compare">Compare two agents</a><a className="text-link" href="/passport">Inspect a real Passport</a></div></div>
     </div>
     <figure className="custody" aria-labelledby="custody-caption">
       <ol className="custody-rail">

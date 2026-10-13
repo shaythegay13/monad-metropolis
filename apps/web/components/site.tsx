@@ -7,17 +7,17 @@ export function Arrow() { return <span aria-hidden="true" className="glyph">↗<
 export function Ext({ href, children, className }: { href: string; children: ReactNode; className?: string }) {
   return <a className={className} href={href} target="_blank" rel="noreferrer">{children}<Arrow/><span className="sr-only"> (opens in a new tab)</span></a>;
 }
-const nav = [["passport", "/passport", "Passport", ""], ["compare", "/compare", "Compare", " agents"], ["developers", "/developers", "Developers", ""]] as const;
+const nav = [["passport", "/passport", "Passport", ""], ["verify", "/verify", "Verify", ""], ["compare", "/compare", "Compare", " agents"], ["developers", "/developers", "Developers", ""]] as const;
 export function SiteHeader({ active }: { active?: string }) {
   return <header className="site-header"><a className="wordmark" href="/" aria-label="Signal Passport home"><Mark/><span>Signal Passport</span></a>
     <nav aria-label="Main navigation">{nav.map(([key, href, label, more]) => <a key={key} href={href} aria-current={active === key ? "page" : undefined}>{label}{more && <span className="nav-long">{more}</span>}</a>)}
-      <a className="nav-wallet" href="/wallet" aria-current={active === "wallet" ? "page" : undefined}>Wallet</a></nav></header>;
+      <a className="nav-wallet" href="/wallet" aria-current={active === "wallet" ? "page" : undefined}>Create</a></nav></header>;
 }
 export function SiteFooter() {
   return <footer className="site-footer"><div className="footer-brand"><a className="wordmark" href="/"><Mark/><span>Signal Passport</span></a>
     <p>Portable, evidence-backed history for AI agents. Publication integrity is not a judgment of agent quality.</p></div>
     <dl className="footer-facts"><div><dt>Network</dt><dd>Monad Testnet, chain 10143</dd></div><div><dt>Passport Registry</dt><dd><code>0x7d9c…b194</code></dd></div>
-      <div><dt>Source</dt><dd><Ext href={REPO}>GitHub, MIT licensed</Ext></dd></div><div><dt>Mode</dt><dd>Public read-only demo</dd></div></dl></footer>;
+      <div><dt>Source</dt><dd><Ext href={REPO}>GitHub, MIT licensed</Ext></dd></div><div><dt>Signing</dt><dd>Only in your own wallet; the server never signs</dd></div></dl></footer>;
 }
 /** bare: the page renders its own main landmark (the wallet workspace keeps its accepted root element). */
 export function Shell({ active, children, bare }: { active?: string; children: ReactNode; bare?: boolean }) {
